@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Inria &#8212; Candyce</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="4. Université de Lorraine" href="Universit%C3%A9DeLorraine.html" />
+    <link rel="prev" title="2. France Université Numérique" href="FUN.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Jupyter_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Candyce</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    CANDYCE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ProgrammeCandyce.html">
+   1. Le programme Candyce
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MiseEnOeuvre.html">
+   2. Mise en œuvre
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique: Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DescriptionScientifiqueAnnexes.html">
+   1. À propos de cette partie
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Jupyter.html">
+   2. État de l’art: l’écosystème Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ApportPedagogique.html">
+   3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ConceptionResponsable.html">
+   4. Principes de conception responsable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ManifesteDonn%C3%A9es.html">
+     Manifeste sur la gestion des données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DirectionsTechnologiques.html">
+   5. Directions technologiques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Maquette.html">
+   6. Maquette
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../RessourcesP%C3%A9dagogiquesFAIR.html">
+   7. Ressources pédagogiques FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Consortium
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Acad%C3%A9mieDeParis.html">
+   1. Académie de Paris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="FUN.html">
+   2. France Université Numérique
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Inria
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Universit%C3%A9DeLorraine.html">
+   4. Université de Lorraine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Universit%C3%A9ParisSaclay.html">
+   5. Université Paris-Saclay
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Site produit par <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/issues/new?title=Issue%20on%20page%20%2FConsortium/Inria.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/edit/main/Consortium/Inria.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Consortium/Inria.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#personnes-cles">
+   Personnes clés
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Inria</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#personnes-cles">
+   Personnes clés
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="inria">
+<h1><span class="section-number">3. </span>Inria<a class="headerlink" href="#inria" title="Lien permanent vers ce titre">#</a></h1>
+<p>Inria est l’institut national de recherche en sciences et technologies du
+numérique. La recherche de rang mondial, l’innovation technologique et le risque
+entrepreneurial constituent son ADN. Au sein de plus de 200 équipes-projets,
+pour la plupart communes avec les grandes universités de recherche, plus de 3500
+scientifiques et ingénieurs y explorent des voies nouvelles, souvent dans
+l’interdisciplinarité et en collaboration avec des partenaires industriels pour
+répondre à des défis ambitieux. Institut technologique, Inria soutient également
+la diversité des voies de l’innovation : de l’édition open source de logiciels à
+la création de startups technologiques (« Deeptech ») en passant par le
+partenariat avec les entreprises et les efforts de standardisation.</p>
+<p>L’ambition stratégique d’Inria, réaffirmée dans son Contrat d’Objectifs et de
+Performance (COP) signé avec l’État pour la période 2019-2023, est d’accélérer
+la construction d’un leadership scientifique, technologique et industriel, dans
+et par le numérique, de la France, dans une dynamique européenne. Inria
+constitue à ce titre un outil de la souveraineté et de l’autonomie stratégique
+numérique de la Nation au travers de l’appui aux politiques publiques et de son
+action en faveur des grands sites universitaires dans le domaine du numérique.</p>
+<p>Cette ambition se fonde sur la cohérence et les synergies entre sa politique
+nationale et sa politique de site, en engageant pleinement Inria à travers ses
+centres de recherche, dans le développement d’universités de recherche de rang
+mondial, au cœur d’écosystèmes entrepreneuriaux et industriels dynamisés par le
+numérique, avec une exigence d’impact tant scientifique, qu’économique et
+sociétal.</p>
+<section id="personnes-cles">
+<h2>Personnes clés<a class="headerlink" href="#personnes-cles" title="Lien permanent vers ce titre">#</a></h2>
+<p><strong>Benjamin Ninassi</strong></p>
+<p>Benjamin Ninassi est ingénieur de recherche au sein de la Direction Générale
+Déléguée à la Science d’Inria. Il a auparavant encadré pendant une douzaine
+d’années les développements d’applications du système d’information de
+l’institut au sein de la DSI. Spécialisé dans les technologies web et leurs
+usages, il pilote la mise en œuvre de multiples plateformes logicielles dédiées
+à la médiation scientifique et à l’innovation pédagogique. Il intervient à tous
+les niveaux, depuis l’accompagnement à la définition des besoins en assistance à
+maitrise d’ouvrage jusqu’à la réalisation technique, en passant par la
+définition de l’architecture, l’urbanisation, le développement, l’intégration,
+etc. Il a notamment fait partie de l’équipe réduite qui a mis en place la
+plateforme <a class="reference external" href="https://www.fun-mooc.fr/fr/">FUN-MOOC</a> en 2014. Il a développé et
+déployé pour le lancement du premier MOOC Python en 2014 une plateforme
+indépendante permettant l’utilisation de notebooks IPython intégrés dans
+FUN-MOOC. Cette plateforme a permis aux enseignants d’élaborer du contenu sous
+forme de notebooks et aux apprenants de consommer l’intégralité du MOOC et de
+réaliser les différents exercices pratiques sans avoir besoin d’installer un
+environnement de développement en local sur leur machine. Ce développement a
+servi de souche pour les évolutions successives des autres MOOC Python qui lui
+ont succédé.</p>
+<p>Il est également fortement impliqué dans les projets
+<a class="reference external" href="https://classcode.fr">Class’Code</a> et (CAI Community)[<a class="reference external" href="https://cai.community">https://cai.community</a>] de
+co-création et de mise à disposition de ressources éducatives libres pour
+l’enseignement des sciences du numérique. Il intervient tout autant dans la
+définition stratégique des projets que dans la réalisation technique, puisqu’il
+s’occupe notamment des plateformes logicielles.</p>
+<p>Il possède de plus une fort expertise en écoconception de services numérique et
+une maitrise de leurs impacts environnementaux :</p>
+<ul class="simple">
+<li><p>il est membre contributeur de
+l”<a class="reference external" href="https://institutnr.org">Institut du Numérique Responsable</a> et à notablement
+contribué à la mise en place du
+<a class="reference external" href="https://gr491.isit-europe.org">Guide de Référence de Conception Responsable de Services Numériques</a>
+;</p></li>
+<li><p>il est membre du groupement de services multidisciplinaire
+<a class="reference external" href="https://ecoinfo.cnrs.fr">EcoInfo</a> ;</p></li>
+<li><p>il contribue à la mission interministérielle «
+<a class="reference external" href="https://ecoresponsable.numerique.gouv.fr/a-propos/">GreenTech</a> » piloté par
+la Direction interministérielle du numérique (DINUM) et le Ministère de la
+Transition Ecologique (MTE) et à notablement contribué à l’élaboration du
+Référentiel Général d’Ecoconception de Services Numériques
+<a class="reference external" href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">RGESN</a></p></li>
+<li><p>il est co-auteur du
+<a class="reference external" href="https://www.fun-mooc.fr/fr/cours/impacts-environnementaux-du-numerique/">MOOC Class’Code/Inria</a>
+de sensibilisation aux impacts environnementaux du numérique</p></li>
+</ul>
+<p>Il enseigne également les méthodes de gestion de projet agile, notamment SCRUM,
+à l’université de Rennes1.</p>
+<p>Benjamin Ninassi apporte au consortium ses compétences techniques et
+managériales transverses, ses expériences des différents projets de création et
+de mises à dispositions de ressources éducatives libres pour l’enseignement de
+l’informatique auxquels il a eu l’occasion de contribuer ainsi que des acteurs
+de référence. Il apporte également son expertise en écoconception de services
+numérique et sa maitrise de leurs impacts environnementaux, compétences
+nécessaires à la définition et au déploiement d’une stratégie d’étude et de
+réduction des impacts d’un tel projet.</p>
+<p><strong>Thierry Parmentelat</strong></p>
+<p>Thierry Parmentelat est co-auteur d’un MOOC sur Python, en ligne sur FUN /
+France Université Numérique, et qui a attiré environ 100.000 apprenants depuis
+sa création en 2014. Ce MOOC tire profit du confort que peuvent apporter les
+notebooks Jupyter dans le contexte de l’enseignement à distance, permettant
+notamment:</p>
+<ul class="simple">
+<li><p>aux apprenants de suivre les cours et prendre en main le langage avant même
+d’avoir eu à installer localement la pile logicielle Python, opération qui
+peut être rébarbative, et décourager les apprenants novices;</p></li>
+<li><p>aux apprenants d’expérimenter très facilement de leur coté des variantes du
+code proposé par l’enseignant;</p></li>
+<li><p>de proposer des activités de type “exercices auto-corrigés”;</p></li>
+<li><p>à l’enseignant d’avoir la garantie que le cours est intègre, puisque tout le
+code est exécuté par l’apprenant lors de son parcours;</p></li>
+</ul>
+<p>Comme la plateforme, basée sur Open-edx, ne permettait pas en 2014 - et c’est
+toujours le cas - de créer et exécuter nativement des contenus au format
+notebook, la DSI d’Inria - et notamment Benjamin Ninassi - a développé un
+service séparé pour remplir cette fonctionnalité.</p>
+<p>Pour pouvoir faire face aux évolutions nécessaires, Thierry Parmentelat a récrit
+en 2017 une nouvelle version de ce service,
+<a class="reference external" href="https://github.com/parmentelat/nbhosting">baptisée nbhosting</a> qui héberge,
+outre le MOOC Python:</p>
+<ul class="simple">
+<li><p>d’autres <a class="reference external" href="https://www.fun-mooc.fr/">MOOCs sur FUN</a> (Inria et École
+Polytechnique)</p></li>
+<li><p>le cours d’informatique en première année de
+l”<a class="reference external" href="https://www.minesparis.psl.eu/">École des Mines</a> dans lequel Thierry
+Parmentelat est très impliqué</p></li>
+<li><p>des cours en présentiel à l”<a class="reference external" href="https://ensip.univ-poitiers.fr/">ENSIP</a></p></li>
+<li><p>des notebooks intégrés dans le moodle de
+<a class="reference external" href="https://magistere.education.fr/">m&#64;gistere</a></p></li>
+</ul>
+<p>Enfin le système nbhosting est actuellement déployé et opéré séparément par
+l’Académie de Paris comme un des composants de Capytale.</p>
+<p>Ainsi Thierry Parmentelat apporte au consortium un spectre d’expérience qui
+couvre très largement les domaines concernés par cette proposition, allant du
+développement, déploiement et opération des outils, jusqu’à leur utilisation au
+quotidien pour l’enseignement, aussi bien dans un contexte massif et en ligne
+que traditionnel dans une École d’ingénieurs.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Consortium"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="FUN.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>France Université Numérique</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Universit%C3%A9DeLorraine.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Université de Lorraine</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Candyce<br/>
+  
+      &copy; Copyright 2021-2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

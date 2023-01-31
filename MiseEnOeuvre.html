@@ -1,0 +1,1981 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Mise en œuvre &#8212; Candyce</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="1. À propos de cette partie" href="DescriptionScientifiqueAnnexes.html" />
+    <link rel="prev" title="1. Le programme Candyce" href="ProgrammeCandyce.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Jupyter_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Candyce</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    CANDYCE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ProgrammeCandyce.html">
+   1. Le programme Candyce
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Mise en œuvre
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique: Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="DescriptionScientifiqueAnnexes.html">
+   1. À propos de cette partie
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter.html">
+   2. État de l’art: l’écosystème Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApportPedagogique.html">
+   3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ConceptionResponsable.html">
+   4. Principes de conception responsable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ManifesteDonn%C3%A9es.html">
+     Manifeste sur la gestion des données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DirectionsTechnologiques.html">
+   5. Directions technologiques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Maquette.html">
+   6. Maquette
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RessourcesP%C3%A9dagogiquesFAIR.html">
+   7. Ressources pédagogiques FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Consortium
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Acad%C3%A9mieDeParis.html">
+   1. Académie de Paris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/FUN.html">
+   2. France Université Numérique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Inria.html">
+   3. Inria
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9DeLorraine.html">
+   4. Université de Lorraine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9ParisSaclay.html">
+   5. Université Paris-Saclay
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Site produit par <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/issues/new?title=Issue%20on%20page%20%2FMiseEnOeuvre.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/edit/main/MiseEnOeuvre.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/MiseEnOeuvre.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vue-d-ensemble-des-chapitres">
+   Vue d’ensemble des chapitres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#consortium-et-communaute">
+   Consortium et communauté
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gouvernance">
+   Gouvernance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-0-pilotage-du-projet">
+   Chapitre 0 : Pilotage du projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-1-developpement-technologique">
+   Chapitre 1- Développement technologique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chapitre-1a-developpement-du-socle-logiciel">
+     Chapitre 1a : Développement du socle logiciel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chapitre-1b-deploiement-et-operation">
+     Chapitre 1b : Déploiement et opération
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-2-adoption-et-co-construction-dans-le-scolaire">
+   Chapitre 2 : Adoption et co-construction dans le scolaire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enjeux-et-ambition">
+     Enjeux et ambition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupes-de-production-de-ressources-pedagogiques">
+     Groupes de production de ressources pédagogiques
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#communautes-dusagers">
+     Communautés d’usagers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formation-et-accompagnement-des-usagers-et-des-referents-candyce-ainsi-que-des-cadres">
+     Formation et accompagnement des usagers et des référents Candyce, ainsi que des cadres
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodologie-pour-la-formation-et-l-accompagnement">
+     Méthodologie pour la formation et l’accompagnement :
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimentations-dans-le-1er-degre-et-dans-les-colleges">
+     Expérimentations dans le 1er degré et dans les collèges
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-3-adoption-et-co-construction-dans-le-superieur">
+   Chapitre 3 : Adoption et co-construction dans le supérieur
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimentations-usages-pedagogiques-innovants">
+     Expérimentations: usages pédagogiques innovants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formation-des-usagers-et-des-ambassadeurs-candyce">
+     Formation des usagers et des ambassadeurs Candyce
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-actions-pour-inspirer-former-accompagner-co-construire-evaluer">
+     Autres actions pour Inspirer, Former, Accompagner, Co-Construire, Évaluer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-4-liens-avec-la-communaute-filiere-education-et-numerique-edtechs-entreprises-associations">
+   Chapitre 4 : Liens avec la communauté : Filière éducation et numérique (Edtechs, entreprises, associations, …)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-collaboration-avec-la-communaute-au-coeur-de-candyce">
+     La collaboration avec la communauté au cœur de Candyce
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implication-de-la-communaute-participation-a-la-gouvernance-et-ami-aap">
+     Implication de la communauté : participation à la gouvernance et AMI / AAP
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#production-et-interconnexion-de-ressources-pedagogiques">
+     Production et interconnexion de ressources pédagogiques
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-d-transfert-et-ami-aap-du-wp3">
+     R&amp;D Transfert et AMI/AAP du WP3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cellule-dappui-et-developpement-de-la-communaute-candyce">
+     Cellule d’appui et développement de la communauté Candyce
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interoperabilite">
+     Interopérabilité
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-5-candyce-et-la-recherche">
+   Chapitre 5 : Candyce et la recherche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-6-evaluation">
+   Chapitre 6 : Évaluation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identification-des-criteres-devaluation-et-de-succes">
+     Identification des critères d’évaluation et de succès
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criteres-devaluation-resultats">
+     Critères d’évaluation : résultats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criteres-devaluation-impact">
+     Critères d’évaluation: impact
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#etudes-dimpact">
+     Études d’impact
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prefiguration-de-la-suite-du-programme-candyce">
+     Préfiguration de la suite du programme Candyce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Mise en œuvre</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vue-d-ensemble-des-chapitres">
+   Vue d’ensemble des chapitres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#consortium-et-communaute">
+   Consortium et communauté
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gouvernance">
+   Gouvernance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-0-pilotage-du-projet">
+   Chapitre 0 : Pilotage du projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-1-developpement-technologique">
+   Chapitre 1- Développement technologique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chapitre-1a-developpement-du-socle-logiciel">
+     Chapitre 1a : Développement du socle logiciel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chapitre-1b-deploiement-et-operation">
+     Chapitre 1b : Déploiement et opération
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-2-adoption-et-co-construction-dans-le-scolaire">
+   Chapitre 2 : Adoption et co-construction dans le scolaire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enjeux-et-ambition">
+     Enjeux et ambition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupes-de-production-de-ressources-pedagogiques">
+     Groupes de production de ressources pédagogiques
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#communautes-dusagers">
+     Communautés d’usagers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formation-et-accompagnement-des-usagers-et-des-referents-candyce-ainsi-que-des-cadres">
+     Formation et accompagnement des usagers et des référents Candyce, ainsi que des cadres
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodologie-pour-la-formation-et-l-accompagnement">
+     Méthodologie pour la formation et l’accompagnement :
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimentations-dans-le-1er-degre-et-dans-les-colleges">
+     Expérimentations dans le 1er degré et dans les collèges
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-3-adoption-et-co-construction-dans-le-superieur">
+   Chapitre 3 : Adoption et co-construction dans le supérieur
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimentations-usages-pedagogiques-innovants">
+     Expérimentations: usages pédagogiques innovants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formation-des-usagers-et-des-ambassadeurs-candyce">
+     Formation des usagers et des ambassadeurs Candyce
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-actions-pour-inspirer-former-accompagner-co-construire-evaluer">
+     Autres actions pour Inspirer, Former, Accompagner, Co-Construire, Évaluer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-4-liens-avec-la-communaute-filiere-education-et-numerique-edtechs-entreprises-associations">
+   Chapitre 4 : Liens avec la communauté : Filière éducation et numérique (Edtechs, entreprises, associations, …)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-collaboration-avec-la-communaute-au-coeur-de-candyce">
+     La collaboration avec la communauté au cœur de Candyce
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implication-de-la-communaute-participation-a-la-gouvernance-et-ami-aap">
+     Implication de la communauté : participation à la gouvernance et AMI / AAP
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#production-et-interconnexion-de-ressources-pedagogiques">
+     Production et interconnexion de ressources pédagogiques
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-d-transfert-et-ami-aap-du-wp3">
+     R&amp;D Transfert et AMI/AAP du WP3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cellule-dappui-et-developpement-de-la-communaute-candyce">
+     Cellule d’appui et développement de la communauté Candyce
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interoperabilite">
+     Interopérabilité
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-5-candyce-et-la-recherche">
+   Chapitre 5 : Candyce et la recherche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapitre-6-evaluation">
+   Chapitre 6 : Évaluation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identification-des-criteres-devaluation-et-de-succes">
+     Identification des critères d’évaluation et de succès
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criteres-devaluation-resultats">
+     Critères d’évaluation : résultats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criteres-devaluation-impact">
+     Critères d’évaluation: impact
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#etudes-dimpact">
+     Études d’impact
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prefiguration-de-la-suite-du-programme-candyce">
+     Préfiguration de la suite du programme Candyce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="mise-en-oeuvre">
+<h1><span class="section-number">2. </span>Mise en œuvre<a class="headerlink" href="#mise-en-oeuvre" title="Lien permanent vers ce titre">#</a></h1>
+<p>La mise en œuvre du programme Candyce passe par une gouvernance resserrée et
+sept « chapitres » répondant à chacun des enjeux de ce programme, pour un
+financement global de 10 M€ sur 3 ans. Ces chapitres sont résumés succinctement
+dans cette section et représentés sur la Figure 1. Dans les sections suivantes,
+nous décrivons le consortium et la communauté, la gouvernance, puis chaque
+chapitre l’un après l’autre avec ses enjeux et les acteurs impliqués.</p>
+<section id="vue-d-ensemble-des-chapitres">
+<h2>Vue d’ensemble des chapitres<a class="headerlink" href="#vue-d-ensemble-des-chapitres" title="Lien permanent vers ce titre">#</a></h2>
+<p>Le programme Candyce sur les trois premières années comportera sept chapitres,
+représentés dans la figure <a class="reference internal" href="#figure-lots"><span class="std std-numref">Fig. 2.1</span></a>.</p>
+<ul class="simple">
+<li><p>Un chapitre sur la <strong>gouvernance et le pilotage de projet</strong></p></li>
+<li><p>Un chapitre portant sur le <strong>développement technique de l’infrastructure
+Candyce</strong>[3] — socle indispensable pour les autres chapitres — avec deux
+volets : 1a pour le développement logiciel et 1b pour le déploiement et
+l’opération de l’infrastructure. La convergence entre Capytale et Candyce
+participe à ces deux volets.</p></li>
+<li><p>Un chapitre sur l”<strong>adoption et la co-construction de Candyce/Capytale dans le
+scolaire</strong> :</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Généralisation de pratiques éprouvées sur le terrain pour enseigner et
+apprendre les sciences du numérique  au lycée (identification et évaluation
+des contenus et des pratiques, création et animation des communautés) ;</p></li>
+<li><p>Expérimentation d’usages innovants du numérique scientifique pour, par
+exemple, l’enseignement de la littérature, des langues, de
+l’histoire-géographie, des arts ou du sport ;</p></li>
+<li><p>Expérimentations d’usages innovants du numérique scientifique pour le collège
+et le primaire, notamment pour en identifier les prérequis en termes
+d’adaptation des environnements au public concerné (interfaces simplifiées,
+…) et de mise en œuvre pratique (connectivité, …) en lien, notamment, avec
+les TNE ;</p></li>
+<li><p>Accompagnement à cette transformation avec un enjeu de formation du corps
+enseignant et des cadres de l’éducation nationale.</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Un chapitre sur l”<strong>adoption et la co-construction de Candyce dans le
+supérieur</strong> et le renforcement de la continuité pédagogique Bac -3/Bac +3;
+outre les éléments ci-dessus déclinés à l’aune des structures du supérieur, il
+inclut la mise en place de synergies à travers des expérimentations avec
+certaines universités et écoles d’ingénieurs, notamment porteuses d’actions
+des PIA Innovation pédagogique et numérique telles que les projets DemoES.</p></li>
+<li><p>Un chapitre dédié aux <strong>liens avec la communauté — Edtechs, industrie,
+associations —</strong> afin d’initier un écosystème vertueux de production de
+ressources et de services publics et privés qui s’appuieront sur et
+enrichiront Candyce.</p></li>
+<li><p>Un chapitre portant sur les <strong>liens avec la recherche en sciences du
+numérique, sciences de l’éducation et de la formation, sciences humaines et
+sociales et sciences cognitives</strong>: caractérisation de la partie observatoire
+de Candyce, conciliation éthique, sécurisation et valorisation des données,
+interopérabilité avec la plate-forme des données de l’éducation et du
+supérieur, expérimentations, animation d’appels à projet en lien étroit avec
+le programme 3 de ce PEPR.</p></li>
+<li><p>Un chapitre d’<strong>évaluation</strong> définissant les critères et conditions du succès,
+assurant leur évaluation sur trois ans ainsi que la préfiguration de la
+poursuite du programme sur cinq ans sur financements complémentaires.</p></li>
+</ul>
+<figure class="align-default" id="figure-lots">
+<a class="reference internal image-reference" href="_images/Lots.svg"><img alt="Lots" src="_images/Lots.svg" width="90%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Les lots de Candyce</span><a class="headerlink" href="#figure-lots" title="Lien permanent vers cette image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="consortium-et-communaute">
+<h2>Consortium et communauté<a class="headerlink" href="#consortium-et-communaute" title="Lien permanent vers ce titre">#</a></h2>
+<p>Les établissements représentés dans le cœur du consortium du programme Candyce,
+sont nommés établissements « partenaires ». À ceux-ci s’adjoindront des
+établissements dits « associés », selon les besoins des chapitres. Les
+établissements partenaires et associés identifiés à ce stade du montage du
+projet sont listés ci-dessous et représentés sur la Figure 2. Un processus sera
+mis en place pour agréger d’autres établissements au fur et à mesure du montage,
+de l’exécution et de la montée en puissance du programme.</p>
+<p>À ce jour, les établissements partenaires sont les suivants :</p>
+<ul class="simple">
+<li><p>Inria (maîtrise d’ouvrage),</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Université Paris-Saclay : maîtrise d’œuvre, déploiement dans le supérieur,</p></li>
+<li><p>Académie de Paris (Capytale),</p></li>
+<li><p>Direction du Numérique pour l’Éducation (DNE) : pilotage du déploiement dans
+le scolaire et des liens avec la communauté (Edtechs, entreprises,
+associations, …),</p></li>
+<li><p>France Université Numérique (FUN) : opération de l’infrastructure,</p></li>
+</ul>
+<!-- - QuantStack (PME) : développement du socle logiciel, !-->
+<ul class="simple">
+<li><p>Université de Lorraine, Anne Boyer responsable scientifique de l’axe
+transverse « éducation et numérique » du laboratoire Loria: pilotage de la
+recherche</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Canopé (Accompagnement des usages, test utilisateurs, ressources support à la
+formation des enseignants, accompagnement des enseignants et enseignantes à la
+conception de ressources),</p></li>
+<li><p>École Polytechnique.</p></li>
+</ul>
+<p>À ce jour, les établissements associés ont manifesté leur volonté de rejoindre
+ce programme pour participer à sa co-conception, expérimenter, déployer,
+apporter leurs expertises à la communauté Candyce.</p>
+<p>Cette liste sera complétée au fur et à mesure des différents chapitres : (voir
+fiches projets en annexe)</p>
+<ul class="simple">
+<li><p>CNAM,</p></li>
+<li><p>ENSAM (DemoES JENII),</p></li>
+<li><p>Université de Rennes 1 (DemoES AIR), Université de la Polynésie Française,
+Université de Grenoble Alpes (GRICAD),
+<a class="reference external" href="https://www.fau.de/">FAU - Friedrich-Alexander-Universität Erlangen-Nürnberg</a>,
+(Allemagne), Université Nazi Boni (Burkina Faso)</p></li>
+<li><p>Aix-Marseille Université</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Animath, France IOI, associations d’enseignantes et enseignants</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Personaldata.io, Hestia.ai</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Des contacts seront pris avec Renater, des hébergeurs de cloud souverain …</p></li>
+</ul>
+<figure class="align-default" id="figure-communaute">
+<a class="reference internal image-reference" href="_images/Communauté.svg"><img alt="Lots" src="_images/Communauté.svg" width="90%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">La communauté de Candyce</span><a class="headerlink" href="#figure-communaute" title="Lien permanent vers cette image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="gouvernance">
+<h2>Gouvernance<a class="headerlink" href="#gouvernance" title="Lien permanent vers ce titre">#</a></h2>
+<p>La gouvernance se compose d’une maîtrise d’ouvrage MOA et d’une maîtrise d’œuvre
+MOE.</p>
+<p>La MOA portée par Inria définit les fonctionnalités globales, les livrables et
+leur évaluation (recette) pour l’ensemble des lots dont la mise en œuvre est de
+la responsabilité de la MOE, portée par l’Université Paris Saclay. La MOA assure
+aussi le pilotage stratégique et fait le lien avec les autres programmes du PEPR
+et la coordination de la stratégie d’accélération Enseignement et numérique du
+SGPI.</p>
+<p>La MOE assure la direction exécutive du programme : elle suit l’exécution des
+lots et la trajectoire globale du programme. Elle rend compte à la maîtrise
+d’ouvrage qui arbitre sur des décisions stratégiques en s’appuyant sur un
+conseil et des comités. La direction exécutive du programme se compose de :</p>
+<ul class="simple">
+<li><p>un directeur de projet qui assume également la direction technique en lien
+avec Inria,</p></li>
+<li><p>une direction opérationnelle, qui suit au quotidien l’avancement des travaux
+de chacun des chapitres en lien étroit avec les responsables des chapitres,
+coordonne les moyens, arbitre à son niveau et rend compte à la direction du
+programme. Son rôle est crucial sur l’animation entre les chapitres afin de
+favoriser la transversalité des actions.</p></li>
+</ul>
+<p>Les établissements partenaires se partagent la responsabilité de la gouvernance
+et des chapitres du programme. Les personnes en charge de la gouvernance sont
+des salarié⸱es des établissements partenaires. Chaque chapitre est placé sous la
+responsabilité d’un établissement partenaire.</p>
+<p>La gouvernance s’appuie sur :</p>
+<ul class="simple">
+<li><p><strong>Un conseil scientifique et éthique</strong> pluridisciplinaire, composé de
+scientifiques des sciences du numérique, sciences de l’éducation,
+neurosciences, sociologie, et acteurs/actrices de la formation : le corps
+enseignant, les apprenant⸱es, etc. Il sera en charge de piloter les actions de
+recherche du programme et d’aider la gouvernance à arbitrer et évaluer les
+propositions des chapitres, notamment pour le choix des expérimentations et la
+conciliation entre éthique, sécurisation et valorisation des données
+d’apprentissages. Ce comité scientifique est intégré à la communauté
+scientifique de la gouvernance du PEPR. Pour les questions éthiques, il
+regroupe des experts internes et s’appuiera sur les comités d’éthiques
+existants et notamment sur le Comité d’éthique des données du MENJS pour le
+scolaire.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Composition du Conseil scientifique et éthique (cette liste peut être amenée
+à évoluer):</strong></p>
+<p><strong>Jill Jênn Vie</strong> chargé de recherche, équipe
+<a class="reference external" href="https://team.inria.fr/soda/">SODA</a>, Inria Saclay,</p>
+<p><strong>Éric Bruillard</strong>, professeur à l’université de Paris, laboratoire EDA</p>
+<p><strong>Vanda Luengo</strong>, professeure d’informatique à Sorbonne Université. Elle est
+responsable de l’équipe MOCAH du LIP6 et directrice du centre d’innovation
+pédagogique CAPSULE de Sorbone Université.</p>
+<p><strong>Margarida Romero</strong>, Professeure des Universités (1ère classe), Laboratoire
+d’Innovation et Numérique pour l’Education (LINE) | Université Côte d’Azur</p>
+<p><strong>Jean-François Cerisier</strong>, Professeur de sciences de l’information et de la
+communication, Directeur du laboratoire TECHNE, Université de Poitiers</p>
+<p><strong>Pascal Plantard</strong>, Professeur des Universités en sciences de l’éducation et
+de la formation, Anthropologue des usages, Co-Directeur du Groupement
+d’Intérêt Scientifique (GIS) M&#64;rsouin</p>
+<p><strong>Elie Allouche</strong>, Chef de projet recherche appliquée et incubateur de projets
+numériques, Bureau du soutien à l’innovation numérique et à la recherche
+appliquée, Chargé du carnet Hypothèses « Education, numérique et recherche
+<a class="reference external" href="https://edunumrech.hypotheses.org/">https://edunumrech.hypotheses.org/</a> #GTnum , Direction du numérique pour
+l’éducation, Ministère de l’Éducation nationale, de la Jeunesse et des Sports</p>
+<p><strong>Sophie Pène</strong>, Professeure en sciences de l’information et communication,
+chercheure au DICEM - CNAM</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Un comité des Parties-prenantes</strong>, transversal au scolaire et au supérieur,
+et composé de recteurs et rectrices, de DANE, de représentants des
+enseignant⸱es et apprenant⸱es, du scolaire et du supérieur et des familles, de
+VPs numérique et formation, de cadres de l’éducation, etc. Ce comité sera en
+charge de favoriser l’expression des besoins, la définition des scenarii
+pédagogiques types, les retours d’usages, le partage des bonnes pratiques,
+etc.</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p><strong>Un comité technique</strong>, composé d’experts et expertes, venant de structures
+publiques et privées, en charge des orientations technologiques et
+réglementaires, de l’avancement de l’exécution technique et de la réalisation
+des ambitions comme l’accessibilité, la sécurité, la sobriété numérique ou
+encore la mise en œuvre de la gestion éthique des données.</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p><strong>Un comité « filière éducation et numérique »,</strong> avec des représentant⸱es des
+Edtech, entreprises, associations, communauté du libre. Il aura notamment pour
+objectifs de favoriser l’identification des besoins de la filière,
+l’interopérabilité avec les ressources et services privés, le transfert des
+avancées de Candyce et de la recherche, l’identification des modèles
+économiques, en lien avec le groupe de travail dédié du WP3c. Seront
+impliqués, Afinef, EdtechFrance, «Les éditeurs du numérique» ou des
+représentants désignés par eux.</p></li>
+</ul>
+<p>Ces comités seront associés à la gouvernance du PEPR et certaines personnes
+seront associées au dispositif WP2 et WP3 du PEPR.</p>
+<p>Un accord de consortium et des conventions entre les parties prenantes seront
+réalisés.</p>
+</section>
+<section id="chapitre-0-pilotage-du-projet">
+<h2>Chapitre 0 : Pilotage du projet<a class="headerlink" href="#chapitre-0-pilotage-du-projet" title="Lien permanent vers ce titre">#</a></h2>
+<p><u>Enjeux :</u> exécution pertinente du projet, gestion des risques,
+gouvernance, communication</p>
+<p><u>Pilotes :</u></p>
+<ul class="simple">
+<li><p><strong>Maître d’ouvrage :</strong> Inria</p></li>
+<li><p><strong>Maître d’œuvre :</strong> Université Paris-Saclay</p></li>
+</ul>
+<p><u>Partenaires </u>: tous</p>
+<p><u>Financement :</u> 200 K€/an</p>
+<p>L’équipe de pilotage du projet est en charge de la bonne exécution de celui-ci
+et assurera notamment :</p>
+<ul class="simple">
+<li><p>le suivi de la trajectoire de chacun des chapitres ;</p></li>
+<li><p>l’animation et la coordination des transversalités entre chapitres et les
+conseil/comités ;</p></li>
+<li><p>la coordination et la participation à l’animation des communautés ;</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>la coordination de la veille : technologies, communautés, ressources, projets,
+etc ;</p></li>
+<li><p>la coordination et la participation à la communication ;</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>le pilotage et le suivi juridique et financier ;</p></li>
+<li><p>l’animation du conseil et des comités, arbitrages et planification agile ;</p></li>
+<li><p>la gestion des risques ;</p></li>
+<li><p>la gestion de l’élargissement progressif du consortium à mesure de la montée
+en puissance ;</p></li>
+<li><p>la synthèse des rapports et évaluations pour SGPI/ANR ;</p></li>
+<li><p>le suivi des indicateurs.</p></li>
+</ul>
+</section>
+<section id="chapitre-1-developpement-technologique">
+<h2>Chapitre 1- Développement technologique<a class="headerlink" href="#chapitre-1-developpement-technologique" title="Lien permanent vers ce titre">#</a></h2>
+<p><strong>Pilote de la Maîtrise d’œuvre</strong> des chapitres 1.a (Développement du socle
+logiciel) et 1.b (Déploiement et opération) : Université Paris Saclay</p>
+<section id="chapitre-1a-developpement-du-socle-logiciel">
+<h3>Chapitre 1a : Développement du socle logiciel<a class="headerlink" href="#chapitre-1a-developpement-du-socle-logiciel" title="Lien permanent vers ce titre">#</a></h3>
+<p><u>Enjeux :</u> Faire évoluer les fonctionnalités de l’infrastructure Jupyter en
+soutenant son déploiement opérationnel au fur et à mesure et sa co-construction
+avec les autres chapitres</p>
+<!-- <u>Pilote :</u> QuantStack !-->
+<p><u>Partenaires :</u> UPsaclay (dont CentraleSupélec), FUN, Académie de Paris,
+Inria</p>
+<p><u>Associés :</u> Symerio (Pyodide)</p>
+<p><u>Jalons: </u></p>
+<ul class="simple">
+<li><p>6 mois : Produit Minimal Viable, premiers utilisateurs, début co-construction</p></li>
+<li><p>7-24 mois: Produit complet</p></li>
+<li><p>25- : Maturation par co-construction à plus large échelle</p></li>
+</ul>
+<p><u>Financement 1.a :</u> 1,1 M€/an</p>
+<p>Du fait des objectifs ambitieux en termes d”<strong>accessibilité</strong>, de <strong>passage à
+l’échelle</strong>, d”<strong>extensibilité,</strong> <strong>de gestion des flux de données</strong>, de
+<strong>frugalité</strong> et d’<strong>écoconception</strong>, la mise en place de l’infrastructure
+Candyce nécessite d’importants développements et/ou évolutions de briques
+logicielles libres dans les écosystèmes sous-jacents, dont Jupyter. Ces briques
+logicielles libres et leurs évolutions seront naturellement rendues disponibles
+à la communauté. Elles seront ainsi un apport significatif non seulement dans
+notre contexte, mais aussi pour l’ensemble de l’écosystème économique utilisant
+ces technologies, très implantées en Europe. Elle permettront notamment à
+d’autres entités, publiques ou privées, de déployer des infrastructures
+similaires à Candyce.</p>
+<p><strong>Principales fonctionnalités</strong></p>
+<p>Pour les apprenant.e.s, Candyce offre accès — par exemple via les ENT — à des
+ressources pédagogiques interactives — typiquement des carnets Jupyter — dans
+des <strong>environnements virtuels collaboratifs</strong>. Ces environnements permettent
+aussi le partage de documents et de la bureautique simple.</p>
+<p>Les enseignant.e.s accèdent à Candyce par un portail offrant une <strong>bibliothèque
+de ressources pédagogiques</strong> <strong>par discipline et de façon
+interdisciplinaire</strong> et un <strong>gestionnaire de devoirs</strong>. Dans le scénario le plus
+simple, l’enseignant utilise le <strong>moteur de recherche et de recommandation
+personnalisé</strong> pour choisir une ressource préexistante en fonction de ses
+besoins pédagogiques, et la met à disposition de ses élèves via le
+<strong>gestionnaire de devoirs</strong>. Il peut aussi produire ses propres ressources,
+rédiger ses propres carnets, voire définir les logiciels requis pour utiliser
+ces ressources, via un <strong>gestionnaire d’environnements</strong>. Il peut ensuite, s’il
+le souhaite, déposer sa production sur la bibliothèque pour la mettre à la
+disposition de toute la communauté. La bibliothèque permet et encourage la
+<strong>recommandation des ressources</strong> par les pairs et par les corps d’inspection
+disciplinaires.</p>
+<p>Candyce fournit à tous les utilisateurs et utilisatrices des tableaux de bords
+paramétrables de suivi, personnalisés en fonction de leur(s) rôle(s).</p>
+<p><strong>Principales directions technologiques</strong></p>
+<p><strong>Accessibilité :</strong> Entre 15 et 20% de la population souffre d’un handicap
+pouvant affecter leur navigation sur le web (ou l’utilisation d’une application
+web). Candyce s’adressant à l’ensemble des élèves du scolaire ainsi qu’aux
+étudiants et étudiantes du supérieur, l’accessibilité sera être une priorité
+dans le développement de la plate-forme.</p>
+<p><strong>Interopérabilité :</strong> Un des principes fondamentaux de l’architecture de
+Jupyter est de produire des spécifications formelles pour les protocoles de
+communication, les formats de fichier, et les autres points d’extensions afin
+d’offrir une interopérabilité et de permettre des cas d’usages très variés. Les
+standards ouverts définis par Jupyter sont aujourd’hui considérés comme des
+standards de l’industrie. Le programme Candyce appliquera le même principe de
+conception permettant une forte composabilité, et facilitera son intégration
+avec d’autres écosystèmes. Cela inclura l’intégration avec les annuaires tels
+que EduConnect ou Éducation-Recherche (par authentification SSO OAuth2.0/OpenId
+Connect), les ENT et LMS tels que Moodle ou Open EDX (par protocoles LTI voire
+h5p), et les autres services de l’enseignement. Cet interopérabilité permettra
+l’attribution de rôles relatifs au contenu utilisé, enseignant, étudiant,
+auteur, … (RBAC : Role-Based Access Control) et la portabilité des données
+d’apprentissage (protocoles tels que TubCab xAPI ou Caliper). Enfin des
+expérimentations seront menés avec des mésocentres (École Polytechnique, GRICAD
+Université de Grenoble-Alpes), pour permettre des scenarii mixtes où un
+utilisateur accède sur Candyce à une ressource pédagogique environnée et
+souhaite l’exécuter sur des ressources physiques spécifiques auquel il a par
+ailleurs accès (par exemples des accélérateurs matériels GPU, très prisés pour
+le calcul parallèle et l’apprentissage statistique en IA).</p>
+<p><strong>Environnements logiciels configurables et reproductibles :</strong> Un aspect
+critique de Candyce est de garantir que le contenu pédagogique créé par les
+enseignant⸱es et les élèves continue de fonctionner au gré des mises à jour.
+Cette contrainte est aussi importante pour le supérieur et la recherche, afin de
+faciliter la <em>reproductibilité</em> des résultats. Par ailleurs, les enseignants
+vont vouloir utiliser une large panoplie de logiciels libres. Pour cela, Candyce
+adoptera une approche similaire au projet MyBinder : pour chaque contenu, la
+personne enseignante pourra choisir la liste des logiciels qui seront
+disponibles dans son environnement d’exécution. Aussi, un utilisateur ou une
+utilisatrice se connectant plus tard pour accéder à ce contenu retrouvera le
+même environnement logiciel. <strong><em>Ce qui marchait hier marchera demain…</em></strong></p>
+<p><strong>Convergence avec Capytale, plateforme portée par l’Académie de Paris et les
+autres déploiements de Jupyter</strong> : Voir
+<a class="reference external" href="#iii--articulation-avec-les-plateformes-existantes-notamment-capytale">Section III- Articulation avec les plate-formes existantes : Capytale, …</a></p>
+<p><strong>Une construction basée sur l’expérience des utilisateurs réels :</strong> Tests
+utilisateurs en laboratoire, amélioration continue de la plate-forme sur la base
+des retours de télémétrie A/B, co-construction avec les communautés
+d’utilisateurs. Le programme Candyce sera construit dans une approche « produit »
+afin d’offrir le meilleur outil pour les utilisateurs sur le terrain, avec une
+organisation systématique de ces retours, et mesures d’usage à chaque itération.</p>
+<p>Ce dispositif UX sera complété par le processus de co-conception décrit dans les
+chapitres 2 et 3 et par le dispositif d’accompagnement, de tests et
+d’acceptabilité porté par Canopé.</p>
+<p><strong>Livrables :</strong></p>
+<p>Les grands axes de développement concernent l”<strong>infrastructure cloud haute
+disponibilité</strong>, l’<strong>écoconception</strong>, l”<strong>édition collaborative</strong>, le
+développement de l”<strong>interface de Candyce</strong>, la <strong>francisation</strong>,
+l”<strong>accessibilité</strong>, les <strong>évolutions de l’interface de Jupyter pour le grand
+public</strong>, la <strong>télémétrie</strong>, et un <strong>gestionnaire de contenus pédagogiques</strong>.</p>
+</section>
+<section id="chapitre-1b-deploiement-et-operation">
+<h3>Chapitre 1b : Déploiement et opération<a class="headerlink" href="#chapitre-1b-deploiement-et-operation" title="Lien permanent vers ce titre">#</a></h3>
+<p>Enjeux : assurer un déploiement agile et robuste de l’infrastructure Candyce
+chez un ou plusieurs hébergeurs cloud souverains, son maintien en conditions
+opérationnelles et sa mise à l’échelle</p>
+<p><u>Pilote :</u> France Université Numérique (FUN)</p>
+<p><u>Partenaires :</u> UPSaclay, CentraleSupelec, <!--QuantStack!-->, Académie de Paris,
+Inria, DNE</p>
+<p><u>Associés : </u>hébergeur(s) cloud souverain(s) ? Renater ?</p>
+<p><u>Jalons</u> à 18 mois, 3 ans puis optionnel jusqu’à 5 ans</p>
+<p><u>Financement :</u> 500 K€/an</p>
+<p><strong>Description technique du déploiement de l’infrastructure Candyce :</strong></p>
+<p>L’infrastructure de Candyce (pour son instance nationale) sera déployée chez un
+hébergeur cloud souverain dans un cluster Kubernetes dédié. Les bases de données
+requises par l’infrastructure seront quant à elles opérées en dehors de ce
+cluster sur des machines virtuelles dédiées également en mode cluster avec des
+répliques dans une zone géographique nationale / chez un hébergeur distinct(e).
+Le stockage des données et leur sauvegarde seront envisagés sur des systèmes de
+fichiers distribués avec là aussi répliques dans une zone géographique / un
+hébergeur distinct(e).</p>
+<p>Une procédure de déploiement continu (automatisée) sera mise en place pour en
+assurer la reproductibilité et minimiser les interventions humaines lors des
+montées de version de l’infrastructure. La stratégie de déploiement envisagée
+serait de type <em>bleu-vert</em> afin de garantir une réversion instantanée en cas de
+soucis lors d’une mise à jour de l’infrastructure.</p>
+<p><strong>Mise à l’échelle de l’infrastructure :</strong> l’architecture envisagée est très
+<strong>polyvalente</strong> et <strong>élastique</strong>, permettant à chaque instant <em>t</em> d’adapter
+automatiquement les ressources physiques mobilisées à la demande. Des sondes et
+indicateurs spécifiques devront être développés à l’usage pour sa mise en œuvre.</p>
+<p><strong>Plan de reprise d’activité (PRA) :</strong></p>
+<p>Une stratégie multi-cloud devra être envisagée dès le début du projet pour
+permettre une reprise d’activité efficiente si notre hébergeur cloud primaire
+venait à subir une avarie majeure (incendie, coupure électrique, catastrophes
+naturelles). L’objectif de la mise en place du PRA sera de pouvoir basculer
+l’infrastructure de production en un temps minime avec un minimum de moyens
+humains (typiquement quelques heures pour un ou deux ingénieurs).</p>
+<p><strong>Qualité de service :</strong></p>
+<p>Des sondes spécifiques seront mises en place afin d’assurer le maintien en
+condition opérationnelle de l’infrastructure. Ces sondes permettront de suivre
+des indicateurs de performance, de consommation et de disponibilité des services
+maintenus. Des alertes sur ces indicateurs permettront à l’opérateur de réagir
+en préventif ou en cas de défaillance afin d’assurer une qualité de service
+constante. L’opération 24/7 de l’infrastructure, impliquera la mise en place
+d’un système d’astreinte.</p>
+<p><strong>Support utilisateurs :</strong></p>
+<p>Un chargé de support assurera la fonction de support technique de niveau 0 et 1,
+et fera remonter les demandes de plus haut niveau aux équipes techniques.</p>
+<p><strong>Traces d’apprentissage :</strong></p>
+<p>En parallèle du déploiement du cœur de l’infrastructure, et sous contrôle du
+conseil scientifique et éthique, une infrastructure complète de collecte,
+transformation, stockage, et analyse des traces d’apprentissage, sera déployée
+afin d’être complètement souverains sur ces données. Sera également mise en
+place une stratégie d’interopérabilité avec la plate-forme des données de
+l’éducation et du supérieur afin d’enrichir cette dernière avec, notamment, ces
+traces d’apprentissage. L’ensemble des réalisations techniques sera piloté par
+le conseil scientifique et éthique, en lien avec les ministères et
+établissements concernés.</p>
+<p><strong>Stockage des données :</strong></p>
+<p>La quantité de données stockées ne faisant que croître, une stratégie de gestion
+du cycle de vie des données utilisateurs et des traces d’apprentissage devra
+être mise en place pour optimiser leur disponibilité et les coûts associés à
+leur stockage. Il est encore complexe à ce stade d’anticiper de tels coûts
+dépendants directement de l’usage qui sera fait du service et de la diversité
+d’événements d’apprentissage distincts que la plate-forme va collecter.</p>
+</section>
+</section>
+<section id="chapitre-2-adoption-et-co-construction-dans-le-scolaire">
+<span id="adoptioncoconstructionscolaire"></span><h2>Chapitre 2 : Adoption et co-construction dans le scolaire<a class="headerlink" href="#chapitre-2-adoption-et-co-construction-dans-le-scolaire" title="Lien permanent vers ce titre">#</a></h2>
+<section id="enjeux-et-ambition">
+<h3>Enjeux et ambition<a class="headerlink" href="#enjeux-et-ambition" title="Lien permanent vers ce titre">#</a></h3>
+<ul class="simple">
+<li><p>permettre la généralisation de pratiques éprouvées sur le terrain pour
+enseigner et apprendre les sciences du numérique au lycée ;</p></li>
+<li><p>assurer l’adéquation de Candyce aux besoins prioritaires du corps enseignant
+et apprenant⸱es</p></li>
+<li><p>mener des expérimentations pédagogiques autour d’usages innovants du numérique
+scientifique au service de toutes les disciplines, ainsi qu’au collège et au
+primaire ;</p></li>
+<li><p>favoriser la percolation des usages transverses aux disciplines et aux niveaux
+de formation.</p></li>
+</ul>
+<p><u>Pilote :</u> DNE</p>
+<p><u>Partenaires :</u> Académie de Paris, FUN, Canopé, Inria, CRI,</p>
+<p><u>Associés :</u> ENSAM, École Polytechnique.</p>
+<p><u>Jalons :</u> 18 mois, 3 ans puis optionnel jusqu’à 5 ans</p>
+<p><u>Financement </u>: 900K€/an</p>
+<p>Candyce gagnera encore en intérêt s’il est adopté à large échelle dans le
+scolaire et le supérieur. Une condition de réussite est de répondre avec
+pertinence aux besoins de la communauté enseignante, grâce à une démarche active
+de co-construction à toutes les étapes du projet.</p>
+<p>Dans la continuité des déploiements existants dans le scolaire et le supérieur,
+portés par les utilisateurs finaux, cette co-construction est déjà au cœur du
+montage du programme autour du noyau dur constitué par l’<strong>Académie de
+Paris</strong> pour le scolaire – porteur et opérateur du projet Capytale – de
+l’<strong>Université Paris-Saclay</strong> et de <strong>France Université Numérique</strong> pour le
+supérieur. Un volet essentiel du programme sera l’élargissement progressif de ce
+noyau dur jusqu’à l’ensemble de la communauté éducative pour :</p>
+<ul class="simple">
+<li><p><strong>Inspirer</strong>, notamment avec des démonstrations d’usages.</p></li>
+<li><p><strong>Former</strong> pour développer des compétences autour d’un geste professionnel.</p></li>
+<li><p><strong>Accompagner</strong> les enseignant⸱es dans leurs premières réalisations
+pédagogiques.</p></li>
+<li><p><strong>Évaluer</strong> les besoins, l’adéquation de la plate-forme à ces besoins, ainsi
+que l’efficacité pédagogique des démarches et contenus qu’elle favorise.</p></li>
+<li><p><strong>Co-construire</strong> avec une démarche participative pour réduire la distance qui
+peut exister entre les attendus des concepteurs du service et ceux des
+personnes qui l’utiliseront.</p></li>
+</ul>
+<p>Les représentants de ces deux communautés joueront un rôle déterminant dans la
+conception de la plate-forme qui devra tout d’abord intégrer les processus des
+solutions existantes, et notamment de Capytale.</p>
+<p>Nous détaillons les éléments de stratégie à mettre en œuvre pour permettre cet
+élargissement, dans ce chapitre pour le scolaire et dans le chapitre suivant
+pour le supérieur. On y retrouvera des actions de nature similaire mais
+différentes dans leurs modalités de mise en œuvre, notamment pour s’appuyer au
+mieux sur les structures et réseaux existants.</p>
+<p>Des moyens humains devront notamment être mobilisés pour:</p>
+<ul class="simple">
+<li><p>communiquer, former et accompagner la communauté des enseignants;</p></li>
+<li><p>animer les réseaux de représentants des communautés qui participeront à la
+conception de la plate-forme;</p></li>
+<li><p>contribuer à la conception de l’expérience utilisateur;</p></li>
+<li><p>constituer des cohortes d’utilisateurs et utilisatrices (enseignant⸱es et
+étudiant⸱es) pour les tests d’utilisation;</p></li>
+<li><p>assister la production de matériel pédagogique devant être abondée au
+gestionnaire de contenus pédagogiques intégré à l’infrastructure.</p></li>
+</ul>
+</section>
+<section id="groupes-de-production-de-ressources-pedagogiques">
+<h3>Groupes de production de ressources pédagogiques<a class="headerlink" href="#groupes-de-production-de-ressources-pedagogiques" title="Lien permanent vers ce titre">#</a></h3>
+<p>Afin de développer les usages pédagogiques de Candyce nous développerons des
+groupes de production à l’instar des Travaux Académiques Mutualisés (TraAM) que
+pratique la direction du numérique pour l’éducation (DNE). Les TraAM, co-pilotés
+par la DNE et l’inspection générale de l’éducation, du sport et de la recherche,
+aboutissent à des productions de scenarii pédagogiques du numérique et
+s’appuient sur des expérimentations dans des classes. Ils associent les équipes
+académiques du premier et du second degré. Ces groupes de production permettent
+d’explorer des thématiques disciplinaires, interdisciplinaire ou
+transdisciplinaires par l’expérimentation.</p>
+<ul class="simple">
+<li><p>Entités / partenaires</p>
+<ul>
+<li><p>DNE/IGESR,</p></li>
+<li><p>DANE/ Inspection territoriale.</p></li>
+<li><p>Didacticiens</p></li>
+</ul>
+</li>
+<li><p>Actions / protocole de production</p>
+<ul>
+<li><p>Définition des thématiques annuelles,</p></li>
+<li><p>Appel à projets,</p></li>
+<li><p>Création et expérimentation de scenarii pédagogiques,</p></li>
+<li><p>Mutualisation interacadémique des scenarii ainsi produits.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="communautes-dusagers">
+<h3>Communautés d’usagers<a class="headerlink" href="#communautes-dusagers" title="Lien permanent vers ce titre">#</a></h3>
+<p>Afin d’obtenir l’adhésion du plus grand nombre d’utilisateurs et d’utilisatrices
+potentiels, nous animerons un comité des usagers pour recueillir leurs retours
+d’expérience et l’expression de leurs besoins pour optimiser les évolutions
+fonctionnelles des environnements de Candyce. Cette co-construction relève des
+démarches participatives et vise à réduire la distance qui peut exister entre
+celles et ceux qui conçoivent le service et ses utilisatrices/utilisateurs.</p>
+<ul class="simple">
+<li><p>Entités / partenaires</p>
+<ul>
+<li><p>Délégations Académiques au Numérique Éducatif (DANE) et inspecteurs des
+académies partenaires,</p></li>
+<li><p>L’équipe de développement des environnements Candyce.</p></li>
+</ul>
+</li>
+<li><p>Actions</p>
+<ul>
+<li><p>Constitution et animation, par des pilotes issus des académies partenaires,</p></li>
+<li><p>De communautés bâties de manière concentrique et regroupant : les usagers de
+Candyce, les usagers concepteurs et experts, les usagers experts impliqués
+dans le développement,</p></li>
+<li><p>De communautés de référents et référentes territoriales (au sein des
+lycées).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="formation-et-accompagnement-des-usagers-et-des-referents-candyce-ainsi-que-des-cadres">
+<h3>Formation et accompagnement des usagers et des référents Candyce, ainsi que des cadres<a class="headerlink" href="#formation-et-accompagnement-des-usagers-et-des-referents-candyce-ainsi-que-des-cadres" title="Lien permanent vers ce titre">#</a></h3>
+<p>L’évolution des pratiques professionnelles vers des usages numériques nécessite
+de mettre en place une vraie stratégie de conduite du changement avec un
+processus progressif : INSPIRER avec des démonstrations d’usages pédagogiques et
+de leurs plus-values (micro formation) ; FORMER les enseignant⸱es pour
+développer leurs compétences autour d’un geste professionnel (formation courte)
+; ACCOMPAGNER les enseignants dans leurs premières réalisations pédagogiques
+avec des formations action et des mises en réseau (formation longue).</p>
+<ul class="simple">
+<li><p>Entités / partenaires impliqués</p>
+<ul>
+<li><p>ingénieur⸱es de formation hybride et formatrices et formateurs,</p></li>
+<li><p>au niveau national (Dgesco, DNE, IH2EF),</p></li>
+<li><p>au niveau académique (EAFC, DANE),</p></li>
+<li><p>opérateur de formation (Canopé, FUN).</p></li>
+</ul>
+</li>
+<li><p>Actions</p>
+<ul>
+<li><p>conception d’un plan de formation hybride,</p></li>
+<li><p>conception des parcours de formation hybride,</p></li>
+<li><p>mise en œuvre du plan de formation.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="methodologie-pour-la-formation-et-l-accompagnement">
+<h3>Méthodologie pour la formation et l’accompagnement :<a class="headerlink" href="#methodologie-pour-la-formation-et-l-accompagnement" title="Lien permanent vers ce titre">#</a></h3>
+<p>Pour l’appropriation de ce service innovant, les actions doivent s’inscrire dans
+la durée sur plusieurs années scolaires :</p>
+<ul class="simple">
+<li><p>Organisation régulière de présentations aux différents réseaux de la DNE
+(DRANE/DAN, experts et expertes, IAN, CPD NUM, ERUN…). Incitation à inclure
+des formations sur Candyce dans les plans de formation académiques notamment
+en partenariat avec le réseau Canopé.</p></li>
+<li><p>Présentation de Candyce et prise en main par l’ensemble des expert⸱es du
+second degré (scientifiques et autres), mise en place d’un processus de test
+dans les réalités de classe, identification des usages possibles en diffusant
+les retours concrets.</p></li>
+<li><p>Accompagnement des IAN disciplinaires par les expert⸱es avec la même
+méthodologie et les mêmes consignes pour augmenter, partager, diffuser les
+remontées d’usages (par exemple partage des productions et réalisations par
+les ambassadeurs Candyce).</p></li>
+<li><p>Proposer/mutualiser des synthèses à partir des retours selon différentes
+catégories d’usages ce qui pourra alimenter un document type « Vademecum
+d’usages » qui sera diffusé comme document d’accompagnement sur les
+territoires.</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>Prévoir dans le lancement des TraAM pour l’année 2022-23 la possibilité
+d’orienter les travaux sur ce service.</p></li>
+<li><p>Au niveau du premier degré, présenter, acculturer avec la même méthodologie
+aux réseaux des CPD Num et eRUN afin qu’ils et elles recueillent des retours
+d’utilisation au niveau de quelques classes de cycle 3 CM1-CM2.</p></li>
+<li><p>Possibilité de mener des expérimentations pédagogiques autour d’usages
+innovants du numérique scientifique au service de toutes les disciplines au
+primaire.</p></li>
+</ul>
+</section>
+<section id="experimentations-dans-le-1er-degre-et-dans-les-colleges">
+<h3>Expérimentations dans le 1er degré et dans les collèges<a class="headerlink" href="#experimentations-dans-le-1er-degre-et-dans-les-colleges" title="Lien permanent vers ce titre">#</a></h3>
+<p>Les expérimentations en école pourraient prendre appui sur l’expérience des
+Savanturiers du numériques du CRI qui exploite la démarche d’éducation par la
+recherche, déjà implémentée dans de nombreuses classes par les enseignants
+partenaires du programme Savanturiers.</p>
+<ul class="simple">
+<li><p>Entités / partenaires impliqués</p>
+<ul>
+<li><p>Recteurs/Rectrices, IA-DASEN, DANE, IEN numérique et IEN formation des
+académies partenaires,</p></li>
+<li><p>Acteurs et actrices de l’Edtech, CRI.</p></li>
+<li><p>Didacticiens</p></li>
+</ul>
+</li>
+<li><p>Actions</p>
+<ul>
+<li><p>Mise en œuvre d’expérimentations pour éprouver l’utilisation des carnets
+Jupyter dans le premier degré et les collèges, en lien avec les actions déjà
+menées dans le domaine de l’apprentissage du codage et de la pensée
+algorithmique et de manière générale des pratiques pédagogiques s’appuyant
+sur les sciences de la donnée (data science) et sur le Conseil scientifique.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="chapitre-3-adoption-et-co-construction-dans-le-superieur">
+<span id="adoptioncoconstructionsuperieur"></span><h2>Chapitre 3 : Adoption et co-construction dans le supérieur<a class="headerlink" href="#chapitre-3-adoption-et-co-construction-dans-le-superieur" title="Lien permanent vers ce titre">#</a></h2>
+<p><u>Enjeux :</u> Généralisation des pratiques éprouvées; expérimentation d’usages
+innovants du numérique scientifique au service des SHS et des humanités ;
+percolation des usages transverses aux domaines et aux niveaux, adéquation de
+Candyce aux besoins.</p>
+<p><u>Pilote :</u> Université Paris-Saclay</p>
+<p><u>Partenaires </u>: CentraleSupelec (dans Paris-Saclay), FUN, École
+Polytechnique</p>
+<p><u>Associés </u>: Université de Rennes 1 (DemoES AIR) et Rennes 2 (CREAD, Centre
+de Recherche sur l’éducation les Apprentissages et la Didactique et GIS
+M&#64;rsouin), Université de la Polynésie Française, Université de Grenoble
+(GRICAD), Aix-Marseille Université, CNAM, ENSAM (DemoES JINII), réseau des MIAGE
+(en cours)
+<a class="reference external" href="https://www.fau.de/">FAU - Friedrich-Alexander-Universität Erlangen-Nürnberg (Allemagne),</a>
+Université Nazi Boni (Burkina Faso) (partenaires étrangers associés non
+financés), autres via des AMI/AAP du WP3 a et b</p>
+<p><u>Jalons :</u> 18 mois, 3 ans puis optionnel jusqu’à 5 ans</p>
+<p><u>Financement :</u> 500 K€/an</p>
+<p>Les enjeux et actions à prendre pour l’adoption et la co-construction dans le
+supérieur sont similaires en nature à ceux pour le scolaire tels que décrits
+dans le chapitre précédent, en déclinant les modalités de mise en œuvre à l’aune
+des spécificités du supérieur.</p>
+<p>À grands traits, le supérieur se distingue du scolaire par une grande autonomie
+des enseignant⸱es et des établissements, des cohortes et équipes pédagogiques de
+tailles très variées, une pénétration déjà forte de Jupyter dans de nombreux
+domaines, notamment via la recherche. Nous ne traçons volontairement ici pas de
+frontière entre enseignement et recherche; en effet, la frontière naturelle
+s’exprime en termes de besoins qui sont très divers. Selon le principe des 80-20
+de Pareto, Candyce vise à apporter une solution confortable et simple à mettre
+en œuvre pour répondre à des besoins simples (ressources matérielles légères,
+logiciels non exotiques), ce qui couvre déjà une large gamme d’usages allant de
+l’enseignement en licence à la recherche. En revanche un simple cours de science
+des données de licence peut immédiatement requérir des ressources importantes
+(GPU, temps de calcul, taille des données) soulevant des enjeux qui sortent du
+cadre de Candyce en tant qu’infrastructure nationale. Candyce pourra rester
+pertinent pour des besoins intermédiaires, via des déploiements dédiés opérés
+par les institutions. Pour des besoins avancés (HPC: Calcul Haute Performance,
+…) Candyce n’a pas vocation à se substituer aux infrastructures existantes.</p>
+<p>De ce fait, le premier enjeu pour l’adoption de Candyce dans le supérieur est la
+qualité technique et fonctionnelle: offrir un outil qui réponde aux besoins –
+mieux que les plate-formes non souveraines existantes. Si c’est le cas, elle
+sera naturellement adoptée par un grand nombre d’acteurs. Le deuxième enjeu
+consiste alors à accélérer le processus, promouvoir l’usage d’outils souverains,
+et accompagner l’adoption dans les domaines où l’usage du numérique est moins
+traditionnel.</p>
+<section id="experimentations-usages-pedagogiques-innovants">
+<h3>Expérimentations: usages pédagogiques innovants<a class="headerlink" href="#experimentations-usages-pedagogiques-innovants" title="Lien permanent vers ce titre">#</a></h3>
+<p>L’objectif de ces expérimentations est d’étudier ce que peut apporter le
+numérique scientifique dans des domaines où le calcul et la programmation sont
+moins implantés. L’écosystème Jupyter a déjà pénétré les usages en recherche
+dans de nombreuses disciplines, y compris les SHS (exemple: humanités
+numériques). Le levier d’action principal sera l’accélération de la percolation
+de ces usages innovants vers l’enseignement, en master, puis en licence, puis
+dans le scolaire. Cette percolation passera par l’inspiration et le transfert de
+documents pédagogiques et d’outils pédagogiques (par exemple: cartes et frises
+chronologiques interactives).</p>
+<ul class="simple">
+<li><p>Entités / partenaires impliqués</p>
+<ul>
+<li><p>Réseaux de recherche (par ex. dans les humanités numériques), ambassadeurs
+individuels, …</p></li>
+</ul>
+</li>
+<li><p>Actions</p>
+<ul>
+<li><p>Organisation de rencontres</p></li>
+<li><p>Soutien pour l’organisation d’«écoles d’été»</p></li>
+<li><p>Soutien par des décharges pour innovation pédagogique</p></li>
+<li><p>Mise en œuvre d’expérimentations</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="formation-des-usagers-et-des-ambassadeurs-candyce">
+<h3>Formation des usagers et des ambassadeurs Candyce<a class="headerlink" href="#formation-des-usagers-et-des-ambassadeurs-candyce" title="Lien permanent vers ce titre">#</a></h3>
+<ul class="simple">
+<li><p>Entités / partenaires impliqués</p>
+<ul>
+<li><p>Écoles doctorales, service des formations des universités et instituts
+(CNRS, …), préparations CAPES et Agrégation, Software Carpentry, …</p></li>
+</ul>
+</li>
+<li><p>Actions</p>
+<ul>
+<li><p>Formation des formateurs;</p></li>
+<li><p>Préparation de matériel pédagogique à l’attention des formateurs et
+formatrices, comme par exemple une traduction et extension du livre en ligne
+<a class="reference external" href="https://jupyter4edu.github.io/jupyter-edu-book/">Teaching and Learning with Jupyter</a>,
+et sa déclinaison en MOOC;</p></li>
+<li><p>Intégration Candyce dans les catalogues de formation, en visant notamment
+les heures de formations obligatoires pour les doctorant⸱es et jeunes
+enseignant⸱es chercheurs et chercheuses;</p></li>
+<li><p>Soutien aux ambassadeurs et ambassadrices, notamment en négociant
+l’inclusion de la formation des (jeunes) pairs dans leurs services
+d’enseignement ou au moins en heures supplémentaires.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="autres-actions-pour-inspirer-former-accompagner-co-construire-evaluer">
+<h3>Autres actions pour Inspirer, Former, Accompagner, Co-Construire, Évaluer<a class="headerlink" href="#autres-actions-pour-inspirer-former-accompagner-co-construire-evaluer" title="Lien permanent vers ce titre">#</a></h3>
+<ul class="simple">
+<li><p>Interventions dans les événements locaux et nationaux autour de la pédagogie
+(par exemple Journée de l’Innovation Pédagogique de Paris Saclay): Inspirer,
+Former.</p></li>
+<li><p>Organisation d’ateliers thématiques (ex. Jupyter pour l’enseignement du calcul
+numérique, …) où les enseignants peuvent échanger sur leurs usages: Inspirer,
+Former.</p></li>
+<li><p>Animation de réseaux d’ambassadeurs: Inspirer, Former, Accompagner,
+Co-Construire.</p></li>
+<li><p>Observation des usages sur site: Évaluer.</p></li>
+<li><p>Organisation de la collecte et remontée des expériences, rapports de bugs,
+demandes d’évolutions: Co-Construire, Évaluer.</p></li>
+<li><p>Ingénierie pédagogique: Accompagner.</p></li>
+<li><p>Production de <em>templates</em> de cours: Accompagner.</p></li>
+<li><p>Lien avec les démarches SOTL (Scholarship of Teaching and Learning) dans les
+établissements: Évaluer.</p></li>
+<li><p>Déploiements locaux pour répondre à des besoins spécifiques (liens avec les
+DSI, …): Accompagner</p></li>
+<li><p>Interopérabilité avec d’autres plates-formes: Accompagner</p></li>
+</ul>
+</section>
+</section>
+<section id="chapitre-4-liens-avec-la-communaute-filiere-education-et-numerique-edtechs-entreprises-associations">
+<h2>Chapitre 4 : Liens avec la communauté : Filière éducation et numérique (Edtechs, entreprises, associations, …)<a class="headerlink" href="#chapitre-4-liens-avec-la-communaute-filiere-education-et-numerique-edtechs-entreprises-associations" title="Lien permanent vers ce titre">#</a></h2>
+<p><u>Enjeux :</u></p>
+<ul class="simple">
+<li><p>mettre Candyce au centre d’un écosystème Français et Européen de ressources et
+de services, publics et privés (Edtech, industrie, associations, …) avec
+lequel il créera de la valeur en enrichissant ces services et ces
+ressources grâce à une interopérabilité renforcée ;</p></li>
+<li><p>identification des modèles économiques (via GT WP3c), des conditions d’usages,
+ainsi que des conditions d’utilisation des données d’usage ;</p></li>
+<li><p>production de ressources pédagogiques ;</p></li>
+</ul>
+<!-- -->
+<ul class="simple">
+<li><p>transfert de la recherche ;</p></li>
+</ul>
+<p><u>Pilotes :</u> DNE/Inria</p>
+<p><u>Partenaires </u>: CentraleSupelec (Université Paris-Saclay), Inria, Canopé</p>
+<p><u>Associés :</u> à construire avec les représentants des EdTech comme Éditeurs
+d’éducation, Afinef et Edtech France et les fonds d’investissement comme
+Educapital et Brighteyes Venture.</p>
+<p><u>Jalons :</u> à lancer à T0 +12 mois sur 2 ans</p>
+<p><u>Financement :</u> 1,5 M€ au total</p>
+<section id="la-collaboration-avec-la-communaute-au-coeur-de-candyce">
+<h3>La collaboration avec la communauté au cœur de Candyce<a class="headerlink" href="#la-collaboration-avec-la-communaute-au-coeur-de-candyce" title="Lien permanent vers ce titre">#</a></h3>
+<p>De par la large diffusion des technologies Jupyter et la nature même du logiciel
+libre, la collaboration étroite avec la communauté — EdTech, des entreprises en
+général, des associations, ou des services publics — est dans l’ADN du programme
+Candyce, à commencer par son cœur même : l’infrastructure Candyce sera en effet
+réalisée conjointement par un prestataire qui sera retenu pour son
+expertise pour développer avec la communauté du libre une infrastructure
+de cette ambition, et par l’établissement public France Université Numérique
+dont le cœur de métier est la co-construction et l’opération de services
+numériques innovants et souverains pour l’éducation. <!-- QuantStack bénéficiera en
+retour des avancées de ce projet pour son développement européen et
+international, tandis que France Université Numérique l’intégrera dans sa
+plate-forme FUN MOOC.!--></p>
+<p>Le transfert aux entreprises des outils et résultats de recherche issus de
+Candyce est un élément essentiel pour la réussite du projet</p>
+<p>D’autre part, les Entreprises et associations seront incitées à participer
+activement à l’enrichissement des ressources de Candyce et inversement, les
+ressources et composants logiciels de Candyce pourront enrichir les ressources
+des Edtech et des associations.</p>
+<p>Pour atteindre cet objectif, plusieurs actions seront mises en œuvre :</p>
+<ul class="simple">
+<li><p>Implication de la communauté filière dans la gouvernance de Candyce (Comité
+filière Education et Numérique) et dans le PEPR (Comité d’usagers)</p></li>
+<li><p>Recensement de l’offre de ressources existantes, qualification des ressources
+en vue de leur interconnexion et/ou de leur enrichissement</p></li>
+<li><p>Commandes de ressources auprès des entreprises et associations</p></li>
+<li><p>Services de développement de la communauté utilisatrice de Candyce pour
+sensibiliser, accompagner et faciliter l’interfaçage</p></li>
+<li><p>Développement de ressources de formation par Inria Academy en support</p></li>
+<li><p>Incitation à la participation aux Challenges sur le périmètre scolaire et
+supérieur et P2IA</p></li>
+<li><p>AMI et AAP du WP3 a et b dont les consortia devront intégrer des edtechs et/ou
+des associations comme prestataires</p></li>
+<li><p>Groupe de travail sur les modèles économiques dans le cadre du WP3c</p></li>
+</ul>
+<p>Pour répondre à ces objectifs, une cellule d’appui à la communauté sera mise en
+place.</p>
+</section>
+<section id="implication-de-la-communaute-participation-a-la-gouvernance-et-ami-aap">
+<h3>Implication de la communauté : participation à la gouvernance et AMI / AAP<a class="headerlink" href="#implication-de-la-communaute-participation-a-la-gouvernance-et-ami-aap" title="Lien permanent vers ce titre">#</a></h3>
+<p>Des représentants de la Filière éducation et numérique (Edtech, entreprises
+autres services publics, associations, communauté du libre) seront associés à la
+gouvernance via un comité dédié. Leur implication permettra d’identifier et
+explorer :</p>
+<ul class="simple">
+<li><p>Les besoins de la filière ;</p></li>
+<li><p>les services de Candyce qui pourront renforcer l’offre et les ressources de la
+communauté ;</p></li>
+<li><p>les modalités d’interopérabilité entre Candyce et les services proposés par la
+communauté ;</p></li>
+<li><p>les questions relatives au traitement des données ;</p></li>
+<li><p>les conditions d’usage de l’observatoire des données ;</p></li>
+<li><p>le renforcement du transfert des résultats de la recherche ;</p></li>
+</ul>
+<p>Le sujet des modèles économiques sera aussi central ; il sera traité par un
+groupe de travail dédié aux modèles économiques dans le cadre du WP3c.</p>
+<p>Des séminaires réguliers pourront être organisés, permettant d’échanger sur les
+verrous scientifiques et technologiques, les avancées de la recherche, les
+activités conjointes que le Crédit Impôt Recherche ou les appels lancés dans le
+cadre du WP3 permettront de soutenir. Le lien entre le comité de filière et le
+comité scientifique et éthique permettra de partager les avancées scientifiques,
+d’impliquer les entreprises et de co-concevoir des dispositifs pertinents,
+agiles et efficaces de transfert technologique.</p>
+</section>
+<section id="production-et-interconnexion-de-ressources-pedagogiques">
+<h3>Production et interconnexion de ressources pédagogiques<a class="headerlink" href="#production-et-interconnexion-de-ressources-pedagogiques" title="Lien permanent vers ce titre">#</a></h3>
+<p>Tout d’abord, la cellule d’appui sera mise à disposition de la communauté
+filière afin d’accompagner les entreprises et associations qui le souhaitent
+pour produire des ressources et services interopérables avec Candyce, pour
+intégrer leurs ressources et services à Candyce et/ou pour faciliter
+l’utilisation de Candyce dans leurs ressources et services. Ces acteurs auront
+accès à un support de formation technique en ligne ainsi qu’à des ingénieurs qui
+les accompagneront. Ce service ne fera pas l’objet de prestations financières de
+part et d’autre.</p>
+<p>D’autre part, afin de faciliter l’appropriation de Candyce par les enseignants,
+les acteurs de la communauté (EdTech, associations comme France IO ou Animath)
+seront mobilisés via des commandes financées par prestations pour produire des
+ressources pédagogiques « clé en mains » en fonction des besoins des différentes
+disciplines. Ces ressources, diffusées sous licence libre, seront valorisées
+dans le gestionnaire de ressources Candyce. Elles pourront être valorisées sur
+d’autres plateformes et via les réseaux de la DNE.</p>
+</section>
+<section id="r-d-transfert-et-ami-aap-du-wp3">
+<h3>R&amp;D Transfert et AMI/AAP du WP3<a class="headerlink" href="#r-d-transfert-et-ami-aap-du-wp3" title="Lien permanent vers ce titre">#</a></h3>
+<p>Pour aller plus loin, les appels à manifestation d’intérêt et appels à projets
+qui seront lancés dans le cadre du WP3 devront intégrer des entreprises et/ou
+des associations. À noter que, dans le cadre du règlement financier lié au PEPR,
+aucune aide directe n’est possible pour les entreprises impliquées.</p>
+<p>Aussi, <strong>dans le cadre de la stratégie d’accélération, il sera essentiel que des
+AAP de l’outil « R&amp;D transfert » (Challenges, Partenariat d’innovation sur le
+modèle du P2IA) commun au scolaire et au supérieur soient dédiés à l’écosystème
+de ressources publiques/privées de Candyce</strong>.</p>
+<p>Ces dispositifs seront menés en concertation avec le SGPI ; la personne en
+charge de la coordination de la Stratégie d’accélération « Enseignement et
+numérique », MENJS et le MESRI.</p>
+</section>
+<section id="cellule-dappui-et-developpement-de-la-communaute-candyce">
+<h3>Cellule d’appui et développement de la communauté Candyce<a class="headerlink" href="#cellule-dappui-et-developpement-de-la-communaute-candyce" title="Lien permanent vers ce titre">#</a></h3>
+<p>La cellule d’appui aura plusieurs missions et sera composée d’un/une responsable
+des relations avec les entreprises (et autres acteurs privés) et d’ingénieurs et
+de spécialistes pédagogiques autour des carnets Jupyter dans le scolaire et le
+supérieur:</p>
+<p>Elle sera en charge de sensibiliser la communauté filière à Candyce et à
+l’écosytème Jupyter afin de favoriser l’appropriation de Candyce, et de recenser
+et qualifier les ressources et le potentiel existants. Elle facilitera et
+accompagnera les entreprises et associations qui le souhaitent pour interfacer
+leurs ressources avec Candyce ; inversement, elle pourra identifier les moyens
+de favoriser l’utilisation de Candyce dans les ressources produites par les
+différents éditeurs.</p>
+<p>Enfin, elle aura pour mission de favoriser l’appropriation de Candyce dans le
+secteur de la formation professionnelle publique et privée. Des expérimentations
+pourraient être menées dans ce cadre, à l’issue des trois ans, afin d’étendre
+les cas d’usages de Candyce et les spécificités liées à ce secteur.</p>
+</section>
+<section id="interoperabilite">
+<h3>Interopérabilité<a class="headerlink" href="#interoperabilite" title="Lien permanent vers ce titre">#</a></h3>
+<p>Pour faciliter l’adoption de Candyce et le développement d’un écosystème riche
+autour, il conviendra de mettre en œuvre les conditions d’interaction et
+d’interopérabilité des services et ressources tiers, notamment pour assurer une
+navigation «sans couture» pour les apprenants et les enseignants. Cela sera
+rendu possible par la maturité des standards internationaux sur les domaines
+suivants :</p>
+<ul class="simple">
+<li><p>informations de vie scolaire : identification, rôle, notes, … (par ex.
+OneRooster) ;</p></li>
+<li><p>traces d’apprentissage (TinCan xAPI, Caliper, …) ;</p></li>
+<li><p>intégration fine d’applications et de contenus interactifs (LTI, H5P).</p></li>
+</ul>
+<p>Ces standards font partie du <strong>futur cadre général d’interopérabilité du MENJS</strong>
+que devront respecter tous les outils en interaction avec l’écosystème de
+l’éducation nationale.</p>
+<p>Un premier appel à la communauté concernera des expérimentations pour le
+développement, l’évaluation en conditions réelles et la standardisation d’API
+permettant cette interopérabilité. Cette action sera utilement informée ou
+renforcée par des coding sprints de type connectathon. Elle pourra, le cas
+échéant, permettre de se voir délivrer des certifications (IMS Global Learning
+Consortium, …). Ces actions seront en lien avec le WP3 a et b.</p>
+</section>
+</section>
+<section id="chapitre-5-candyce-et-la-recherche">
+<span id="recherche-vision"></span><h2>Chapitre 5 : Candyce et la recherche<a class="headerlink" href="#chapitre-5-candyce-et-la-recherche" title="Lien permanent vers ce titre">#</a></h2>
+<p><u>Enjeux :</u> mieux accompagner l’apprenant en lui fournissant un retour
+personnalisé sur son apprentissage ; offrir à tous un apprentissage
+personnalisé en lien avec ses capacités, ses difficultés et ses objectifs ;
+doter l’enseignant d’outils intelligents d’aide au pilotage pédagogique et
+organisationnel de sa classe ; participer à la construction d’une école
+inclusive par la définition d’outils à forte valeur pédagogique ajoutée ; mieux
+comprendre l’apprentissage ; mesurer l’impact de mesures éducatives sur
+l’apprentissage et la formation.</p>
+<p><u>Défis :</u> levée des défis scientifiques identifiés dans l’introduction ;
+conciliation éthique, sécurisation et valorisation des données d’apprentissage ;
+couplage avec la plate-forme des données de l’éducation et du supérieur et
+l’Equipex+ IDEE ; liens avec la communauté éducative ; transfert industriel des
+recherches.</p>
+<p><u>Pilote </u>: Anne Boyer, responsable scientifique de l’axe transverse
+« éducation et numérique » du laboratoire Loria, d’Université de Lorraine</p>
+<p><u>Partenaires :</u> Inria, Université Paris-Saclay, FUN, DNE, (MESRI ?)</p>
+<p><u>Associés :</u> Hestia.ai</p>
+<p>Jalons : spécification sur 18 mois, puis développement à partir de T0+18 mois
+jusqu’à T0+ 3 ans puis optionnel jusqu’à 5 ans</p>
+<p>Financement : 1 M€ au total + AAP du Programme 3 du PEPR</p>
+<p>À travers l’élaboration de sa fonction observatoire, Candyce est un outil de
+valorisation de la donnée éducative à destination des utilisateurs de
+l’environnement des carnets numériques interactifs et collaboratifs pour
+l’enseignement, des chercheurs et chercheuses dans les différentes disciplines
+concernées par l’éducation et le numérique (ce qui inclut en particulier les
+sciences cognitives, les sciences du numérique, les sciences de l’éducation et
+de la formation et les sciences humaines et sociales), des institutions
+éducatives et des Edtech.</p>
+<p>Ce chapitre a le triple objectif de</p>
+<p>1) S’inscrire dans le cadre du chapitre 4 « Vision et stratégie scientifique »
+du document de cadrage du PEPR : accompagner, par la recherche, l’émergence
+d’usages pédagogiques innovants du numérique scientifique au service de toutes
+les disciplines ; s’assurer de leur efficacité en matière de réduction des
+inégalités et d’inclusion, et de gestion de l’hétérogénéité scolaire en termes
+de contextes d’apprentissage comme de modes d’accès au savoir ; enfin, favoriser
+la continuité entre temps scolaire et hors temps scolaire.</p>
+<p>2) Fournir à la recherche un environnement ouvert permettant, au travers des
+observations collectées, de mieux appréhender et comprendre l’impact des carnets
+numériques sur le comportement d’apprentissage des étudiants et de formation des
+enseignants ;</p>
+<p>3) Permettre par la recherche une prise de recul sur le projet, son
+appropriation technologique et pédagogique et étudier comment les carnets
+participent à la transformation numérique de l’enseignement.</p>
+<p>Ainsi l’enjeu de la création de l’observatoire Candyce est multiple, puisqu’il
+doit permettre de :</p>
+<ul class="simple">
+<li><p>collecter et sauvegarder de manière sécurisée et éthique des données sur le
+comportement numérique des apprenants en interaction avec des carnets
+numériques, données qui pourront alimenter la plate-forme des données de
+l’éducation et du supérieur ;</p></li>
+<li><p>fournir un retour d’usage fondé sur la preuve aux apprenant⸱es, enseignant⸱es,
+institutions éducatives et décideurs-décideuses sous la forme notamment de
+tableaux de bord et d’indicateurs ;</p></li>
+<li><p>nourrir la recherche en éducation et numérique avec des données collectées
+dans des contextes éducatifs divers, des disciplines différentes, à tous les
+niveaux de l’enseignement, et ainsi</p></li>
+<li><p>contribuer à une communauté pluridisciplinaire de recherche et développer une
+culture de la donnée chez les différents acteurs et actrices de la communauté
+éducative du scolaire et du supérieur, les apprenant⸱es et les parents.</p></li>
+</ul>
+<p>Les acteurs impliqués dans cette action sont multiples : MENJS (DNE, DAN,
+DGESCO…), MESRI (et DSI des universités et grandes écoles), acteurs et
+actrices de la recherche en éducation et numérique (via Allistene, Athena,
+l’ATIEF, le réseau e-FRAN, le RTP éducation, …), Edtech et en particulier
+l’association Prometheus-X, des spécialistes de la gestion des données
+personnelles comme Hestia.ai ou l’initiative personaldata.io….</p>
+<p>La méthodologie de conception et mise en œuvre de l’observatoire est organisée
+ainsi :</p>
+<ul class="simple">
+<li><p>recueil des besoins des différents acteurs et co-conception des services
+attendus ;</p></li>
+<li><p>définition et mise en œuvre d’une collecte éthique et responsable (en
+interaction avec la CNIL, les AMDAC, le comité éthique de l’éducation,
+l’association des DPO, …) ;</p></li>
+<li><p>établissement d’une <strong>charte éthique de la donnée et de son usage</strong>, en
+interaction avec l’equipex+ IDEE et la plate-forme des données de l’éducation
+et du supérieur, le Comité d’éthique du MENJS et aussi en consultation avec
+GAIA-X et le DASES (Data Space Education &amp; Skills) ;</p></li>
+<li><p>identification des traces techniquement et éthiquement collectables au vu de
+la charte;</p></li>
+<li><p>définition des standards permettant une exploitation aisée des données et une
+interopérabilité avec la plate-forme des données de l’éducation et du
+supérieur ;</p></li>
+<li><p>description des traceurs et de leur positionnement au niveau d’une ressource
+ou d’un parcours pédagogique ;</p></li>
+<li><p>définition et développement d’une plate-forme de collecte éthique, sauvegarde
+sécurisée et accès aux données répondant aux besoins identifiés des
+utilisateurs ;</p></li>
+<li><p>développement, test et déploiement des services identifiés.</p></li>
+</ul>
+<p>L’animation d’une communauté pluridisciplinaire et pluri-profil autour de la
+donnée dans Candyce participera à alimenter les AAP Recherche Exploratoire et la
+partie Accélération du WP3 et à proposer à la MENJS/DNE la création d’un GTnum
+autour des carnets numériques et de leur usage.</p>
+<p>Passer de résultats de recherche à la conception et la diffusion d’outils
+fiables, puis à leur utilisation éclairée, est un aspect qui sera abordé au
+travers de différentes actions, qui concernent à la fois le transfert industriel
+des recherches et le lien avec les communautés éducatives.</p>
+<p><strong>Lien avec les communautés éducatives</strong></p>
+<p>Mener des recherches en éducation nécessite une interaction forte avec le
+terrain, à la fois pour identifier les besoins, co-concevoir les applications,
+tester les produits de la recherche en situation réelle et en favoriser un usage
+éclairé. Le lien entre le comité des utilisateurs et le conseil scientifique et
+éthique sera à cet effet primordial. Il permettra non seulement un meilleur
+partage des résultats de la recherche avec tous les acteurs éducatifs mais aussi
+leur sensibilisation et leur implication pour les associer le plus en amont
+possible aux activités de recherche.</p>
+</section>
+<section id="chapitre-6-evaluation">
+<h2>Chapitre 6 : Évaluation<a class="headerlink" href="#chapitre-6-evaluation" title="Lien permanent vers ce titre">#</a></h2>
+<p>Enjeux :</p>
+<ul class="simple">
+<li><p>Évaluer la réussite du programme vis à vis de ses missions et ambitions
+multiples, d’une part pour rendre compte des moyens engagés et d’autre part
+pour informer l’item suivant.</p></li>
+<li><p>Préfigurer la suite du programme Candyce.</p></li>
+</ul>
+<p>Pilote : Inria</p>
+<p>Partenaires : tous</p>
+<p>Jalons : 18 mois, 3 ans puis optionnel jusqu’à 5 ans</p>
+<p>Financement : 0,5 M€ sur 3 ans puis optionnel jusqu’5 ans</p>
+<section id="identification-des-criteres-devaluation-et-de-succes">
+<h3>Identification des critères d’évaluation et de succès<a class="headerlink" href="#identification-des-criteres-devaluation-et-de-succes" title="Lien permanent vers ce titre">#</a></h3>
+<p>À ce jour, les critères d’évaluation suivants ont été identifiés. Il conviendra
+de les amender et de les compléter. Il faudra en sus définir comment évaluer,
+qualitativement et/ou quantitativement, chacun d’entre eux et s’accorder sur les
+objectifs visés à trois ans et cinq ans.</p>
+</section>
+<section id="criteres-devaluation-resultats">
+<h3>Critères d’évaluation : résultats<a class="headerlink" href="#criteres-devaluation-resultats" title="Lien permanent vers ce titre">#</a></h3>
+<ul class="simple">
+<li><p>Publics formés, communautés animées et impliquées,</p></li>
+<li><p>Qualité de la plate-forme</p>
+<ul>
+<li><p><strong>Expérience utilisateur</strong></p></li>
+<li><p><strong>Technique:</strong> fonctionnalité, interopérabilité, accessibilité, performance,
+scalabilité, robustesse, sécurité, etc.</p></li>
+<li><p><strong>Éthique:</strong> protection des données personnelles, frugalité, etc.</p></li>
+<li><p><strong>Organisationnelle:</strong> soutenabilité, coûts de maintenance et d’opération,
+potentiel de pérennité à long terme</p></li>
+</ul>
+</li>
+<li><p>Contributions logicielles à l’écosystème Jupyter</p></li>
+<li><p>Production de contenus pédagogiques</p></li>
+<li><p>Qualité et pertinence des données produites</p></li>
+</ul>
+</section>
+<section id="criteres-devaluation-impact">
+<h3>Critères d’évaluation: impact<a class="headerlink" href="#criteres-devaluation-impact" title="Lien permanent vers ce titre">#</a></h3>
+<ul class="simple">
+<li><p>Pertinence pédagogique des carnets numériques (au sens large)</p></li>
+<li><p><strong>Adoption de l’infrastructure</strong></p>
+<ul>
+<li><p>Dans le scolaire (lycée/collège/primaire)</p></li>
+<li><p>Dans le supérieur (enseignement et recherche)</p></li>
+<li><p>Par la recherche</p></li>
+<li><p>Par les Edtech, associations, …</p></li>
+</ul>
+</li>
+<li><p><strong>Adoption des briques logicielles développées pour Candyce</strong></p>
+<ul>
+<li><p>En Europe et dans le monde</p></li>
+<li><p>Dans les entreprises (dont formation professionnelle, …)</p></li>
+</ul>
+</li>
+<li><p><strong>Impact environnemental</strong></p></li>
+</ul>
+</section>
+<section id="etudes-dimpact">
+<h3>Études d’impact<a class="headerlink" href="#etudes-dimpact" title="Lien permanent vers ce titre">#</a></h3>
+<p>Dans un premier volet de ce chapitre, des études seront menées sur l’impact de
+Candyce pour l’enseignement, la recherche, l’industrie, la société et
+l’environnement, sur la base des critères retenus, afin de nourrir l’évaluation
+des politiques publiques ainsi que la préfiguration de la suite du programme
+Candyce. Certaines études seront réalisées par un organisme extérieur qui reste
+à déterminer.</p>
+</section>
+<section id="prefiguration-de-la-suite-du-programme-candyce">
+<h3>Préfiguration de la suite du programme Candyce<a class="headerlink" href="#prefiguration-de-la-suite-du-programme-candyce" title="Lien permanent vers ce titre">#</a></h3>
+<p>Le deuxième volet de ce chapitre concernera la préfiguration de la suite du
+programme Candyce, après trois ans et après cinq ans. Cela concernera notamment
+les finalités, l’architecture, les acteurs, les porteurs, les modalités de
+financements et les modèles économiques associés. Pourra par exemple être
+étudiée la constitution d’un GIP (Groupement d’Intérêt Public) permettant
+d’exercer des activités d’intérêt général, et à titre subsidiaire de réaliser
+les activités à caractère industriel et commercial nécessaires à la réalisation
+des objectifs qui lui ont été assignés.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ProgrammeCandyce.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Le programme Candyce</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="DescriptionScientifiqueAnnexes.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>À propos de cette partie</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Candyce<br/>
+  
+      &copy; Copyright 2021-2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

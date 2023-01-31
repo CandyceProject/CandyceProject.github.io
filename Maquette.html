@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6. Maquette &#8212; Candyce</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="7. Ressources pédagogiques FAIR" href="RessourcesP%C3%A9dagogiquesFAIR.html" />
+    <link rel="prev" title="5. Directions technologiques" href="DirectionsTechnologiques.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Jupyter_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Candyce</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    CANDYCE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ProgrammeCandyce.html">
+   1. Le programme Candyce
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MiseEnOeuvre.html">
+   2. Mise en œuvre
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique: Annexes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="DescriptionScientifiqueAnnexes.html">
+   1. À propos de cette partie
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter.html">
+   2. État de l’art: l’écosystème Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApportPedagogique.html">
+   3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ConceptionResponsable.html">
+   4. Principes de conception responsable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ManifesteDonn%C3%A9es.html">
+     Manifeste sur la gestion des données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DirectionsTechnologiques.html">
+   5. Directions technologiques
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Maquette
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RessourcesP%C3%A9dagogiquesFAIR.html">
+   7. Ressources pédagogiques FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Consortium
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Acad%C3%A9mieDeParis.html">
+   1. Académie de Paris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/FUN.html">
+   2. France Université Numérique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Inria.html">
+   3. Inria
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9DeLorraine.html">
+   4. Université de Lorraine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9ParisSaclay.html">
+   5. Université Paris-Saclay
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Site produit par <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/issues/new?title=Issue%20on%20page%20%2FMaquette.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/edit/main/Maquette.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Maquette.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carnet">
+   Carnet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestion-des-projets">
+   Gestion des projets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestion-des-environnements">
+   Gestion des environnements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interface-jupyter-dans-un-projet">
+   Interface Jupyter dans un projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestion-des-devoirs">
+   Gestion des devoirs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfaces-d-edition-wysiwyg">
+   Interfaces d’édition WYSIWYG
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cellules-de-carnets">
+     Cellules de carnets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traitement-de-texte-et-tableau-virtuel">
+     Traitement de texte et tableau virtuel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-par-blocs">
+     Programmation par blocs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Maquette</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carnet">
+   Carnet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestion-des-projets">
+   Gestion des projets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestion-des-environnements">
+   Gestion des environnements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interface-jupyter-dans-un-projet">
+   Interface Jupyter dans un projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestion-des-devoirs">
+   Gestion des devoirs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfaces-d-edition-wysiwyg">
+   Interfaces d’édition WYSIWYG
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cellules-de-carnets">
+     Cellules de carnets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traitement-de-texte-et-tableau-virtuel">
+     Traitement de texte et tableau virtuel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-par-blocs">
+     Programmation par blocs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="maquette">
+<span id="id1"></span><h1><span class="section-number">6. </span>Maquette<a class="headerlink" href="#maquette" title="Lien permanent vers ce titre">#</a></h1>
+<p>Dans cette section, nous présentons un extrait de la maquette réalisée à l’été
+2021 pour l’interface de l’infrastructure Candyce. Cette maquette ne représente
+pas l’apparence finale de Candyce mais a été réalisée pour affiner et mieux
+communiquer l’articulation générale des concepts sous-jacents à l’infrastructure
+d’un point de vue utilisateur.</p>
+<p>Les parcours des utilisateurs de la plateforme pourront être très différents
+selon qu’il s’agit, par exemple :</p>
+<ul class="simple">
+<li><p>d’un <strong>étudiant du secondaire</strong>, accédant directement à un contenu depuis
+l’ENT avec un simple lien, avec une interface simplifiée (type « retrolab » ou
+JupyterLab en mode « document unique »),</p></li>
+<li><p>d’un <strong>professeur du secondaire</strong>, utilisant la plateforme pour créer de
+nouvelles ressources pédagogiques,</p></li>
+<li><p>d’un <strong>professeur du supérieur</strong>, requérant des outils spécifiques dans son
+environnement Conda, etc.</p></li>
+</ul>
+<p>Ce document ne présente qu’une partie de la maquette visuelle réalisée, qui
+détaille les différents parcours utilisateurs de façon plus détaillée que ce
+document.</p>
+<section id="carnet">
+<h2>Carnet<a class="headerlink" href="#carnet" title="Lien permanent vers ce titre">#</a></h2>
+<p>L’interface « simplifiée » ou « document unique » de JupyterLab – affichant le
+document courant en pleine page – sera l’interface par défaut d’un étudiant se
+connectant à un contenu depuis l’ENT.</p>
+<p><img alt="" src="_images/bezout-screenshot.png" /></p>
+</section>
+<section id="gestion-des-projets">
+<h2>Gestion des projets<a class="headerlink" href="#gestion-des-projets" title="Lien permanent vers ce titre">#</a></h2>
+<p><strong>Page principale de gestion de projet</strong></p>
+<p>Un enseignant s’authentifiant sur la plateforme pour créer du contenu
+pédagogique (via un SSO Educonnect ou depuis un ENT) se trouvera devant une
+interface permettant de créer un nouveau « projet ».</p>
+<p><img alt="" src="_images/maquette-page-principale-projet.png" /></p>
+<p>Un utilisateur familier de JupyterLab reconnaîtra la mise en page de
+l’application mais avec un contenu différent.</p>
+<p>Les onglets sur le côté gauche permettent de choisir une interface de gestion :</p>
+<ul class="simple">
+<li><p>des projets (contenu et ressource pédagogique),</p></li>
+<li><p>des environnements logiciels,</p></li>
+<li><p>des contacts.</p></li>
+</ul>
+<p><strong>Création d’un nouveau projet</strong></p>
+<p>Un <em>projet</em> est constitué de :</p>
+<ul class="simple">
+<li><p>une arborescence de fichiers (textes, images, carnets);</p></li>
+<li><p>un environnement d’exécution, à choisir parmi les environnements disponibles.</p></li>
+</ul>
+<p><img alt="" src="_images/maquette-nouveau-projet.png" /></p>
+<p>L’éditeur de projet permet de choisir un nom, une description, une image, un
+environnement logiciel dans la liste des environnements disponibles, et d’y
+inviter des collaborateurs.</p>
+<p>Une image peut être associée à un projet pour le retrouver plus facilement.</p>
+<p><img alt="" src="_images/maquette-miniature.png" /></p>
+<p><strong>Choix d’un environnement parmi les environnements disponibles</strong></p>
+<p>L’enseignant peut choisir un environnement parmi ceux qui sont proposés sur la
+plateforme et ceux qu’il aura créés avec le gestionnaire d’environnement.</p>
+<p><img alt="" src="_images/maquette-choix-environnement.png" /></p>
+<p><strong>Ajout de collaborateurs pour l’édition collaborative parmi les contacts et
+groupes de contacts</strong></p>
+<p>Une fois le projet créé, des collaborateurs (au sens de l’édition collaborative)
+peuvent être ajoutés nominativement, ou par groupe. Les groupes de contacts
+peuvent être créés et gérés dans l’onglet « contacts »; cela incluera des
+groupes créés automatiquement à partir de l’information de composition des
+classes de l’ENT.</p>
+<p><img alt="" src="_images/maquette-choix-collaborateurs.png" /></p>
+</section>
+<section id="gestion-des-environnements">
+<h2>Gestion des environnements<a class="headerlink" href="#gestion-des-environnements" title="Lien permanent vers ce titre">#</a></h2>
+<p><strong>Page principale de gestion des environnements</strong></p>
+<p>En choisissant l’onglet « environnements » dans le panneau latéral, on peut voir
+les différents environnements disponibles et créer un nouvel environnement.</p>
+<p>Un bouton « Créer » est aussi proposé pour permettre d’installer des paquets
+personnalisés.</p>
+<p><img alt="" src="_images/maquette-page-principale-environnement.png" /></p>
+<p><strong>Création d’un nouvel environnement</strong></p>
+<p>Le bouton « Créer » ouvre un éditeur d’environnement (qui peut aussi être
+utilisé pour éditer un environnement existant).</p>
+<p><img alt="" src="_images/maquette-nouvel-environnement.png" /></p>
+<p>L’interface permet de sélectionner les paquets logiciels et de choisir entre un
+environnement « côté serveur » (exécuté dans un conteneur sur le serveur) ou «
+côté navigateur » (en WebAssembly, utilisant JupyterLite). Comme mentionné
+précédemment, un nombre moins important de paquets seront disponibles en mode
+JupyterLite.</p>
+<blockquote>
+<div><p>Fournir les paquets logiciels WebAssembly sous la forme de paquets conda
+permettra d’offrir une expérience homogène entre les deux types
+d’environnement, et de rendre le passage de l’un à l’autre transparent pour
+l’utilisateur.</p>
+</div></blockquote>
+<p><strong>Choix de paquets logiciels avec auto-complétion</strong></p>
+<p>L’outil de gestion de la liste des paquets offre des fonctionnalités
+d’auto-complétion sur la base des paquets disponibles.</p>
+<p><img alt="" src="_images/maquette-auto-completion.png" /></p>
+<p><strong>Cas d’erreur dans la résolution des versions</strong></p>
+<p>Si un ensemble de paquets aux versions incompatibles est sélectionné,
+l’utilisateur en est informé dans une barre d’état extensible.</p>
+<p><img alt="" src="_images/maquette-resolution-erreur.png" /></p>
+<p>Les conflits peuvent être détaillés en bas de page. % Nous ne devrions pas
+mentionnés comment l’information sera présentée uniquement quelle information
+(càd rester au niveau fonctionnel)</p>
+<p><img alt="" src="_images/maquette-resolution-erreur-diagnostic.png" /></p>
+<p>En cas de succès, l’utilisateur en est aussi informé dans la barre d’état.</p>
+<p><img alt="" src="_images/maquette-resolution-succes.png" /></p>
+<p>Dans ce cas, la liste exhaustive des paquets installés dans l’environnement est
+détaillée en pied de page (incluant les dépendances de second ordre).</p>
+<p><img alt="" src="_images/maquette-resolution-succes-diagnostic.png" /></p>
+</section>
+<section id="interface-jupyter-dans-un-projet">
+<h2>Interface Jupyter dans un projet<a class="headerlink" href="#interface-jupyter-dans-un-projet" title="Lien permanent vers ce titre">#</a></h2>
+<p>Une fois créé dans l’interface principale de Candyce, un projet peut être lancé
+et l’utilisateur avancé est dirigé vers une interface Jupyter, augmentée d’un
+panneau indiquant quels utilisateurs sont des collaborateurs du projet et s’ils
+sont connectés.</p>
+<p><img alt="" src="_images/maquette-interface-jupyter.png" /></p>
+<p><strong>Création d’un cours ou devoir dans un projet</strong></p>
+<p>L’interface de JupyterLab est aussi complétée d’un outil de gestion des cours et
+devoirs (soumission, correction automatique « à la nbgrader »).</p>
+<p><img alt="" src="_images/maquette-interface-jupyter-cours.png" /></p>
+<p>Une icône vers le gestionnaire de devoirs est aussi accessible dans le lanceur.</p>
+<p><img alt="" src="_images/maquette-interface-jupyter-cours-gestion.png" /></p>
+</section>
+<section id="gestion-des-devoirs">
+<h2>Gestion des devoirs<a class="headerlink" href="#gestion-des-devoirs" title="Lien permanent vers ce titre">#</a></h2>
+<p>Dans l’arborescence d’un projet, l’enseignant peut créer plusieurs contenus
+pédagogiques, de type « polycopié » (ne faisant pas l’objet d’une évaluation) ou
+« devoir » (faisant l’objet d’une évaluation, potentiellement automatique avec
+un outil similaire à nbgrader).</p>
+<p>Ajout de destinataires à un polycopié.</p>
+<p><img alt="" src="_images/maquette-interface-jupyter-cours-partage.png" /></p>
+<p>Création d’un nouveau devoir à rendre.</p>
+<p><img alt="" src="_images/maquette-interface-jupyter-cours-partage-collectable.png" /></p>
+<p>Changement de la date de remise du devoir.</p>
+<p><img alt="" src="_images/maquette-interface-jupyter-cours-partage-collectable-date.png" /></p>
+<p>Soumission du même contenu à plusieurs groupes d’élèves.</p>
+<p><img alt="" src="_images/maquette-interface-jupyter-cours-partage-multiple.png" /></p>
+<p><strong>Remarques:</strong></p>
+<ul class="simple">
+<li><p>Du point de vue de l’élève, un contenu envoyé par un enseignant prend la forme
+d’un <strong>nouveau projet dans son espace</strong>.</p></li>
+<li><p>Par défaut, l’enseignant est ajouté comme <strong>collaborateur</strong> au sens de
+l’édition collaborative aux projets qu’il a envoyés aux étudiants, de sorte
+qu’il puisse aider les étudiants dans leur travail.</p></li>
+<li><p>Ces fonctionnalités d’envoi de devoirs - si elles ne font pas partie du
+parcours utilisateur typique d’un étudiant - ne lui seront pas cachées. <strong>Le
+parcours typique d’un étudiant sera l’accès direct au contenu depuis son
+ENT.</strong></p></li>
+<li><p>En revanche, ce même étudiant se connectant à la plateforme Candyce pourra, au
+même titre qu’un enseignant, créer des projets et des environnements pour
+lui-même et les partager avec d’autres utilisateurs de la plateforme.</p></li>
+</ul>
+<p><strong>Nbgrader</strong></p>
+<p><a class="reference external" href="https://github.com/jupyter/nbgrader">Nbgrader</a> est un outil d’évaluation
+automatiques de carnets, développé initialement pour les besoins de UC Berkeley
+relatifs à l’utilisation de carnets pour l’enseignement à de grands groupes
+d’élèves.</p>
+<p>Nbgrader permet de créer des « carnets à trous » où l’élève :</p>
+<ul class="simple">
+<li><p>doit implémenter lui-même une part de la logique du programme,</p></li>
+<li><p>dispose de quelques tests simples pour vérifier son code,</p></li>
+<li><p>mais n’a pas accès à l’ensemble des tests utilisés par l’enseignant pour la
+correction finale - évitant ainsi la manipulation du résultat.</p></li>
+</ul>
+<p><img alt="" src="_images/maquette-interface-jupyter-nbgrader.png" /></p>
+<p>Candyce offrira des fonctionnalités très similaires, mais n’utilisera pas
+nécessairement la base de code actuelle de <em>nbgrader</em>.</p>
+</section>
+<section id="interfaces-d-edition-wysiwyg">
+<h2>Interfaces d’édition WYSIWYG<a class="headerlink" href="#interfaces-d-edition-wysiwyg" title="Lien permanent vers ce titre">#</a></h2>
+<section id="cellules-de-carnets">
+<h3>Cellules de carnets<a class="headerlink" href="#cellules-de-carnets" title="Lien permanent vers ce titre">#</a></h3>
+<p>Une extension à l’interface du carnet qui simplifiera son usage par les élèves
+du secondaire sera d’offrir la possibilité d’éditer les cellules de textes avec
+une interface visuelle WYSIWYG (What You See Is What You Get) plutôt que via la
+syntax Markdown.</p>
+<p><img alt="" src="_images/wysiwyg-cells.png" /></p>
+<p><em>Un éditeur visuel pour les cellules de textes</em></p>
+<p>Une solution envisagée est d’utiliser l’outil
+<a class="reference external" href="https://prosemirror.net/">ProseMirror</a>, qui peut être utilisé pour éditer du
+Markdown, et se prête bien à l’intégration aux fonctionnalités d’édition
+collaborative de Jupyter basées sur YJS.</p>
+</section>
+<section id="traitement-de-texte-et-tableau-virtuel">
+<h3>Traitement de texte et tableau virtuel<a class="headerlink" href="#traitement-de-texte-et-tableau-virtuel" title="Lien permanent vers ce titre">#</a></h3>
+<p>Au-delà des documents carnets, l’intégration à l’interface d’un outil de
+traitement de texte sera nécessaire. Des intégrations à Jupyter de Prosemirror
+et Tiptap ont déjà été effectuées. Pour cette fonctionalité, Candyce pourrait
+aussi se tourner vers OnlyOffice.</p>
+<p>Dans un contexte d’enseignement mixte présentiel / distanciel, un outil de
+« tableau blanc » virtuel permettant l’édition collaborative sera intégrée à la
+plateforme.</p>
+<p><img alt="" src="_images/whiteboard.png" /></p>
+<p><em>Un tableau blanc collaboratif intégré à l’interface de JupyterLab</em></p>
+</section>
+<section id="programmation-par-blocs">
+<h3>Programmation par blocs<a class="headerlink" href="#programmation-par-blocs" title="Lien permanent vers ce titre">#</a></h3>
+<p>Dans le cadre de l’expérimentation de la plateforme pour l’enseignement au
+collège, des intégrations d’outils de programmation par blocs est envisagée.
+Dans la maquette ci-dessous, une interface de carnet alternative est proposée,
+dans laquelle les cellules de code sont remplacées par des éditeurs visuels pour
+la programmation par bloc.</p>
+<p><img alt="" src="_images/maquette-blockly.png" /></p>
+<p><em>Une maquette d’un éditeur de programme blockly intégré dans le carnet au lieu
+des cellules de code</em></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="DirectionsTechnologiques.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Directions technologiques</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="RessourcesP%C3%A9dagogiquesFAIR.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Ressources pédagogiques FAIR</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Candyce<br/>
+  
+      &copy; Copyright 2021-2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

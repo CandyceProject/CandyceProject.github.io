@@ -1,0 +1,1521 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. État de l’art: l’écosystème Jupyter &#8212; Candyce</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà" href="ApportPedagogique.html" />
+    <link rel="prev" title="1. À propos de cette partie" href="DescriptionScientifiqueAnnexes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Jupyter_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Candyce</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    CANDYCE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ProgrammeCandyce.html">
+   1. Le programme Candyce
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MiseEnOeuvre.html">
+   2. Mise en œuvre
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique: Annexes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="DescriptionScientifiqueAnnexes.html">
+   1. À propos de cette partie
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. État de l’art: l’écosystème Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApportPedagogique.html">
+   3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ConceptionResponsable.html">
+   4. Principes de conception responsable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ManifesteDonn%C3%A9es.html">
+     Manifeste sur la gestion des données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DirectionsTechnologiques.html">
+   5. Directions technologiques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Maquette.html">
+   6. Maquette
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RessourcesP%C3%A9dagogiquesFAIR.html">
+   7. Ressources pédagogiques FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Consortium
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Acad%C3%A9mieDeParis.html">
+   1. Académie de Paris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/FUN.html">
+   2. France Université Numérique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Inria.html">
+   3. Inria
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9DeLorraine.html">
+   4. Université de Lorraine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9ParisSaclay.html">
+   5. Université Paris-Saclay
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Site produit par <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/issues/new?title=Issue%20on%20page%20%2FJupyter.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/edit/main/Jupyter.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Jupyter.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-notebook-carnet-interactif">
+   Le notebook (carnet interactif)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adoption">
+   Adoption
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pour-les-sciences-et-la-reproductibilite">
+     Pour les sciences et la reproductibilité
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-l-industrie">
+     Dans l’industrie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-le-secondaire-en-france">
+     Dans le secondaire en France
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-le-superieur-en-france">
+     Dans le supérieur en France
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inria">
+       Inria
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#le-cnam">
+       Le CNAM
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mathrice">
+       Mathrice
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#universite-paris-saclay">
+       Université Paris-Saclay
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opendreamkit">
+       OpenDreamKit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plasmabio">
+       PlasmaBio
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-deploiements-notables-pour-l-enseignement">
+     Autres déploiements notables pour l’enseignement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capytale-un-service-jupyter-pour-l-enseignement-secondaire">
+   Capytale: un service Jupyter pour l’enseignement secondaire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivations">
+     Motivations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#des-activites-de-codage-entre-enseignants-et-eleves">
+     Des activités de codage entre enseignants et élèves
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#une-diffusion-nationale">
+     Une diffusion nationale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#une-infrastructure-academique-souveraine">
+     Une infrastructure académique souveraine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#une-bibliotheque-d-echanges-entre-enseignants">
+     Une bibliothèque d’échanges entre enseignants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plusieurs-types-d-activites-de-codage">
+     Plusieurs types d’activités de codage
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activites-basees-sur-les-notebooks-jupyter">
+       Activités basées sur les notebooks jupyter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activites-python-simples">
+       Activités Python simples
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activites-sur-les-langages-du-web">
+       Activités sur les langages du web
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-projet-entierement-base-sur-des-logiciels-libres">
+     Un projet entièrement basé sur des logiciels libres
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temoignages">
+     <span class="xref myst">
+      Témoignages
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Témoignages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-les-grandes-societes-francaises">
+     Dans les grandes sociétés françaises
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temoignages-de-capytale">
+     Témoignages de Capytale
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composants-cles">
+   Composants clés
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlite-jupyter-entierement-dans-le-navigateur">
+     JupyterLite: Jupyter entièrement dans le navigateur
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vous-pouvez-lancer-jupyterlite-depuis-ce-document">
+       Vous pouvez lancer JupyterLite depuis ce document ✨
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#facilite-de-passage-a-lechelle">
+       Facilité de passage à l’échelle
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#de-l-informatique-interactive-accessible-dans-le-navigateur">
+       De l’informatique interactive accessible dans le navigateur
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#personnalisation-du-deploiement">
+       Personnalisation du déploiement
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>État de l’art: l’écosystème Jupyter</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-notebook-carnet-interactif">
+   Le notebook (carnet interactif)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adoption">
+   Adoption
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pour-les-sciences-et-la-reproductibilite">
+     Pour les sciences et la reproductibilité
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-l-industrie">
+     Dans l’industrie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-le-secondaire-en-france">
+     Dans le secondaire en France
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-le-superieur-en-france">
+     Dans le supérieur en France
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inria">
+       Inria
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#le-cnam">
+       Le CNAM
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mathrice">
+       Mathrice
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#universite-paris-saclay">
+       Université Paris-Saclay
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opendreamkit">
+       OpenDreamKit
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plasmabio">
+       PlasmaBio
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-deploiements-notables-pour-l-enseignement">
+     Autres déploiements notables pour l’enseignement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capytale-un-service-jupyter-pour-l-enseignement-secondaire">
+   Capytale: un service Jupyter pour l’enseignement secondaire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivations">
+     Motivations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#des-activites-de-codage-entre-enseignants-et-eleves">
+     Des activités de codage entre enseignants et élèves
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#une-diffusion-nationale">
+     Une diffusion nationale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#une-infrastructure-academique-souveraine">
+     Une infrastructure académique souveraine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#une-bibliotheque-d-echanges-entre-enseignants">
+     Une bibliothèque d’échanges entre enseignants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plusieurs-types-d-activites-de-codage">
+     Plusieurs types d’activités de codage
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activites-basees-sur-les-notebooks-jupyter">
+       Activités basées sur les notebooks jupyter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activites-python-simples">
+       Activités Python simples
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activites-sur-les-langages-du-web">
+       Activités sur les langages du web
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-projet-entierement-base-sur-des-logiciels-libres">
+     Un projet entièrement basé sur des logiciels libres
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temoignages">
+     <span class="xref myst">
+      Témoignages
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Témoignages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dans-les-grandes-societes-francaises">
+     Dans les grandes sociétés françaises
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temoignages-de-capytale">
+     Témoignages de Capytale
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composants-cles">
+   Composants clés
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlite-jupyter-entierement-dans-le-navigateur">
+     JupyterLite: Jupyter entièrement dans le navigateur
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vous-pouvez-lancer-jupyterlite-depuis-ce-document">
+       Vous pouvez lancer JupyterLite depuis ce document ✨
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#facilite-de-passage-a-lechelle">
+       Facilité de passage à l’échelle
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#de-l-informatique-interactive-accessible-dans-le-navigateur">
+       De l’informatique interactive accessible dans le navigateur
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#personnalisation-du-deploiement">
+       Personnalisation du déploiement
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="etat-de-l-art-l-ecosysteme-jupyter">
+<span id="ecosystemejupyter"></span><h1><span class="section-number">2. </span>État de l’art: l’écosystème Jupyter<a class="headerlink" href="#etat-de-l-art-l-ecosysteme-jupyter" title="Lien permanent vers ce titre">#</a></h1>
+<p>Jupyter est un écosystème de logiciels libres, de protocoles ouverts et de
+standards dont le but est de faciliter le travail des ingénieurs, scientifiques,
+étudiants et enseignants, depuis la phase exploratoire de leurs projets jusqu’à
+la communication des résultats.</p>
+<p>Depuis ses débuts en 2014, le projet Jupyter a connu une adoption très rapide
+dans tous les secteurs, et compte aujourd’hui des <strong>millions d’utilisateurs dans
+le monde</strong>. Jupyter est devenu la <em>lingua franca</em> des professionnels du calcul
+scientifique, des ingénieurs en formation aux chercheurs en passant par les «
+data scientists » et ingénieurs dans l’industrie. En dehors du monde
+professionnel, Jupyter est également un standard <em>de facto</em> dans l’enseignement.</p>
+<blockquote>
+<div><p>En 2018, les développeurs du projet Jupyter ont été honorés du prix « <strong>ACM
+Software System Award</strong> », attribué tous les ans depuis 1983 à une institution
+ou à une ou plusieurs personnes sélectionnées pour le développement d’un
+logiciel ayant eu une influence sur le long terme. Les lauréats précédents
+comprennent notamment UNIX, le World Wide Web, Java, etc.</p>
+</div></blockquote>
+<p><img alt="jupyterlab-screenshot" src="_images/jupyterlab-screenshot.png" /></p>
+<section id="le-notebook-carnet-interactif">
+<h2>Le notebook (carnet interactif)<a class="headerlink" href="#le-notebook-carnet-interactif" title="Lien permanent vers ce titre">#</a></h2>
+<p>Le composant le plus populaire de Jupyter est le <em>notebook</em>, une interface
+d’édition de documents interactifs entremêlant éléments narratifs, formules,
+code exécutable, visualisations, avec la possibilité de réaliser des diapos ou
+des mini-applications interactives.</p>
+<p>Ce format s’est avéré particulièrement utile dans le contexte de l’enseignement
+des sciences car l’interactivité offerte implique l’apprenant dans une démarche
+d’apprentissage actif.</p>
+<p>Le notebook est aussi très utilisé par les professionnels dans la phase
+exploratoire de leur travail, car il permet d’itérer rapidement en fournissant
+des résultats visuels immédiats dans l’interface où se fait le développement.
+C’est justement de là que vient le nom du projet qui devait être une <strong>version
+électronique des carnets de recherche</strong> utilisés traditionnellement en sciences
+physiques.</p>
+<a class="reference internal image-reference" href="_images/galileo.png"><img alt="_images/galileo.png" src="_images/galileo.png" style="width: 50%;" /></a>
+<p><em>Carnet de recherche de Galilée (1610) sur ses observations de Jupiter et de ses
+quatre principaux satellites, dont les schémas ont inspiré le logo du projet
+Jupyter.</em></p>
+<p>Le concept de notebook s’inscrit dans le paradigme de la
+« <a class="reference external" href="https://fr.wikipedia.org/wiki/Programmation_lettr%C3%A9e">programmation lettrée</a>
+» (litterate programming) prônée par le pionnier de l’informatique Donald Knuth.
+Dans ce paradigme, l’auteur est encouragé à s’adresser en premier lieu à ses
+lecteurs en traduisant le fil de sa pensée sous la forme d’une narration, le
+programme n’étant qu’un sous-produit de cette narration. Les premiers exemples
+de notebooks ont émergé dans les années 1990 dans des systèmes comme Maple et
+Mathematica.</p>
+<p>Ce qui distingue le notebook Jupyter, c’est le fait d’être libre, standardisé,
+basé sur des technologies web ouvertes, et agnostique au langage de
+programmation. Jupyter (JUlia, PYThon, R) peut être utilisé avec ces trois
+langages scientifiques ainsi que des centaines d’autres. Ces propriétés sont à
+l’origine de son adoption à très large échelle.</p>
+</section>
+<section id="adoption">
+<span id="id1"></span><h2>Adoption<a class="headerlink" href="#adoption" title="Lien permanent vers ce titre">#</a></h2>
+<p>Le projet <a class="reference external" href="https://fr.wikipedia.org/wiki/Jupyter">Jupyter</a>, qui est né du projet
+plus ancien <a class="reference external" href="https://fr.wikipedia.org/wiki/IPython">IPython</a>, est issu du monde
+académique où il y est très adopté, que ce soit pour l’enseignement ou pour la
+recherche. Des supercalculateurs aux cours d’introduction à la programmation, la
+plupart des universités font aujourd’hui usage du projet. Nombre d’entre elles
+ont déployé des services basés sur JupyterHub, mettant à disposition de leurs
+utilisateurs des environnements virtuels collaboratifs à la demande.</p>
+<a class="reference internal image-reference" href="_images/data8.jpeg"><img alt="_images/data8.jpeg" src="_images/data8.jpeg" style="width: 70%;" /></a>
+<p><em>Séance de cours avec Jupyter à UC Berkeley pour « Data 8 », cours de data
+sciences ouvert à tous les étudiants de l’université.</em></p>
+<section id="pour-les-sciences-et-la-reproductibilite">
+<h3>Pour les sciences et la reproductibilité<a class="headerlink" href="#pour-les-sciences-et-la-reproductibilite" title="Lien permanent vers ce titre">#</a></h3>
+<p>Le succès de Jupyter dans le milieu académique et l’utilisation du notebook pour
+la communication des résultats ont beaucoup contribué à l’adoption de meilleures
+pratiques pour la reproductibilité des résultats scientifiques.</p>
+<p>Par exemple, en 2016, le projet LIGO a annoncé la première observation d’ondes
+gravitationnelles, découverte qui a été plus tard récompensée d’un prix Nobel de
+physique. L’équipe de LIGO a publié les résultats de l’expérience ainsi que des
+notebooks Jupyter avec le code effectuant le traitement des données brutes,
+permettant de re-créer les figures de l’article académique.</p>
+<p><a class="reference internal" href="_images/ligo-photo.jpeg"><img alt="_images/ligo-photo.jpeg" src="_images/ligo-photo.jpeg" style="width: 40%;" /></a> <a class="reference internal" href="_images/ligo-notebook.png"><img alt="_images/ligo-notebook.png" src="_images/ligo-notebook.png" style="width: 40%;" /></a></p>
+<p><em>L’observatoire des ondes gravitationnelles de LIGO à Hanford, et le notebook
+Jupyter publié permettant de reproduire le traitement du signal associé.</em></p>
+<p>Les résultats du groupe LIGO ont été partagés sur un déploiement public de
+Jupyter appelé « <strong>MyBinder</strong> (dont il sera question plus tard dans la
+proposition) », permettant à n’importe quel internaute de faire usage de Jupyter
+sans authentification préalable. Les serveurs hébergeant le service MyBinder
+sont gracieusement offerts par Google Cloud, et depuis peu, <strong>OVH</strong>, qui reçoit
+environ 40% du trafic du service (150k utilisateurs par semaine).</p>
+<p>Un autre exemple d’utilisation de Jupyter pour la reproductibilité est le cours
+d’économie calculatoire <a class="reference external" href="https://quantecon.org/">QuantEcon</a> de Thomas J. Sargent
+(Nobel Économie 2011) et John Stachurski, qui est entièrement écrit et mis à
+disposition sous forme de notebooks Jupyter.</p>
+<a class="reference internal image-reference" href="_images/quantecon.png"><img alt="_images/quantecon.png" src="_images/quantecon.png" style="width: 80%;" /></a>
+<p><em>Capture d’écran du site <a class="reference external" href="https://quantecon.org/">quantecon.org</a>.</em></p>
+</section>
+<section id="dans-l-industrie">
+<h3>Dans l’industrie<a class="headerlink" href="#dans-l-industrie" title="Lien permanent vers ce titre">#</a></h3>
+<p>Les principaux acteurs du numérique ont tous basé leurs plateformes de science
+des données sur Jupyter —
+<a class="reference external" href="https://aws.amazon.com/fr/sagemaker/">Amazon SageMaker</a>,
+<a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a>, Bloomberg BQuant,
+Intel Trusted Analytics Platform, IBM Watson Studio,
+<a class="reference external" href="https://saturncloud.io/">Saturn Cloud</a>, <a class="reference external" href="http://noteable.io">noteable.io</a>, etc. — démontrant à
+l’occasion la flexibilité de la solution et sa capacité d’intégration et
+d’interopérabilité avec des infrastructures déjà existantes.</p>
+<p>Certains de ces acteurs cherchent activement à s’approprier la technologie
+Jupyter par des extensions propriétaires non compatibles, afin de rendre
+captives les communautés d’utilisateurs de leurs services (par ex. Colab de
+Google), reproduisant le schéma à la « Android ». <strong>Il y a clairement une menace
+sur la souveraineté des données d’apprentissage si des solutions passant à
+l’échelle ne sont pas proposées.</strong></p>
+</section>
+<section id="dans-le-secondaire-en-france">
+<span id="adoptionscolaire"></span><h3>Dans le secondaire en France<a class="headerlink" href="#dans-le-secondaire-en-france" title="Lien permanent vers ce titre">#</a></h3>
+<p>Il existe en France plusieurs initiatives pour l’utilisation de Jupyter dans le
+secondaire, appuyées par le ministère de l’éducation nationale de la jeunesse et
+des sports. La principale est le projet «Capytale» décrit plus loin
+<a class="reference internal" href="#capytale"><span class="std std-ref">dans une section dédiée</span></a>.</p>
+</section>
+<section id="dans-le-superieur-en-france">
+<span id="adoptionsuperieur"></span><h3>Dans le supérieur en France<a class="headerlink" href="#dans-le-superieur-en-france" title="Lien permanent vers ce titre">#</a></h3>
+<p>Il existe de <em>très</em> nombreux déploiements de Jupyter dans les universités et
+grandes écoles françaises (et plus largement en Europe et dans le monde). Dans
+cette section, nous présentons quelques initiatives notables mais nous sommes
+loin de l’exhaustivité.</p>
+<section id="inria">
+<h4>Inria<a class="headerlink" href="#inria" title="Lien permanent vers ce titre">#</a></h4>
+<p>Les premiers déploiements des Notebooks Jupyter à l’Inria ont été réalisés par
+Benjamin Ninassi puis repris par Arnaud Legout et Thierry Parmentelat à
+l’occasion du premier MOOC sur l’apprentissage du langage Python,
+<a class="reference external" href="https://learninglab.inria.fr/mooc-python-inria/">ouvert sur FUN fin 2014</a> et
+dont le développement s’est poursuivi pour les MOOCs suivants.</p>
+</section>
+<section id="le-cnam">
+<h4>Le CNAM<a class="headerlink" href="#le-cnam" title="Lien permanent vers ce titre">#</a></h4>
+<p>Grâce aux efforts concertés d’une équipe d’ingénieur⸱es et d’enseignant⸱es et
+grâce à des financements internes, le CNAM a développé une
+<a class="reference external" href="https://jhub.cnam.fr/">plate-forme JupyterHub</a>. Cette plate-forme s’intègre à
+l’ENT du CNAM (Moodle) via LTI et permet de créer des cahiers numériques alliant
+programmation, visualisation et argumentaire pour des contenus allant du
+polycopié de cours aux comptes rendus de travaux pratiques. Elle suscite des
+retours d’expérience positifs dans les diverses filières du CNAM. Ce
+<a class="reference external" href="https://jhub.cnam.fr/doc/">site</a> détaille l’historique et le fonctionnement du
+projet.</p>
+<!-- Le CNAM dispose de deux déploiements de JupyterHub :
+ - un premier déploiement pour les enseignements, intégré au SSO de
+   Moodle (LTI),
+ - un second intégré au SSO du GitLab interne, donnant accès à une
+   galerie de tableaux de bord.  !-->
+</section>
+<section id="mathrice">
+<h4>Mathrice<a class="headerlink" href="#mathrice" title="Lien permanent vers ce titre">#</a></h4>
+<p><a class="reference external" href="https://mathrice.fr/">Mathrice</a>, le réseau des informaticiens des laboratoires
+de recherche en mathématiques a déployé
+<a class="reference external" href="https://jupytercloud.math.cnrs.fr">un service JupyterHub</a> dédié à
+l’expérimentation, la conception et la diffusion de démonstrateurs et la
+formation, à l’exclusion de l’enseignement, car il ne peut garantir ni le volume
+nécessaire ni la disponibilité attendue.</p>
+<p>Ce service, qui s’inscrit dans la continuité d’un service de carnets basé sur
+SageMath déployés il y a une dizaine d’année, offre maintenant:</p>
+<ul class="simple">
+<li><p>différentes plateformes pour des publics variés (pour la communauté
+mathématique ou l’ensemble de l’enseignement supérieur recherche);</p></li>
+<li><p>une grande diversité de noyaux prêts à l’emploi, mis à jour régulièrement et
+fonctionnant sur GPUs;</p></li>
+<li><p>la possibilité de générer votre propre instance JupyterHub;</p></li>
+<li><p>la possibilité de créer vos propres Noyaux et de mettre vos Notebooks en
+ligne.</p></li>
+</ul>
+<p>Cette initiative a pu se concrétiser grâce au soutien du
+<a class="reference external" href="https://calcul.math.cnrs.fr/">Groupe de Recherche Calcul</a> du CNRS qui a acquis
+un nœud CPU en 2019 et a participé à l’acquisition de deux nœuds GPU
+AMD/A100(x2) en 2020 (rendue possible grâce à un soutien financier exceptionnel
+de l’INSMI). Ces trois nœuds sont disponibles sur la plateforme PLMshift
+(hébergée à Bordeaux). Grâce au travail réalisé à l’X, une instance orientée CPU
+est hébergé sur le mésocentre Cloud&#64;Virtualdata de Paris-Saclay à Orsay, avec
+tout le savoir faire des ingénieurs et chercheurs du site.</p>
+</section>
+<section id="universite-paris-saclay">
+<h4>Université Paris-Saclay<a class="headerlink" href="#universite-paris-saclay" title="Lien permanent vers ce titre">#</a></h4>
+<p>Nicolas Thiéry, professeur en informatique, pilote le déploiement de
+<a class="reference external" href="https://jupyterhub.ijclab.in2p3.fr/">JupyterHub&#64;Paris-Saclay</a>, hébergé par le
+mésocentre Cloud&#64;VirtualData de Paris-Saclay à Orsay, à l’attention de tous les
+étudiants et personnels de Paris-Saclay. Ce service est notamment utilisé par
+plus des deux-tiers du millier d’étudiants en L1 sciences de la faculté d’Orsay,
+pour des cours de programmation (C++, Python), de science des données (Python),
+et d’introduction aux méthodes numériques (Python). Le service est aussi utilisé
+pour des enseignements de tous niveaux (licence, master, formation continue),
+toutes disciplines (informatique, mathématiques, géosciences, STAPS, …), avec
+une variété de langages (Python, Sage, R, C++, …).</p>
+</section>
+<section id="opendreamkit">
+<h4>OpenDreamKit<a class="headerlink" href="#opendreamkit" title="Lien permanent vers ce titre">#</a></h4>
+<a class="reference internal image-reference" href="_images/opendreamkit.png"><img alt="_images/opendreamkit.png" src="_images/opendreamkit.png" style="width: 20%;" /></a>
+<p><a class="reference external" href="https://opendreamkit.org/">OpenDreamKit</a> est un projet d’infrastructure
+européenne financé à hauteur de 7.6M€ dans le cadre du programme européen «
+Horizon 2020 », de 2015 à 2019. Ce projet a rassemblé un consortium de 17
+institutions en Europe, et a soutenu le développement de Jupyter et plus
+largement des logiciels libres pour la recherche en mathématiques (GAP, PARI/GP,
+LinBox, Sage, Singular, …). Le projet, coordonné par Nicolas Thiéry,
+professeur des universités, membre du LRI / LISN (Université Paris Saclay-CNRS),
+a reçu le <strong>Prix des Étoiles de l’Europe</strong> dans la catégorie Science Ouverte,
+récompense remise le 16 décembre 2020.</p>
+</section>
+<section id="plasmabio">
+<h4>PlasmaBio<a class="headerlink" href="#plasmabio" title="Lien permanent vers ce titre">#</a></h4>
+<p><a class="reference external" href="https://plasmabio.org/">PLASMA</a> (Plateforme d’eLearning pour l’Analyse de
+données Scientifiques MAssives) est une plateforme d’enseignement de la
+génomique basée sur Jupyter, développée par QuantStack pour l’Université de
+Paris. Plasma a été cofinancé par la Région Île-de-France, via les <strong>Trophées
+franciliens de l’innovation numérique dans le supérieur</strong>. Le déploiement de
+JupyterHub mis en œuvre pour le projet Plasma a été développé comme une
+distribution minimale facilement installable pour les cas d’usage à petite et
+moyenne échelle (jusqu’à quelques dizaines d’utilisateurs concurrents), mais
+déployée dans de très nombreuses organisations, avec des fonctionnalités
+permettant aux professeurs de composer un environnement de développement pour
+leurs élèves. Le projet intègre aussi des outils de visualisation de données
+spécifiques à la génomique.</p>
+</section>
+</section>
+<section id="autres-deploiements-notables-pour-l-enseignement">
+<h3>Autres déploiements notables pour l’enseignement<a class="headerlink" href="#autres-deploiements-notables-pour-l-enseignement" title="Lien permanent vers ce titre">#</a></h3>
+<a class="reference internal image-reference" href="_images/callysto.png"><img alt="_images/callysto.png" src="_images/callysto.png" style="width: 60%;" /></a>
+<p>Deux déploiements canadiens dans le milieu de l’enseignement sont à retenir :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://syzygy.ca">https://syzygy.ca</a> : un déploiement inter-universitaire de Jupyter au Canada,</p></li>
+<li><p><a class="reference external" href="https://callysto.ca">https://callysto.ca</a> : un déploiement de Jupyter pour le secondaire au Canada.</p></li>
+</ul>
+<p>Ces deux déploiements ont la particularité de ne pas être attachés à un unique
+établissement et d’avoir une portée nationale.</p>
+</section>
+</section>
+<section id="capytale-un-service-jupyter-pour-l-enseignement-secondaire">
+<span id="capytale"></span><h2>Capytale: un service Jupyter pour l’enseignement secondaire<a class="headerlink" href="#capytale-un-service-jupyter-pour-l-enseignement-secondaire" title="Lien permanent vers ce titre">#</a></h2>
+<p><a class="reference external" href="https://www.ac-paris.fr/portail/jcms/p1_1971804/capytale-pour-creer-et-partager-une-activite-python">Capytale</a>
+» est un service de notebooks Jupyter en ligne déployé à l’initiative de
+l’académie de Paris et destiné à l’usage de l’enseignement dans le secondaire.
+Cette initiative a suscité l’intérêt d’un grand nombre d’académies qui emboîtent
+le pas.</p>
+<a class="reference internal image-reference" href="_images/division_euclidienne.png"><img alt="_images/division_euclidienne.png" src="_images/division_euclidienne.png" style="width: 70%;" /></a>
+<p><em>Un Notebook Jupyter comme support interactif de cours de Mathématiques</em></p>
+<section id="motivations">
+<h3>Motivations<a class="headerlink" href="#motivations" title="Lien permanent vers ce titre">#</a></h3>
+<p>Pour travailler avec la plupart des langages de programmation, et notamment
+Python qui est le langage unanimement utilisé en lycée, un environnement doit
+être installé sur chaque poste de travail. Il existe beaucoup d’environnements,
+le choix est difficile, l’installation est parfois complexe et les différentes
+versions ne sont pas toujours compatibles entre elles.</p>
+<p>Il en résultait des difficultés à faire travailler les élèves dans des salles
+informatiques avec des environnements hétérogènes ou sur des
+tablettes/ordinateurs personnels à la maison.</p>
+<p>Par ailleurs, les programmes informatiques proposés dans les divers documents
+pedagogiques disponibles sur le web ne fonctionnaient pas toujours.</p>
+<p>Concernant la formation continue des enseignants, les stages sur le codage et
+l’algorithmique étaient régulièrment ralentis par des problématiques techniques
+sans intérêt pédagogique.</p>
+<p>Il est rapidement apparu que ces difficultés représentaient un frein à la
+généralisation de l’enseignement du codage pour de nombreux professeurs n’ayant
+pas reçu de formation informatique lors de leur formation initiale.</p>
+<p>L’académie de Paris a donc décidé de développer Capytale : un service répondant
+à trois objectifs :</p>
+<ol class="simple">
+<li><p>Proposer un environnement de travail standard et adapté aux besoins de
+l’enseignement dans le secondaire</p></li>
+<li><p>Permettre l’accès à l’environnement de travail avec un simple navigateur web
+sans installation locale</p></li>
+<li><p>Offrir un système d’échange de documents et d’activités pédagogiques entre
+enseignants</p></li>
+</ol>
+</section>
+<section id="des-activites-de-codage-entre-enseignants-et-eleves">
+<h3>Des activités de codage entre enseignants et élèves<a class="headerlink" href="#des-activites-de-codage-entre-enseignants-et-eleves" title="Lien permanent vers ce titre">#</a></h3>
+<p>Le projet Capytale est un service numérique pédagogique permettant le partage
+d’activités de codage entre enseignants et élèves. Le système fonctionne
+entièrement en ligne sans aucune installation locale et offre une interface
+commune pour différentes activités d’apprentissage.</p>
+<p>La connexion avec les ENT de région permet aux élèves et aux enseignants de
+travailler directement, sans aucune création de compte.</p>
+<p>L’enseignant commence par créer une activité de codage (exemple : cours illustré
+avec des programmes exécutables, analyse du fonctionnement d’un programme donné,
+finalisation d’un programme à compléter, création ex nihilo d’un programme,
+etc.). Une fois l’activité créée, un code est donné à l’enseignant qui le
+partage avec les élèves. Ce code va permettre aux élèves d’accéder et de
+travailler sur une copie personnelle de l’activité. Les copies des élèves
+apparaissent automatiquement dans l’interface enseignant qui peut alors les
+évaluer. Les activités proposées sont disponibles en ligne sur tout type de
+périphérique (ordinateur, tablette, smartphone), ne nécessitent aucune
+installation et les travaux sont enregistrés sur un cloud.</p>
+<p>La première version du projet Capytale a été lancée en septembre 2019 sur la
+base d’un projet nommé NbHosting et développé par Thierry Parmentelat de
+L’INRIA. Elle réclamait des ressources serveur trop importantes pour envisager
+un déploiement à l’échelle nationale. En décembre 2020, une seconde version de
+Capytale a donc été lancée, basée cette fois sur un système permettant
+l’exécution du code, non plus sur un serveur distant, mais directement dans le
+navigateur du client permise par l’intégration du composant Basthon.</p>
+</section>
+<section id="une-diffusion-nationale">
+<h3>Une diffusion nationale<a class="headerlink" href="#une-diffusion-nationale" title="Lien permanent vers ce titre">#</a></h3>
+<p>Un gros travail a été fourni par la DANE de Paris pour diffuser le service. Sur
+leur demande, des rendez-vous ont été organisés avec chaque académie pour
+effectuer des démonstrations devant les différents acteurs techniques et
+pédagogiques : DANE, prestataires ENT, corps d’inspections, DSI, enseignants
+formateurs. La signature d’une convention de partage de service a été suivie de
+la mise en place d’un connecteur spécifique pour chaque ENT de région afin de
+permettre aux utilisateurs de disposer du service sans autre authentification
+que celle de l’ENT.</p>
+<p>En novembre 2021, soit un peu moins d’un an après sa mise en service, Capytale
+compte jusqu’à 45 000 connexions par semaine avec :</p>
+<ul class="simple">
+<li><p>25 académies</p></li>
+<li><p>2 000 lycées</p></li>
+<li><p>100 000 utilisateurs (90 000 élèves et 10 000 enseignants)</p></li>
+<li><p>1 000 activités partagées entre enseignants</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/capytale_academies.png"><img alt="Carte de France infographie" src="_images/capytale_academies.png" style="width: 70%;" /></a>
+</section>
+<section id="une-infrastructure-academique-souveraine">
+<h3>Une infrastructure académique souveraine<a class="headerlink" href="#une-infrastructure-academique-souveraine" title="Lien permanent vers ce titre">#</a></h3>
+<p>La DSI de l’académie de Paris fournit un hébergement dans le datacenter du
+retorat pour assurer le bon fonctionnement du service Capytale ainsi que sa
+sécurisation en lui appliquant la politique de sécurié définie par l’académie
+notamment pour la protection des données personnelles des utilisateurs.</p>
+<p>La DSI a mis en place une architecture applicative complète qui supporte les
+besoins actuels mais qui est aussi en capcité d’évoluer pour supporter une
+charge en constante évolution depuis deux ans.</p>
+<p>Le maintien en conditions opérationnelles :</p>
+<ul class="simple">
+<li><p>intégration continue</p></li>
+<li><p>jeu de tests</p></li>
+<li><p>recette</p></li>
+<li><p>environnement de développement dev-préprod-prod</p></li>
+<li><p>procédures de sauvegarde</p></li>
+</ul>
+</section>
+<section id="une-bibliotheque-d-echanges-entre-enseignants">
+<h3>Une bibliothèque d’échanges entre enseignants<a class="headerlink" href="#une-bibliotheque-d-echanges-entre-enseignants" title="Lien permanent vers ce titre">#</a></h3>
+<p>Les enseignants peuvent partager entre eux des activités sous licence libre
+(creative commons CC-By-SA) et la bibliothèque collaborative compte aujourd’hui
+plus de 1 000 activités partagées indexées par type d’activité, enseignement, ou
+description littérale.</p>
+</section>
+<section id="plusieurs-types-d-activites-de-codage">
+<h3>Plusieurs types d’activités de codage<a class="headerlink" href="#plusieurs-types-d-activites-de-codage" title="Lien permanent vers ce titre">#</a></h3>
+<p>Capytale permet de proposer plusieurs types d’activités de codage avec
+l’objectif de couvrir l’ensemble des besoins pour l’enseignement secondaire.</p>
+<section id="activites-basees-sur-les-notebooks-jupyter">
+<h4>Activités basées sur les notebooks jupyter<a class="headerlink" href="#activites-basees-sur-les-notebooks-jupyter" title="Lien permanent vers ce titre">#</a></h4>
+<p>Pour des activités de codage élaborées, le format notebook Jupyter est idéal.
+Dans Capytale, les notebooks sont enrichis de fonctionnalités pédagogiques :</p>
+<ul class="simple">
+<li><p>cartouche « Appréciation » pour permettre à l’enseignant d’annoter la copie de
+l’élève</p></li>
+<li><p>cartouche « Évaluation » pour indiquer une note chiffrée ou littérale</p></li>
+<li><p>statut de la copie : en cours, rendu ou corrigé pour permettre aux élèves et
+enseignants de situer la copie dans son cycle d’évolution</p></li>
+</ul>
+<p><img alt="" src="_images/capytale_activite_notebook.png" /></p>
+</section>
+<section id="activites-python-simples">
+<h4>Activités Python simples<a class="headerlink" href="#activites-python-simples" title="Lien permanent vers ce titre">#</a></h4>
+<p>Pour les enseignants habitués à l’environnement Python classique ou souhaitant
+proposer une activité simple, les notebooks peuvent paraître intimidants ou
+inutilement complexes. Capytale propose donc un mode script/console enrichi des
+mêmes fonctionnalités pédagogiques que les notebooks décrits ci-dessus.</p>
+<p>Ce mode script-console représente environ 45% des activités Python quand les
+notebooks complètent à 55% l’ensemble des activités Python sur Capytale.</p>
+<p><img alt="" src="_images/capytale_activite_console.png" /></p>
+</section>
+<section id="activites-sur-les-langages-du-web">
+<h4>Activités sur les langages du web<a class="headerlink" href="#activites-sur-les-langages-du-web" title="Lien permanent vers ce titre">#</a></h4>
+<p>Pour des activités d’apprentissage des langages du web, cette interface permet
+de développer et tester en direct du code en HTML, CSS et JavaScript. Chaque
+zone peut être masquée ou verrouillée en lecture seule selon le besoin
+pédagogique.</p>
+<p><img alt="" src="_images/capytale_activite_html.png" /></p>
+</section>
+</section>
+<section id="un-projet-entierement-base-sur-des-logiciels-libres">
+<h3>Un projet entièrement basé sur des logiciels libres<a class="headerlink" href="#un-projet-entierement-base-sur-des-logiciels-libres" title="Lien permanent vers ce titre">#</a></h3>
+<ul class="simple">
+<li><p>Serveurs Linux</p></li>
+<li><p>Bases de données MariaDB</p></li>
+<li><p>Drupal</p></li>
+<li><p>Basthon</p></li>
+<li><p>Pyodide</p></li>
+</ul>
+</section>
+<section id="temoignages">
+<h3><a class="reference internal" href="#temoignages-capytale"><span class="std std-ref">Témoignages</span></a><a class="headerlink" href="#temoignages" title="Lien permanent vers ce titre">#</a></h3>
+</section>
+</section>
+<section id="id2">
+<span id="id3"></span><h2>Témoignages<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">#</a></h2>
+<p>Les témoignages ci-dessous soulignent l’adoption, l’usage et l’importance de
+Jupyter dans des contextes éducatifs, académiques et industriels très divers.</p>
+<section id="dans-les-grandes-societes-francaises">
+<h3>Dans les grandes sociétés françaises<a class="headerlink" href="#dans-les-grandes-societes-francaises" title="Lien permanent vers ce titre">#</a></h3>
+<blockquote>
+<div><p><em>Les notebooks Jupyter sont parmi les outils indispensables du data scientist,
+que ce soit pour l’exploration interactive d’un jeu de donnée, pour les
+premiers développements d’une pipeline de machine learning ou pour communiquer
+les résultats d’une analyse. C’est pourquoi nous proposons aux utilisateurs de
+notre logiciel, Dataiku DSS, la possibilité d’y retrouver les notebooks
+Jupyter.</em></p>
+</div></blockquote>
+<p>– Léo Dreyfus-Schmidt, <em>VP of Research</em> chez <strong>Dataiku</strong></p>
+<blockquote>
+<div><p><em>Les notebooks de Jupyter sont déjà largement utilisés dans les bureaux
+d’études Safran. Ils permettent en particulier de structurer la préparation
+des données avant calcul ou leur exploitation après, avec les explications
+nécessaires à la compréhension de l’ensemble. Il serait intéressant de
+développer des fonctions collaboratives afin de permettre à plusieurs
+spécialistes de plusieurs secteurs voire plusieurs entités de travailler
+conjointement sur un notebook partagé en garantissant la confidentialité de
+certaines données et leur sécurité.</em></p>
+</div></blockquote>
+<p>– Guy De Spiegeleer, <em>System Engineering and Complex System Simulation Research
+Team Leader</em> chez <strong>Safran SA</strong></p>
+<blockquote>
+<div><p><em>Ces dernières années, nous observons une croissance très importante de la
+popularité du projet Jupyter. Que cela soit pour nos projets scientifiques en
+interne ou encore pour des projets nécessitant des itérations. Cela est
+également vrai pour les projets de nos clients, qu’ils soient industriels ou
+académiques. Nous sommes convaincus que Jupyter est un composant essentiel de
+l’écosystème du cloud. Les évolutions du projet Jupyter vers plus de
+modularité apportent une toute nouvelle vision pour l’avenir des applications
+web.</em></p>
+</div></blockquote>
+<p>– Jean-Louis Quéguiner, <em>Group VP &amp; Fellow - Research &amp; Innovation</em> chez
+<strong>OVHCloud</strong></p>
+<blockquote>
+<div><p><em>Sur les 5 dernières années, les notebooks Jupyter sont devenus un outil de
+travail quotidien d’une population vaste et diverse: « data scientists » à
+travers le groupe, mais aussi de nombreux rôles qui nécessitent une part plus
+ou moins grande de « data engineering » dans les équipes de trading, risque,
+ingénierie financière, et fonctions support de la banque d’investissement. Cet
+outil intuitif et versatile permet de manipuler/explorer/contrôler de grandes
+quantités de données de manière interactive et/ou automatique. Il permet un
+accès facile au large écosystème open source construit autour de Python, qui
+apparaît de plus en plus comme un standard de marché. On observe que les
+notebooks Jupyter sont utilisés aussi bien parmi les fonctions métiers que
+techniques.</em></p>
+</div></blockquote>
+<p>– Olivier Borderies, <em>Digital Officer</em> chez <strong>Société Générale</strong></p>
+<blockquote>
+<div><p><em>Les notebooks Jupyter sont au cœur des services d’analyses du project
+Panosc - projet Européen centré sur les données FAIR dont l’ESRF est un acteur
+majeur. Panosc a choisi JupyterLab et les notebooks Jupyter comme outil de
+référence pour le traitement de données expérimentales issues de 6 grands
+instruments de recherche des communautés photon et neutron européennes. Le
+notebook Jupyter est sans équivalent dans sa capacité à mettre en œuvre des
+services cloud à la fois puissants et ergonomiques à destination des
+scientifiques.</em></p>
+</div></blockquote>
+<p>– Nicolas Leclercq, <em>Head of Accelerator Control Unit</em> chez <strong>ESRF - The
+European Synchrotron</strong></p>
+<blockquote>
+<div><p><em>Jupyterlab est utilisé à l’Entrepôt des Données de Santé de l’AP-HP pour
+permettre l’exploration et l’analyse des données de vie réelle par les
+chercheurs. Travailler avec des notebooks Jupyter facilite la collaboration
+entre experts médicaux, biostatisticiens, data scientists et data engineer en
+centralisant le code informatique, ses commentaires et les résultats et
+visualisations liés à l’exécution du code.</em></p>
+</div></blockquote>
+<p>– Romain Bey, Directeur du service « Science des Données », chez la DSI de l”
+<strong>Assistance Publique – Hôpitaux de Paris (APHP)</strong></p>
+<blockquote>
+<div><p><em>Les notebooks Jupyter sont une évolution technologique désormais
+incontournable dans l’enseignement supérieur et la recherche. Les notebooks
+Jupyter sont des documents polyvalents et interactifs, constitués de code
+informatique, de texte, mais aussi de graphiques et de tableaux. Cette
+caractéristique en fait des médiateurs pédagogiques indispensables dans la
+formation des étudiants à l’analyse de données. Le projet Plasma développé en
+collaboration avec QuantStack, et lauréat des Trophées franciliens de
+l’innovation numérique dans le supérieur en 2018, a permis de mettre à
+disposition, en pleine crise sanitaire, des notebooks Jupyter à des centaines
+d’étudiants de l’Université de Paris, rendant possible la continuité
+pédagogique. Entièrement basée sur des logiciels libres, la couche logicielle
+du projet Plasma permet à chaque enseignant de proposer un environnement à
+façon avec les outils nécessaires à chaque cours. Cette innovation logicielle
+a été développée très efficacement par la société QuantStack. Fort de son
+succès, le projet Plasma est aujourd’hui en cours de déploiement à
+l’Université de Rouen.</em></p>
+</div></blockquote>
+<p>– Sandrine Caburet &amp; Pierre Poulain, UFR Sciences du Vivant, Université de
+Paris, et Claire Vandiedonck, UFR de Médecine, <strong>Université de Paris</strong>.</p>
+<blockquote>
+<div><p>Depuis plusieurs années, l’écosystème jupyter occupe dans les différentes
+entités data du groupe EDF une place croissante en tant qu’outil pour le data
+scientist, en facilitant l’expérimentation de solutions de traitement et la
+valorisation de la donnée. Les standards opensource proposés pour
+l’interactive computing par le projet Jupyter sont devenus un socle
+incontournable dans le domaine. Aujourd’hui Jupyter est également devenu un
+environnement de référence pour nos ingénieurs métiers : en pratique Jupyter
+est complètement intégré aux formations dispensées en interne d’EDF Hydro ;
+l’approche web facilite l’abord de la programmation et tous les outils sont
+accessibles pour que les utilisateurs prototypent des outils ou des dashboards
+répondant précisément à leurs besoins de façon autonome.*</p>
+</div></blockquote>
+<p>– Sébastien Fréal-Saison, <em>Data scientist and Python advocate</em>, <strong>EDF Hydro</strong></p>
+</section>
+<section id="temoignages-de-capytale">
+<span id="temoignages-capytale"></span><h3>Témoignages de Capytale<a class="headerlink" href="#temoignages-de-capytale" title="Lien permanent vers ce titre">#</a></h3>
+<blockquote>
+<div><p><em>Capytale service numérique pédagogique pour l’apprentissage de la
+programmation au lycée. Développé par &#64;Academie_Paris avec &#64;Dane_ot et mis à
+disposition de plusieurs académies. Le nombre de connexions à Capytale
+augmente sensiblement</em></p>
+</div></blockquote>
+<p>– <strong>Philippe Taillard</strong> <em>Délégué académique au numérique |Paris| - Inspecteur
+d’académie-IPR STI |Paris|</em></p>
+<p><a class="reference external" href="https://twitter.com/PhTAILLARD/status/1448024435290689537?s=20">https://twitter.com/PhTAILLARD/status/1448024435290689537?s=20</a></p>
+<blockquote>
+<div><p><em>Et la progression va continuer pour ce très beau projet #ress_num
+#programmation #Capytale &#64;Academie_Paris &#64;Dane_ot À partager !</em></p>
+</div></blockquote>
+<p>– <strong>Axel Jean</strong> <em>Direction du Numérique pour l’Éducation. Bureau du soutien à
+l’innovation &#64;Edu_Num &amp; recherche appliquée TN2 Partenariat #IA #P2IA</em></p>
+<p><a class="reference external" href="https://twitter.com/AxelJean77/status/1448169684411600897?s=20">https://twitter.com/AxelJean77/status/1448169684411600897?s=20</a></p>
+<blockquote>
+<div><p><em>#Capytale : un outil de <strong>+</strong> en <strong>+</strong> utilisé ! Très pratique pour
+l’enseignement de la #programmation en #Python mais aussi du SQL ou encore
+HTML+CSS+JS en #lycée. Capytale est donc à découvrir par les enseignant·e·s de
+#mathématiques mais aussi #SNT, #NSI, #SVT, #PhysiqueChimie, …</em></p>
+</div></blockquote>
+<p>– <strong>Mathématiques dans l’académie d’Orléans-Tours</strong> <em>Mathématiques dans
+l’académie d‘Orléans Tours. Compte animé par les IA-IPR et chargés de mission de
+maths. #labomaths_OT #clubdemaths_OT #NSI_OT</em></p>
+<p><a class="reference external" href="https://twitter.com/maths_ot/status/1462362414482087939?s=20">https://twitter.com/maths_ot/status/1462362414482087939?s=20</a></p>
+<blockquote>
+<div><p><em>Mixant dynamiquement texte, données et code, les Jupyter Notebooks sont l’une
+des plus belles et <em>libres</em> innovations de ces dernières années. Usage très
+pertinent en contexte d’éducation et recherche scientifiques. Un mot sur le
+remarquable projet #Capytale de &#64;Academie_Paris… Pertinent du coup dans le
+nouveau lycée qui fait la part belle à la programmation Python et au
+traitement des données C’est pourquoi Capytale, intégrant des notebooks dans
+les ENT + fonctionnalités pédagogiques, est un beau et très utile projet (pas
+assez mis en avant selon moi) … Un beau projet qui, né dans &#64;Academie_Paris
+sous la houlette de &#64;nicolaspoulain, est désormais présent dans de nombreux
+ENT d’autres académies… Ici, on ne réinvente pas la roue. On prend du libre,
+on l’adapte à ses besoins, on mutualise, on essaime. Et quand on adapte, on
+dépose le code quelque part pour que d’autres puissent en profiter à leur tour
+;) Et on mutualise aussi avec des profs qui font des trucs extras dans leur
+coin, comme ici avec &#64;BasthonPython (lui aussi libre bien etendu)… Un projet
+assez exemplaire, de mon point de vue (de « commoniste »). Vous êtes prof de
+NSI, SNT, ES, PC, SVT, Maths dans des académies proposant Capytale ? Pensez-y
+la semaine prochaine pour des activités stimulantes en confinement ;)
+<a class="reference external" href="https://capytale.fr">https://capytale.fr</a></em></p>
+</div></blockquote>
+<p>– <strong>*Alexis Kauffmann</strong> Chef de projet #Libre éducatif et #Mixité numérique à
+&#64;Edu_Num. Fondateur de &#64;Framasoft. Pas compte officiel de mon employeur*</p>
+<p><a class="reference external" href="https://twitter.com/framaka/status/1378780939703160836?s=20">https://twitter.com/framaka/status/1378780939703160836?s=20</a></p>
+<blockquote>
+<div><p><em>Parfois, il faut le dire : c’est la première fois de ma carrière que je vois
+une initiative si efficace, déployée ds moult académies, avec une réactivité
+hors pair !! (stop à la perpétuelle réinvention de la roue). BRAVO Capytale.</em></p>
+</div></blockquote>
+<p>– <strong>Olivier Danguillaume</strong> <em>Enseignant Maths et NSI (Numérique Sciences
+Informatiques), initiateur conférences Esprit d’Entreprendre : un bon catalyseur
+pour la motivation de nos étudiants</em></p>
+<p><a class="reference external" href="https://twitter.com/OlivierReims/status/1462011992529588225?s=20">https://twitter.com/OlivierReims/status/1462011992529588225?s=20</a></p>
+<blockquote>
+<div><p><em>Zéro papier cette année en 1NSI et TNSI, grâce au combo cours sur Github /
+évals sur Capytale. C’est un changement confortable pour moi qui peux modifier
+mes cours jusqu’au dernier moment, voire a posteriori …</em></p>
+</div></blockquote>
+<p>– <strong>Gilles Lassus</strong> <em>Prof NSI / SNT / Maths chez &#64;ICN_MauriacBdx</em></p>
+<p><a class="reference external" href="https://twitter.com/GillesLassus/status/1443185690955632640?s=20">https://twitter.com/GillesLassus/status/1443185690955632640?s=20</a></p>
+</section>
+</section>
+<section id="composants-cles">
+<h2>Composants clés<a class="headerlink" href="#composants-cles" title="Lien permanent vers ce titre">#</a></h2>
+<p>Dans cette section, nous donnons quelques éléments techniques sur des composants
+clé de l’écosystème Jupyter sur lesquels Candyce s’appuiera.</p>
+<section id="jupyterlite-jupyter-entierement-dans-le-navigateur">
+<span id="jupyterlite"></span><h3>JupyterLite: Jupyter entièrement dans le navigateur<a class="headerlink" href="#jupyterlite-jupyter-entierement-dans-le-navigateur" title="Lien permanent vers ce titre">#</a></h3>
+<p>JupyterLite est une distribution de JupyterLab qui tourne entièrement dans le
+navigateur: non-seulement l’interface graphique, mais aussi l’exécution du code
+utilisateur (noyaux).</p>
+<section id="vous-pouvez-lancer-jupyterlite-depuis-ce-document">
+<h4>Vous pouvez lancer JupyterLite depuis ce document ✨<a class="headerlink" href="#vous-pouvez-lancer-jupyterlite-depuis-ce-document" title="Lien permanent vers ce titre">#</a></h4>
+<p>Il est possible d’utiliser JupyterLite avec les interfaces
+<a class="reference external" href="https://github.com/jupyterlab/jupyterlab">JupyterLab</a> et
+<a class="reference external" href="https://github.com/jupyterlab/retrolab">RetroLab</a>.</p>
+</section>
+<section id="facilite-de-passage-a-lechelle">
+<h4>Facilité de passage à l’échelle<a class="headerlink" href="#facilite-de-passage-a-lechelle" title="Lien permanent vers ce titre">#</a></h4>
+<p>De par son mode de fonctionnement par fichiers statiques, JupyterLite permet au
+navigateur de garder les ressources dans son cache et ainsi alléger les demandes
+et requêtes serveur. Cela permet un passage à l’échelle fluide et sans étude de
+dimensionnement.</p>
+<p>JupyterLite peut également facilement être inclus au sein d’applications plus
+larges. Tout comme JupyterLab, JupyterLite est extrêmement configurable,
+composable, et utilise les conventions déjà établies au sein l’écosystème
+d’extensions pour JupyterLab.</p>
+</section>
+<section id="de-l-informatique-interactive-accessible-dans-le-navigateur">
+<h4>De l’informatique interactive accessible dans le navigateur<a class="headerlink" href="#de-l-informatique-interactive-accessible-dans-le-navigateur" title="Lien permanent vers ce titre">#</a></h4>
+<p>Le noyau Python basé sur Pyodide est inclus dans la distribution JupyterLite par
+défaut. Il utilise la technologie « Web Worker » des navigateurs qui permet une
+meilleur fluidité des interactions utilisateur lorsque du calcul est en cours.</p>
+<p>Les bibliothèques de visualisation de données connues telles que <code class="docutils literal notranslate"><span class="pre">altair</span></code>,
+<code class="docutils literal notranslate"><span class="pre">bqplot</span></code>, <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, and <code class="docutils literal notranslate"><span class="pre">plotly</span></code> sont supportées. Ces outils
+de visualisations sont très importants dans l’appropriation de concepts.</p>
+<p>L’architecture de JupyterLite permet l’ajout de noyaux additionnels tels que les
+langages de programmation Lua et JavaScript.</p>
+<p>Les fichiers utilisateurs peuvent être sauvegardés dans l’espace de stockage du
+navigateur en local. Cela signifie que les données ne sont pas transmises à un
+serveur distant via une requête réseau. De même, les préférences utilisateurs
+comme les thèmes et les ajustements d’interface sont enregistrés dans le
+navigateur de chaque utilisateur. Cela permet à chacun de personnaliser
+JupyterLite et de garder le contrôle sur les préférences et données
+personnelles.</p>
+<p>L’interface donne également accès aux consoles interactives de JupyterLab. Une
+alternative légère au Notebook qui met à disposition un environnement
+d’exécution de code très rapidement.</p>
+</section>
+<section id="personnalisation-du-deploiement">
+<h4>Personnalisation du déploiement<a class="headerlink" href="#personnalisation-du-deploiement" title="Lien permanent vers ce titre">#</a></h4>
+<p>JupyterLite est extensible par design. Des modules complémentaires peuvent
+facilement être ajoutés aux interfaces utilisateurs, ainsi qu’au serveur
+applicatif fonctionnant dans le navigateur.</p>
+<p>Voici un diagramme (vue d’ensemble) mettant en avant les principaux composants.</p>
+<p><img alt="jupyterlite-overview" src="_images/jupyterlite-overview-diagram.png" /></p>
+<p>En adoptant cette architecture, JupyterLite est capable de réutiliser les
+nombreuses extensions JupyterLab déjà existantes.</p>
+<p>Les extensions « serveur » utilisent la même structure de plugins que JupyterLab.
+Elles permettent d’intégrer JupyterLite facilement à des services extérieurs,
+par exemple le système de notation et de commentaires de Capytale. Ou d’ajouter
+des fonctionnalités supplémentaires de gestion de contenu.</p>
+<p>Les interfaces JupyterLab et RetroLab font toutes les deux parties du
+déploiement JupyterLite par défaut. A l’avenir il sera également possible
+d’ajouter des interfaces supplémentaires telles que l’outil de tableau de bord
+Voilà sur demande.</p>
+<p>Finalement JupyterLite permet la création de distributions personnalisées. C’est
+le cas du projet <a class="reference external" href="https://github.com/jtpio/p5-notebook">p5 notebook</a>, un
+déploiement JupyterLite centré sur l’art créatif numérique avec la bibliothèque
+<a class="reference external" href="https://p5js.org"><code class="docutils literal notranslate"><span class="pre">p5.js</span></code></a>.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="DescriptionScientifiqueAnnexes.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>À propos de cette partie</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ApportPedagogique.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Candyce<br/>
+  
+      &copy; Copyright 2021-2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1064 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Directions technologiques &#8212; Candyce</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="6. Maquette" href="Maquette.html" />
+    <link rel="prev" title="Manifeste sur la gestion des données" href="ManifesteDonn%C3%A9es.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Jupyter_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Candyce</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    CANDYCE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ProgrammeCandyce.html">
+   1. Le programme Candyce
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MiseEnOeuvre.html">
+   2. Mise en œuvre
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique: Annexes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="DescriptionScientifiqueAnnexes.html">
+   1. À propos de cette partie
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter.html">
+   2. État de l’art: l’écosystème Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApportPedagogique.html">
+   3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ConceptionResponsable.html">
+   4. Principes de conception responsable
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ManifesteDonn%C3%A9es.html">
+     Manifeste sur la gestion des données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Directions technologiques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Maquette.html">
+   6. Maquette
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RessourcesP%C3%A9dagogiquesFAIR.html">
+   7. Ressources pédagogiques FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Consortium
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Acad%C3%A9mieDeParis.html">
+   1. Académie de Paris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/FUN.html">
+   2. France Université Numérique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Inria.html">
+   3. Inria
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9DeLorraine.html">
+   4. Université de Lorraine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9ParisSaclay.html">
+   5. Université Paris-Saclay
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Site produit par <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/issues/new?title=Issue%20on%20page%20%2FDirectionsTechnologiques.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/edit/main/DirectionsTechnologiques.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/DirectionsTechnologiques.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#donner-acces-a-jupyter-a-des-millions-d-utilisateurs-sans-installation">
+   Donner accès à Jupyter à des millions d’utilisateurs, sans installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passage-a-l-echelle">
+     Passage à l’échelle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connexions-internet-intermittentes-ou-a-forte-latence">
+     Connexions internet intermittentes ou à forte latence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#garantir-l-interoperabilite-avec-des-services-tiers">
+   Garantir l’interopérabilité avec des services tiers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contribuer-a-l-ecosysteme-jupyter">
+   Contribuer à l’écosystème Jupyter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessibilite">
+     Accessibilité
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edition-collaborative">
+     Édition collaborative
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environnements-logiciels-configurables-et-reproductibles">
+     Environnements logiciels configurables et reproductibles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gestion-des-paquets-avec-conda">
+     Gestion des paquets avec conda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repondre-aux-besoins-specifiques-de-la-communaute-educative">
+   Répondre aux besoins spécifiques de la communauté éducative
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gestionnaire-de-projets">
+     Gestionnaire de projets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gestionnaire-de-devoirs-et-correction-automatique">
+     Gestionnaire de devoirs et correction automatique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simplification-de-l-interface-des-carnets">
+     Simplification de l’interface des carnets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bibliotheque-de-contenus">
+     Bibliothèque de contenus
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faire-converger-candyce-avec-capytale-et-les-autres-deploiements-de-jupyter">
+   Faire converger Candyce avec Capytale et les autres déploiements de Jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offrir-une-experience-utilisateur-homogene-et-mutualiser-le-cadre-applicatif">
+   Offrir une expérience utilisateur homogène et mutualiser le cadre applicatif
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Directions technologiques</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#donner-acces-a-jupyter-a-des-millions-d-utilisateurs-sans-installation">
+   Donner accès à Jupyter à des millions d’utilisateurs, sans installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passage-a-l-echelle">
+     Passage à l’échelle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connexions-internet-intermittentes-ou-a-forte-latence">
+     Connexions internet intermittentes ou à forte latence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#garantir-l-interoperabilite-avec-des-services-tiers">
+   Garantir l’interopérabilité avec des services tiers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contribuer-a-l-ecosysteme-jupyter">
+   Contribuer à l’écosystème Jupyter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessibilite">
+     Accessibilité
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edition-collaborative">
+     Édition collaborative
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environnements-logiciels-configurables-et-reproductibles">
+     Environnements logiciels configurables et reproductibles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gestion-des-paquets-avec-conda">
+     Gestion des paquets avec conda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repondre-aux-besoins-specifiques-de-la-communaute-educative">
+   Répondre aux besoins spécifiques de la communauté éducative
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gestionnaire-de-projets">
+     Gestionnaire de projets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gestionnaire-de-devoirs-et-correction-automatique">
+     Gestionnaire de devoirs et correction automatique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simplification-de-l-interface-des-carnets">
+     Simplification de l’interface des carnets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bibliotheque-de-contenus">
+     Bibliothèque de contenus
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faire-converger-candyce-avec-capytale-et-les-autres-deploiements-de-jupyter">
+   Faire converger Candyce avec Capytale et les autres déploiements de Jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offrir-une-experience-utilisateur-homogene-et-mutualiser-le-cadre-applicatif">
+   Offrir une expérience utilisateur homogène et mutualiser le cadre applicatif
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="directions-technologiques">
+<h1><span class="section-number">5. </span>Directions technologiques<a class="headerlink" href="#directions-technologiques" title="Lien permanent vers ce titre">#</a></h1>
+<p>Les directions technologiques de Candyce répondent à des besoins de différents
+ordres.</p>
+<section id="donner-acces-a-jupyter-a-des-millions-d-utilisateurs-sans-installation">
+<h2>Donner accès à Jupyter à des millions d’utilisateurs, sans installation<a class="headerlink" href="#donner-acces-a-jupyter-a-des-millions-d-utilisateurs-sans-installation" title="Lien permanent vers ce titre">#</a></h2>
+<section id="passage-a-l-echelle">
+<h3>Passage à l’échelle<a class="headerlink" href="#passage-a-l-echelle" title="Lien permanent vers ce titre">#</a></h3>
+<p>Le programme Candyce devra permettre à plusieurs millions d’utilisateurs (et
+plusieurs dizaines de milliers d’utilisateurs concurrents) d’accéder à des
+environnements virtuels Jupyter via un simple navigateur. Cela passera par le
+déploiement d’une infrastructure nationale, hébergée sur un cloud souverain.</p>
+<p>Les objectifs pour un tel déploiement sont:</p>
+<ul class="simple">
+<li><p>une haute disponibilité,</p></li>
+<li><p>une « scalabilité » permettant aux ressources cloud d’êtres allouées
+dynamiquement en fonction des besoins,</p></li>
+<li><p>une résistance aux attaques de type « DDOS » (Déni de Service), à la fois dans
+la conception de l’infrastructure (avec des méthodes comme le <em>rate limiting</em>)
+et via l’usage d’outils tiers.</p></li>
+</ul>
+<p>Une des principales tâches du Lot 1a est le développement du back-end de
+l’infrastructure permettant ce passage à l’échelle.</p>
+</section>
+<section id="connexions-internet-intermittentes-ou-a-forte-latence">
+<h3>Connexions internet intermittentes ou à forte latence<a class="headerlink" href="#connexions-internet-intermittentes-ou-a-forte-latence" title="Lien permanent vers ce titre">#</a></h3>
+<p>L’infrastructure nationale Candyce devra permettre d’exécuter les carnets (ou
+autres applicatifs) entièrement dans le navigateur, pour répondre aux besoins
+des établissements avec des connexions internet intermittentes où à forte
+latence.</p>
+<p>Dans l’architecture « classique » de Jupyter, l’édition du carnet a lieu dans le
+navigateur, tandis que l’exécution de code est déléguée à un « noyau » côté
+serveur. Une alternative est d’utiliser des noyaux côté navigateur.</p>
+<p>C’est une approche naturelle pour des langages comme JavaScript qui tournent
+nativement dans le navigateur, et pour bien d’autres langages depuis l’avènement
+de <strong>WebAssembly</strong>, et d’outils comme <strong>Pyodide</strong>, une distribution en
+WebAssembly des composants les plus populaires de l’écosystème Python.</p>
+<ul class="simple">
+<li><p>C’est l’approche utilisée par Capytale et par le projet
+<a class="reference external" href="https://jupyterlite.readthedocs.io/en/latest/">JupyterLite</a>, une distribution
+de JupyterLab utilisant des noyaux « dans le navigateur », développée par
+QuantStack.</p></li>
+<li><p>Cette approche apporte aussi une meilleure expérience utilisateur en cas de
+connectivité réseau dégradée (temps de latence, déconnexions temporaires): en
+effet, les interactions avec le serveur sont alors réduites au chargement de
+l’environnement et à la synchronisation des données utilisateur. Elle permet
+en outre de ne pas nécessiter de provisionner un environnement d’exécution
+côté serveur pour chaque utilisateur, et donc de faciliter le passage à
+l’échelle de l’infrastructure.</p></li>
+<li><p>En revanche, WebAssembly pose de nombreuses contraintes pratiques comme:</p>
+<ul>
+<li><p>l’absence d’un véritable système de fichiers et des limitations en termes
+d’entrée-sortie (ouverture de sockets);</p></li>
+<li><p>la disponibilité d’un plus faible nombre d’outils que pour les distributions
+natives.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="jupyterlite" src="_images/jupyterlite.jpeg" /></p>
+<p><em>La page d’accueil de la documentation de JupyterLite.</em></p>
+<ul class="simple">
+<li><p>Candyce offrira la possibilité de lancer les environnements en question dans
+le front-end chaque fois que les paquets requis sont disponibles en
+WebAssembly. Dans ce cas, JupyterLite sera utilisé au lieu de JupyterLab.</p></li>
+<li><p><strong>JupyterLite sera proposé comme interface alternative à Capytale pour les
+utilisateurs actuels de Capytale</strong>, leur permettant de conserver leur
+expérience utilisateur actuelle, tout en bénéficiant des autres avantages
+offerts par Candyce.</p></li>
+<li><p>JupyterLite utilisant la même base de code que JupyterLab, bénéficiera aussi
+de toutes les améliorations apportées à ce dernier (accessibilité, édition
+collaborative, internationalisation…).</p></li>
+<li><p>Enfin, les composants WebAssembly aujourd’hui basés sur Pyodide seront fournis
+sous forme de paquets Conda, permettant un <em>meilleur passage à l’échelle</em> de
+la création de paquets pour cet environnement, et offrant une expérience
+homogène pour la création d’environnements d’éxécution natifs (tournant sur le
+serveur) ou en WebAssembly.</p></li>
+</ul>
+</section>
+</section>
+<section id="garantir-l-interoperabilite-avec-des-services-tiers">
+<h2>Garantir l’interopérabilité avec des services tiers<a class="headerlink" href="#garantir-l-interoperabilite-avec-des-services-tiers" title="Lien permanent vers ce titre">#</a></h2>
+<p>Candyce doit permettre une connexion aisée avec des services tiers, notamment
+ENT, LMS et services d’authentifications nationaux, et doit permettre une
+réutilisation aisée des briques logicielles créées pour des acteurs tiers
+souhaitant en adapter l’usage. L’interopérabilité est donc une composante clef
+du projet.</p>
+<p>Les principes fondamentaux de l’architecture de Jupyter ont été dès le premier
+jour :</p>
+<ul class="simple">
+<li><p>de produire des spécifications formelles de protocoles de communication, de
+format de fichier pour tous les points d’extensions possibles, et,</p></li>
+<li><p>d’offrir une forte composabilité des différentes briques de l’écosystème pour
+permettre des déploiements.</p></li>
+</ul>
+<p>Cette forte extensibilité de l’écosystème Jupyter a permis :</p>
+<ul class="simple">
+<li><p>son adaptation à des centaines de langages de programmation (noyaux) grace à
+son architecture agnostique au langage,</p></li>
+<li><p>l’adoption du format de fichier de carnet bien au delà de son écosystème (par
+GitHub, VSCode, PyCharm, et beaucoup d’autres),</p></li>
+<li><p>un écosystème très dynamique d’extensions pour JupyterLab, des plus génériques
+aux plus spécialisées,</p></li>
+<li><p>une forte adaptabilité de l’infrastructure de JupyterHub, depuis des
+déploiements très simples (machine unique pour une petite équipe) à des
+déploiements à l’échelle sur le cloud public basés sur Kubernetes (comme
+Binder ou « Zero To JupyterHub »).</p></li>
+</ul>
+<p>Jupyter a été crédité comme étant devenu le « HTTP » du calcul scientifique, à tel
+point que ses formats d’interopérabilités sont considérés comme des standards -
+aussi comptons-nous adopter les mêmes principes pour le développement de
+Candyce.</p>
+<p>En particulier, nous documenterons la déclinaison de Candyce sur plusieurs
+scénarii de déploiements, avec trois <strong>distributions</strong> supportées :</p>
+<ul class="simple">
+<li><p>« Candyce at Scale » : le déploiement à l’échelle de l’infrastructure permettant
+un usage par un très grand nombre d’utilisateurs sur une infrastructure
+élastique, largement décrit dans cette proposition,</p></li>
+<li><p>« Candyce Team » : le déploiement pour une petite équipe dans une société ou un
+laboratoire de recherche, plus simple à mettre en oeuvre, et,</p></li>
+<li><p>« Candyce Desktop » : l’installation en mode « desktop » sur une machine
+utilisateur, offrant des fonctionnalités étendues par rapport à une simple
+installation, comme la gestion des projets et des environnements.</p></li>
+</ul>
+<p>Ces <strong>distributions</strong> de Candyce seront autant d’outils permettant à d’autres
+acteurs de s’approprier les développements réalisés.</p>
+<p>Par ailleurs, Candyce sera par construction, extensible, de par son architecture
+de plugins, permettant l’intégration d’outils pédagogiques produits par des
+tiers.</p>
+</section>
+<section id="contribuer-a-l-ecosysteme-jupyter">
+<h2>Contribuer à l’écosystème Jupyter<a class="headerlink" href="#contribuer-a-l-ecosysteme-jupyter" title="Lien permanent vers ce titre">#</a></h2>
+<p>Le programme Candyce contribuera à améliorer l’écosystème Jupyter pour mieux
+répondre aux besoins de la communauté en général et de la communauté éducative
+en particulier. Tous les développements logiciels seront sous licence libre,
+sous forme de contributions à des briques libres existantes chaque fois que
+possible.</p>
+<section id="accessibilite">
+<h3>Accessibilité<a class="headerlink" href="#accessibilite" title="Lien permanent vers ce titre">#</a></h3>
+<p><strong>Entre 15 et 20% de la population souffre d’un handicap pouvant affecter leur
+navigation sur le web</strong> (ou l’utilisation d’une application web). Candyce
+s’adressant à l’ensemble des élèves du secondaire ainsi qu’aux étudiants du
+supérieur, l’accessibilité doit être une priorité dans le développement de
+l’infrastructure.</p>
+<ul class="simple">
+<li><p>Tout d’abord, il faudra adapter ou développer des outils permettant de
+contrôler que les standards d’accessibilité sont respectés dans toutes les
+parties de l’interface de JupyterLab. Ce sera un des premiers efforts en la
+matière.</p></li>
+<li><p>Ensuite, s’ils sont nécessaires (en particulier pour la maintenance du niveau
+de qualité), ces outils automatisés sont généralement trop limités pour rendre
+compte des interactions complexes typiques des environnements de développement
+comme Jupyter; nous devrons également aborder le problème composant par
+composant avec des experts de l’accessibilité web.</p></li>
+<li><p>Enfin, les questions d’accessibilité devront faire l’objet de tests
+utilisateurs spécifiques.</p></li>
+</ul>
+<p>En effet, au-delà du respect des standard WCAG (Web Content Accessibility
+Guidelines), une attention particulière devra être portée à la navigation au
+clavier dans l’interface graphique ainsi qu’au test de l’interface avec les
+lecteurs d’écran les plus populaires.</p>
+</section>
+<section id="edition-collaborative">
+<h3>Édition collaborative<a class="headerlink" href="#edition-collaborative" title="Lien permanent vers ce titre">#</a></h3>
+<p>Les outils d’édition offrant des fonctionnalités d’édition collaborative sont
+devenus omniprésents ces dernières années (Google Docs, Microsoft Office Online,
+OnlyOffice), et ce d’autant plus depuis la crise sanitaire et la généralisation
+du télétravail.</p>
+<p>L’édition collaborative aujourd’hui implémentée par JupyterLab et basée sur YJS
+requière de conserver l’état de la session de collaboration pour permettre
+d’annuler indéfiniment les changements effectués par un utilisateur sur un
+document, ou de prendre en compte les contributions d’un collaborateur qui
+aurait été déconnecté pendant une longue période.</p>
+<p>Le Lot 1a intègre donc la gestion côté back-end du stockage des sessions de
+collaboration et des modèles CRDT.</p>
+<blockquote>
+<div><p><em>Cette fonctionnalité était une des principales demandes de la communauté
+depuis plusieurs années et n’a été ajoutée par QuantStack qu’avec la version
+3.1 de JupyterLab. Pour permettre l’édition collaborative dans JupyterLab,
+nous avons adopté le framework <strong>YJS</strong>, une implémentation très efficace d’une
+catégorie de structure de données appelée <strong>CRDT</strong> (conflict-free replicating
+data types), pour laquelle les changements sont automatiquement distribués aux
+pairs et intégrés sans conflit.</em></p>
+</div></blockquote>
+<p>L’édition collaborative sera un aspect central de Candyce :</p>
+<ul class="simple">
+<li><p>les enseignants pourront inviter d’autres utilisateurs de la plateforme à
+collaborer sur un contenu pédagogique en cours d’élaboration ;</p></li>
+<li><p>quand un contenu est partagé par un enseignant avec un groupe d’élèves,
+l’enseignant pourra être ajouté par défaut comme collaborateur pour le contenu
+en question chez les élèves.</p></li>
+</ul>
+<p>La conception de la solution d’édition collaborative (notamment en termes de
+permissions d’édition, d’annotation de carnets) oriente une part des choix
+architecturaux de la plateforme décrite ultérieurement.</p>
+</section>
+<section id="environnements-logiciels-configurables-et-reproductibles">
+<h3>Environnements logiciels configurables et reproductibles<a class="headerlink" href="#environnements-logiciels-configurables-et-reproductibles" title="Lien permanent vers ce titre">#</a></h3>
+<p>Un aspect critique de Candyce est de garantir que le contenu pédagogique créé
+par les enseignants, élèves, ou tout autre utilisateur de la plateforme continue
+de fonctionner parfaitement au gré des mises à jour. Cette contrainte est aussi
+particulièrement importante pour le supérieur et la recherche, afin de faciliter
+la reproducibilité des résultats.</p>
+<p>Par ailleurs, des enseignants vont vouloir utiliser pour leurs cours les outils
+open-source populaires qu’ils trouveront en ligne, et qui devront donc pouvoir
+être intégrés à la plateforme.</p>
+<p>Pour résoudre ce problème, le projet « MyBinder » (qui fait partie de
+l’écosystème Jupyter) construit, un environnement logiciel dédié (sous la forme
+d’une image « Docker ») à partir d’un « manifeste » listant les dépendances et
+les contraintes de versions. Sous réserve de suivi de quelques bonnes pratiques,
+la construction de l’environnement est reproductible. Aussi, un utilisateur se
+connectant plus tard pour accéder à ce contenu retrouvera le même environnement
+logiciel, indépendemment des mises à jour de l’infrastructure. <strong>Ce qui marchait
+hier marchera demain…</strong></p>
+<p>Pour Candyce, nous pensons adopter une approche similaire mais évitant certains
+des écueils que rencontre MyBinder pour ce qui est du passage à l’échelle et de
+consommation de ressources (MyBinder compte environ 150 000 utilisateurs uniques
+par semaine, ce qui est inférieur à l’audience attendue pour Candyce).</p>
+<a class="reference internal image-reference" href="_images/mybinder-logo.png"><img alt="_images/mybinder-logo.png" src="_images/mybinder-logo.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>MyBinder repose sur un outil appelé
+<a class="reference external" href="https://github.com/jupyterhub/repo2docker">repo2docker</a> pour construire les
+images Docker des utilisateurs finaux, qui sont téléchargées à chaque
+lancement de session. Repo2docker supporte de nombreux gestionnaires de
+paquets (Pip, Conda, Julia, GUIX, …).</p></li>
+<li><p>Pour Candyce, nous nous focaliserons sur le gestionnaire de paquets Conda et
+les paquets de conda-forge. Ce cas particulier sera optimisé via l’hébergement
+co-localisé d’un miroir de paquets logiciels
+<a class="reference external" href="https://github.com/mamba-org/quetz">Quetz</a> utilisant un stockage des paquets
+sur un registre OCI. Une étude comparative en termes de performances et coûts
+devra être réalisée pour évaluer la pertinence d’une génération d’images « à la
+volée » <em>versus</em> stockées dans un registre Docker ; dans tous les cas, une
+attention particulière doit être apportée à ce qui s’apparente à un « single
+point-of-failure » possible du déploiement de MyBinder.</p></li>
+<li><p>La restriction aux paquets Conda de conda-forge apporte, au delà des
+opportunités d’optimisation, la possibilité d’auditer les outils installables
+par les utilisateurs finaux. C’est un aspect particulièrement critique en
+termes de sécurité comme nous le détaillerons dans les prochaines sections.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Par facilité de langage et car c’est actuellement la solution la plus largement
+utilisée dans l’écosystème Jupyter, nous utilisons dans ce texte les termes
+d”«images Docker» ou de «conteneur Docker» . Le couplage technologique est
+limité et d’autres solutions de conteneurs pourront être envisagées
+(Singularity, …) si nécessaire.</p>
+</div>
+</section>
+<section id="gestion-des-paquets-avec-conda">
+<h3>Gestion des paquets avec conda<a class="headerlink" href="#gestion-des-paquets-avec-conda" title="Lien permanent vers ce titre">#</a></h3>
+<blockquote>
+<div><p><strong>Conda</strong> est un gestionnaire de paquets open-source et disponible sur tous
+les principaux systèmes d’exploitation. Le projet conda-forge (fondé en 2016)
+est très vite devenu la principale source de paquets logiciels pour les
+sciences et l’éducation.</p>
+<ul class="simple">
+<li><p>Le projet <strong>conda-forge</strong> compte environ 4000 contributeurs, 16500 paquets
+logiciels assemblés dans une distribution cohérente, et environ <strong>300
+millions de téléchargements de paquets par mois</strong>. Conda-forge est devenu
+<em>de facto</em> la principale source de paquets logiciels pour le calcul
+scientifique. - C’est aussi la source qui est <strong>la plus régulièrement mise à
+jour</strong> et maintenue par les auteurs même des logiciels comme Jupyter et son
+écosystème. - Conda-forge est généralement crédité pour avoir réussi le «
+<em>crowd sourcing</em> » de la création de paquets logiciels, grâce à une
+combinaison de décentralisation de l’effort et d’outils logiciels
+automatisant au maximum les tâches de maintenance des paquets en question. -
+QuantStack est très actif dans la communauté conda-forge, avec deux membres
+de la « core team » (sur vingt membres au total). De plus, Quantstack
+fournit des éléments centraux dans l’infrastructure de conda-forge comme les
+projets <strong>mamba</strong> (une alternative compatible avec Conda, beaucoup plus
+rapide, et utilisée dans l’infrastructure de conda-forge) et <strong>Quetz</strong> (une
+implémentation open-source d’un serveur d’hébergement de paquets Conda).</p></li>
+</ul>
+</div></blockquote>
+<p>Au-delà du projet Candyce, le développement de l’écosystème de conda-forge et
+l’offre de solutions d’hébergement alternatives en Europe est importante
+économiquement. Un grand nombre d’<strong>entreprises stratégiques dépendent</strong> en
+effet de ces technologies pour le traitement de leurs données.</p>
+</section>
+</section>
+<section id="repondre-aux-besoins-specifiques-de-la-communaute-educative">
+<h2>Répondre aux besoins spécifiques de la communauté éducative<a class="headerlink" href="#repondre-aux-besoins-specifiques-de-la-communaute-educative" title="Lien permanent vers ce titre">#</a></h2>
+<p>Certains développements seront spécifiques au programme Candyce, et répondent
+aux besoins spécifiques de l’utilisation de Jupyter dans le contexte de
+l’enseignement.</p>
+<section id="gestionnaire-de-projets">
+<h3>Gestionnaire de projets<a class="headerlink" href="#gestionnaire-de-projets" title="Lien permanent vers ce titre">#</a></h3>
+<p>Un gestionnaire de projets doit permettre aux enseignants de gérer facilement le
+partage des activités avec les élèves (carnets, jeux de données etc.). Une
+distinction doit ainsi pouvoir être faite entre le contenu visible par
+l’enseignant et celui visible par l’élève, l’accès des élèves doit pouvoir être
+programmée et géré à différents niveaux de granularité (élève, classe…)</p>
+</section>
+<section id="gestionnaire-de-devoirs-et-correction-automatique">
+<h3>Gestionnaire de devoirs et correction automatique<a class="headerlink" href="#gestionnaire-de-devoirs-et-correction-automatique" title="Lien permanent vers ce titre">#</a></h3>
+<p>Un gestionnaire de devoirs devra permettre la collecte et la notation des
+devoirs réalisés par les élèves.</p>
+<p>Un cas d’usage commun des carnets de Jupyter pour l’enseignement est la création
+de « carnets à trous » où l’élève doit implémenter lui-même une partie de la
+logique du programme, et dispose de quelques tests simples pour vérifier son
+code, mais n’a pas forcément accès à l’ensemble des tests utilisés par
+l’enseignant pour la correction finale.</p>
+<p>Plusieurs outils ont été développés à cet effet. En particulier, l’outil
+<a class="reference external" href="https://github.com/jupyter/nbgrader">nbgrader</a> à un enseignant de générer la
+version « élève » d’un tel carnet, sans les corrections, et de lancer l’évaluation
+automatique des réponses des étudiants. En revanche, nbgrader n’offre pas une
+expérience intégrée à l’enseignant, qui doit utiliser des outils en ligne de
+commande pour effectuer les corrections automatiques. Par ailleurs, les
+directives de bases de nbgrader sont uniquement en langue anglaise ce qui n’est
+pas idéal pour son utilisation par des étudiants et enseignants du secondaire.</p>
+<p>Pour Candyce, une solution de correction automatique offrant une expérience
+intégrée sera développée, réutilisant potentiellement la base de code de
+nbgrader ou d’autres outils équivalents.</p>
+</section>
+<section id="simplification-de-l-interface-des-carnets">
+<h3>Simplification de l’interface des carnets<a class="headerlink" href="#simplification-de-l-interface-des-carnets" title="Lien permanent vers ce titre">#</a></h3>
+<p>Certains enseignants ou élèves pourront souhaiter utiliser Candyce, notamment
+pour créer une nouvelle ressource ou adapter une ressource existante, sans pour
+autant programmer ou rédiger en markdown ou latex pour les formules
+mathématiques. Des simplifications seront ainsi apportées aux carnets pour en
+permettre un usage plus aisé : éditions des cellules de texte en WYSIWYG,
+édition de formules mathémqtiques, code par blocs… Certains widgets
+spécifiques pourront aussi être développés en fonction de retours usagers, pour
+simplifier certaines fonctions spécifiques (type drag and drop).</p>
+</section>
+<section id="bibliotheque-de-contenus">
+<h3>Bibliothèque de contenus<a class="headerlink" href="#bibliotheque-de-contenus" title="Lien permanent vers ce titre">#</a></h3>
+<p>A compléter</p>
+</section>
+</section>
+<section id="faire-converger-candyce-avec-capytale-et-les-autres-deploiements-de-jupyter">
+<h2>Faire converger Candyce avec Capytale et les autres déploiements de Jupyter<a class="headerlink" href="#faire-converger-candyce-avec-capytale-et-les-autres-deploiements-de-jupyter" title="Lien permanent vers ce titre">#</a></h2>
+<p>Afin de mutualiser les ressources, le projet vise à opérer une convergence entre
+l’infrastructure Candyce à venir et Capytale, ainsi que d’autres déploiements de
+Jupyter existants, notamment dans le supérieur, comme PlasmaBio. Cette
+convergence est rendue possible par le fait que ces plateformes partagent déjà
+pour l’essentiel les mêmes bases technologiques. La communauté d’enseignants
+faisant déjà usage de ces déploiements étant un atout essentiel pour Candyce,
+cette convergence devra être la plus transparente possible.</p>
+<p>L’approche que nous envisageons sera d’intégrer au fur et à mesure dans Capytale
+les briques technologiques utilisées et développées pour Candyce, afin que les
+utilisateurs actuels bénéficient très rapidement des progrès – ce bénéfice
+contre-balançant les inévitables rugosités – puis de converger sans créer de
+disruption majeure.</p>
+<p>Une étape sera la mise à jour de Capytale pour utiliser les versions les plus
+récentes de Jupyter ainsi que JupyterLite permettra aux utilisateurs de
+bénéficier des fonctionnalités d’édition collaborative, mais aussi des autres
+avantages de la nouvelle implémentation en termes d’accessibilité et de
+performance. La convergence dans les outils composant l’interface graphique de
+Capytale devra ensuite être étendue à la
+<span class="xref myst">bibliothèque de contenus pédagogiques</span>.</p>
+</section>
+<section id="offrir-une-experience-utilisateur-homogene-et-mutualiser-le-cadre-applicatif">
+<h2>Offrir une expérience utilisateur homogène et mutualiser le cadre applicatif<a class="headerlink" href="#offrir-une-experience-utilisateur-homogene-et-mutualiser-le-cadre-applicatif" title="Lien permanent vers ce titre">#</a></h2>
+<p>JupyterLab, le front-end officiel de Jupyter, a été construit sur des fondations
+permettant de créer des applications sophistiquées. Plus qu’une simple
+application, JupyterLab est un cadre applicatif (<em>framework</em>) pour développer
+des applications web interactives telles que le carnet.</p>
+<p>Comme l’illustre la <a class="reference internal" href="Maquette.html"><span class="doc std std-doc">maquette</span></a> de l’infrastructure Candyce
+L’intention est de construire l’intégralité des interfaces de cette
+infrastructure sur le même cadre applicatif, afin :</p>
+<ul class="simple">
+<li><p>d’offrir une <strong>expérience utilisateur homogène</strong> et cohérente dans tous les
+composants de l’interface,</p></li>
+<li><p>de <strong>mutualiser les développements</strong> sur les composants communs, comme les
+efforts d’amélioration de l’accessibilité, d’internationalisation et les
+outils d’intégration,</p></li>
+<li><p>de réutiliser les outils développés pour JupyterLab facilitant :</p>
+<ul>
+<li><p>la création de tests de régression visuels,</p></li>
+<li><p>la réutilisation de thèmes de couleurs de façon homogène,</p></li>
+<li><p>l’internationalisation de l’interface (la francisation dans notre cas),</p></li>
+<li><p>l’utilisation d’outils de création de « visites de l’interface » pour les
+nouveaux utilisateurs, etc…</p></li>
+</ul>
+</li>
+</ul>
+<p>Enfin, si, au-delà du carnet, une partie de l’interface doit bénéficier de
+fonctionnalités d”<strong>édition collaborative</strong>, les outils existent déjà dans le
+cadre applicatif sous-jacent.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ManifesteDonn%C3%A9es.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title">Manifeste sur la gestion des données</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Maquette.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Maquette</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Candyce<br/>
+  
+      &copy; Copyright 2021-2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

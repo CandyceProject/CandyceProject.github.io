@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Principes de conception responsable &#8212; Candyce</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Manifeste sur la gestion des données" href="ManifesteDonn%C3%A9es.html" />
+    <link rel="prev" title="3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà" href="ApportPedagogique.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Jupyter_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Candyce</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    CANDYCE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ProgrammeCandyce.html">
+   1. Le programme Candyce
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MiseEnOeuvre.html">
+   2. Mise en œuvre
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique: Annexes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="DescriptionScientifiqueAnnexes.html">
+   1. À propos de cette partie
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter.html">
+   2. État de l’art: l’écosystème Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApportPedagogique.html">
+   3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   4. Principes de conception responsable
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ManifesteDonn%C3%A9es.html">
+     Manifeste sur la gestion des données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DirectionsTechnologiques.html">
+   5. Directions technologiques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Maquette.html">
+   6. Maquette
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RessourcesP%C3%A9dagogiquesFAIR.html">
+   7. Ressources pédagogiques FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Consortium
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Acad%C3%A9mieDeParis.html">
+   1. Académie de Paris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/FUN.html">
+   2. France Université Numérique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Inria.html">
+   3. Inria
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9DeLorraine.html">
+   4. Université de Lorraine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9ParisSaclay.html">
+   5. Université Paris-Saclay
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Site produit par <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/issues/new?title=Issue%20on%20page%20%2FConceptionResponsable.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/edit/main/ConceptionResponsable.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ConceptionResponsable.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#protection-des-donnees-utilisateurs">
+   Protection des données utilisateurs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecoconception-du-projet">
+   Ecoconception du projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#science-ouverte">
+   Science Ouverte
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Principes de conception responsable</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#protection-des-donnees-utilisateurs">
+   Protection des données utilisateurs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecoconception-du-projet">
+   Ecoconception du projet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#science-ouverte">
+   Science Ouverte
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="principes-de-conception-responsable">
+<span id="conceptionresponsable"></span><h1><span class="section-number">4. </span>Principes de conception responsable<a class="headerlink" href="#principes-de-conception-responsable" title="Lien permanent vers ce titre">#</a></h1>
+<section id="protection-des-donnees-utilisateurs">
+<span id="protectiondonneesutilisateurs"></span><h2>Protection des données utilisateurs<a class="headerlink" href="#protection-des-donnees-utilisateurs" title="Lien permanent vers ce titre">#</a></h2>
+<p>La politique de protection des données personnelles mise en oeuvre par la
+plateforme devra être exemplaire dans son application des grands principes,
+notamment de <strong><em>proportionnalité</em></strong>, de <strong><em>confidentialité</em></strong>, et de
+<strong><em>finalité</em></strong> de toute collecte et traitement de données utilisateurs, et ce,
+quel que soit le rôle de ces derniers : élèves, étudiants, enseignants,
+chercheurs, etc.</p>
+<p>L’accent sera mis sur la <strong><em>transparence</em></strong>. Au-delà des droits réglementaires
+aux données collectées (accès, modification, suppression, …), les utilisateurs
+auront accès à plusieurs outils leur permettant d’explorer leur propre usage de
+la plateforme <em>via</em> un tableau de bord individualisé. Des exemples de notebooks
+permettant aux utilisateurs d’analyser leurs propres données seront mis à
+disposition sur la bibliothèque de contenus. Ces ressources ont pour but de
+favoriser la <strong><em>littératie</em></strong> du public en termes d’usages de données.</p>
+<p>Les développements effectués dans le contexte de Candyce devront garantir la
+confidentialité de la plateforme dès la conception ( »<strong><em>privacy by design</em></strong> »)
+et par défaut ( »<strong><em>privacy by default</em></strong> »). Par exemple, les traces
+d’apprentissage collectées sur l’usage d’une ressource pédagogique ne seront par
+défaut accessibles qu’aux personnes concernées, et tout partage en dehors de ce
+groupe sera explicite et géré par des jetons d’accès révocables (par
+l’établissement, l’académie ou l’utilisateur selon le cas).</p>
+<p>La politique de collecte et de protection des données sera garantie par un
+<em>délégué à la protection des données</em> (DPD, <em>data protection officer</em>, DPO) en
+charge du projet.</p>
+</section>
+<section id="ecoconception-du-projet">
+<h2>Ecoconception du projet<a class="headerlink" href="#ecoconception-du-projet" title="Lien permanent vers ce titre">#</a></h2>
+<p>D’après l’ADEME, le numérique représente aujourd’hui environ 4% des émissions
+mondiales de gaz à effets de serre, avec une croissance anticipée de 10% par an.
+Loin d’être uniquement virtuels, les outils et services numériques ont des
+impacts importants sur l’environnement à travers leur matérialité et le
+quotidien des humains qui les font vivre. Il est donc indispensable qu’un projet
+d’une telle ampleur implémente dès son lancement les grands principes
+d”<strong>écoconception de services numériques</strong> afin de réduire au maximum ses
+impacts.</p>
+<p>Il ne s’agit pas uniquement d’une recherche d’optimisation, d’efficience ou de
+performance visant à réduire la consommation énergétique en phase d’usage, mais
+d’une réflexion plus globale à tendre vers la sobriété. Il est question d’agir
+sur l’ensemble du cycle de vie du service numérique et de l’activité des humains
+impliqués dans le projet, tout autant que sur l’usage des technologies. Cette
+démarche vise notamment directement ou indirectement à allonger la durée des
+vies des équipements numériques, à réduire la consommation de ressources
+informatiques et énergétiques des terminaux, des réseaux, des centres de
+données, et de l’activité humaine intrinsèquement liée.</p>
+<p>Pour se faire, il existe plusieurs ressources de référence sur lesquelles une
+telle démarche devra s’appuyer, dont on peut citer comme exemple :</p>
+<ul class="simple">
+<li><p>Le Référentiel Général d’Ecoconception de Services Numériques
+<a class="reference external" href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">RGESN</a>
+: il s’agit d’un référentiel constitué dans le cadre de la mission
+interministérielle «
+<a class="reference external" href="https://ecoresponsable.numerique.gouv.fr/a-propos/">Green Tech</a> » piloté par
+la Direction interministérielle du numérique (DINUM) et le Ministère de la
+Transition Ecologique (MTE), avec la participation de tous les ministères. Il
+a pour ambition d’intégrer le cercle vertueux comprenant les référentiels et
+règlements existants : RGAA pour l’accessibilité, RGS pour la Sécurité, RGI
+pour l’interopérabilité et RGPD pour la protection des données personnelles ;</p></li>
+<li><p>Le Guide de Référence de Conception Responsable de Services Numériques
+<a class="reference external" href="https://gr491.isit-europe.org/">GR491</a> mis en place par l’Institut du
+Numérique Responsable : ce guide contient 491 bonnes pratiques pour
+implémenter 57 recommandations déclinées en 8 grandes familles. Il ne se
+focalise pas que sur les impacts environnementaux, les bonnes pratiques sont
+catégorisées selon les trois piliers du développement durable : l’aspect
+social, l’aspect économique, et l’aspect environnemental.</p></li>
+</ul>
+<p>Néanmoins l’écoconception d’un service numérique est une discipline balbutiante
+avec encore beaucoup de zones d’ombre et très peu de retours d’expérience
+concrets et chiffrés. Aucun ne porte sur un projet d’une envergure similaire à
+la présente proposition. L’implémentation pionnière d’une telle démarche est
+donc l’opportunité de produire un contenu permettant d’enrichir la connaissance
+globale, la compréhension du sujet et la création de données pour la recherche
+en numérique frugal.</p>
+<p>Sa mise en œuvre va nécessairement devoir passer par plusieurs étapes
+essentielles, dont voici une liste non-exhaustive :</p>
+<ul class="simple">
+<li><p>la sensibilisation de l’ensemble des acteurs du projet aux enjeux. Il ne
+s’agit pas ici d’une formation technique spécialisée réservée à une population
+ciblée, mais bien d’actions de sensibilisation. Il est indispensable qu’à tous
+les niveaux de contribution, de la définition stratégique à la mise en œuvre
+en passant par le pilotage, les acteurs prennent conscience de l’importance
+d’intégrer les impacts environnementaux dans les critères de décisions ;</p></li>
+<li><p>la formation d’acteurs spécialisés. Il est probable qu’à différents niveaux,
+notamment sur le design des interfaces hommes/machines ou le développement
+logiciel, il soit nécessaire d’organiser des sessions de formations techniques
+spécialisées sur le sujet de l’écoconception pour permettre la montée en
+compétence des équipes ;</p></li>
+<li><p>la mise en place d’outils de mesure. Avant de lancer une démarche de réduction
+des impacts, il est nécessaire de mettre en place les outils et les
+méthodologies permettant la mesure à tous les niveaux. Il peut s’agir par
+exemple d’établir la collecte des indicateurs permettant de réaliser le bilan
+carbone du projet, le recensement des infrastructures, tout autant que la mise
+en place de sondes logicielles ou matérielles permettant d’évaluer les
+consommations énergétiques en phase d’usage. L’impact sur les terminaux devra
+également être mesuré, afin d’éviter d’éventuels effets rebonds ou
+d’obésiciels ;</p></li>
+<li><p>ces indicateurs une fois collectés permettront d’alimenter un tableau de bord
+de suivi, permettant ainsi un pilotage du projet incluant l’axe
+environnemental ;</p></li>
+<li><p>l’application des bonnes pratiques d’écoconception va influer sur de nombreux
+choix structurants du projet, comme celui des centres de données hébergeant
+l’infrastructure, le design des interfaces ou la politique de déplacement des
+équipes. Le détail de la mise en œuvre de ces bonnes pratiques serait trop
+longue à détailler ici mais leur implémentation dans le projet fera l’objet
+d’un rapport spécifique qui fera office de retour d’expérience avec l’ambition
+de pouvoir éclairer la mise en place d’une démarche similaire dans de futurs
+projets ;</p></li>
+<li><p>l’information et la sensibilisation des utilisateurs aux impacts de leur usage
+est une étape importante du processus d’écoconception. Une fois des métriques
+produites sur les impacts, il sera alors possible de les rendre accessibles
+aux utilisateurs à travers la plateforme, à des fins de sensibilisation. Ces
+données pourront également être personnalisées en fonction de leur propre
+usage, et intégrées à leurs données de profile.</p></li>
+<li><p>il est fort probable que des développements spécifiques d’outils ou de
+méthodologies soient nécessaires pour mettre en œuvre une telle démarche. Ces
+créations seront rendues disponibles à la communauté, sous la forme d’outils
+logiciels libres ou de rapports détaillant les méthodologies déployées.</p></li>
+</ul>
+</section>
+<section id="science-ouverte">
+<span id="scienceouverte"></span><h2>Science Ouverte<a class="headerlink" href="#science-ouverte" title="Lien permanent vers ce titre">#</a></h2>
+<p>La plupart des partenaires de Candyce sont des promoteurs de longue date de la
+<a class="reference external" href="https://www.ouvrirlascience.fr/">Science Ouverte</a> et Candyce s’inscrit
+naturellement dans ce mouvement. Les motivations en sont tout autant d’ordre
+éthiques (transparence, redonner le contrôle aux utilisateurs), pédagogiques
+(permettre aux apprenants de réutiliser à volonté les outils mis à disposition,
+d”«ouvrir la boîte», les former à la science ouverte, etc.) que pragmatiques
+(reproductibilité, mutualisation, efficience des investissements consentis, coût
+d’opération, simplicité de la gestion de la propriété intellectuelle dans un
+contexte multi-acteurs, etc.).</p>
+<p>Candyce n’aurait simplement pas pu voir le jour sans la Science Ouverte, et
+réciproquement le projet a pour mission de la promouvoir, avec pragmatisme.</p>
+<ul class="simple">
+<li><p>Logiciel libre: tous les logiciels développés dans le cadre du projet Candyce
+le seront sous licence libre (comme la
+<a class="reference external" href="https://fr.wikipedia.org/wiki/Licence_BSD">Licence BSD</a> utilisée par le
+projet Jupyter), en contribuant à chaque fois que possible à des logiciels
+existants.</p></li>
+<li><p>Publications ouvertes: toutes les publications produites dans le cadre du
+projet Candyce (publications scientifiques, matériel pédagogique, …) seront
+diffusées sous licence libre (typiquement
+<a class="reference external" href="https://fr.wikipedia.org/wiki/Licence_Creative_Commons">Creative Commons Attribution</a>).
+Cela inclue notamment les productions de matériel pédagogique commanditées par
+Candyce à des EdTechs.</p></li>
+<li><p>Données ouvertes: toutes les données produites par le projet seront diffusées
+selon le paradigme de «aussi ouvert que possible» (pour soutenir la recherche
+et la valorisation équitable sous toutes ses formes) et «aussi fermé que
+nécessaire» (pour garantir la
+<a class="reference internal" href="#protectiondonneesutilisateurs"><span class="std std-ref">protection des données personnelles</span></a>), sous
+l’égide du
+<span class="xref myst">comité de gouvernance des données personnelles</span>&gt;</p></li>
+<li><p>Gestion ouverte: le paradigme de «aussi ouvert que possible» et «aussi fermé
+que nécessaire» s’appliquera aussi à la mise en œuvre de Candyce (rapports
+d’étapes, …).</p></li>
+</ul>
+<p>Il est important de préciser que, si Candyce promeut la Science Ouverte et ses
+pratiques vertueuses, et en impose les pratiques aux actions financées dans le
+cadre du projet, elle n’a pas vocation – en tant qu’infrastructure – à en
+imposer la pratique à ses utilisateurs; dans le respect des contraintes
+techniques et légales, ceux-ci doivent rester libres de leurs choix pédagogiques
+(enseignants) ou de leurs modèles économiques (auteurs, entreprises). Par
+exemple, un.e enseignant.e ou une entreprise pourra diffuser via
+l’infrastructure du matériel pédagogique qu’il ou elle a produit sous tout autre
+licence. De même, un enseignant pourra proposer un projet pour ses étudiants
+utilisant des outils non libres.</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ApportPedagogique.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ManifesteDonn%C3%A9es.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Manifeste sur la gestion des données</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Candyce<br/>
+  
+      &copy; Copyright 2021-2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

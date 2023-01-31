@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Manifeste sur la gestion des données &#8212; Candyce</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="5. Directions technologiques" href="DirectionsTechnologiques.html" />
+    <link rel="prev" title="4. Principes de conception responsable" href="ConceptionResponsable.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Jupyter_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Candyce</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    CANDYCE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ProgrammeCandyce.html">
+   1. Le programme Candyce
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MiseEnOeuvre.html">
+   2. Mise en œuvre
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Description Scientifique: Annexes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="DescriptionScientifiqueAnnexes.html">
+   1. À propos de cette partie
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Jupyter.html">
+   2. État de l’art: l’écosystème Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ApportPedagogique.html">
+   3. Apport de Jupyter et de Candyce à la communauté éducative, apprenante et au delà
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ConceptionResponsable.html">
+   4. Principes de conception responsable
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Manifeste sur la gestion des données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DirectionsTechnologiques.html">
+   5. Directions technologiques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Maquette.html">
+   6. Maquette
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RessourcesP%C3%A9dagogiquesFAIR.html">
+   7. Ressources pédagogiques FAIR
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Consortium
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Acad%C3%A9mieDeParis.html">
+   1. Académie de Paris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/FUN.html">
+   2. France Université Numérique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Inria.html">
+   3. Inria
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9DeLorraine.html">
+   4. Université de Lorraine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Consortium/Universit%C3%A9ParisSaclay.html">
+   5. Université Paris-Saclay
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Site produit par <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/issues/new?title=Issue%20on%20page%20%2FManifesteDonnées.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/CandyceProject/Proposal/edit/main/ManifesteDonnées.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ManifesteDonnées.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structuration-et-gouvernance">
+   1. Structuration et gouvernance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conformite-rgpd">
+   2. Conformité RGPD
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-finalite-du-traitement">
+     La finalité du traitement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-proportionnalite-des-donnees-traitees">
+     La proportionnalité des données traitées
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-duree-de-conservation">
+     La durée de conservation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-securite-des-donnees">
+     La sécurité des données
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-transparence-et-les-droits-des-personnes">
+     La transparence et les droits des personnes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#au-dela-du-rgpd">
+   3. Au-delà du RGPD
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Manifeste sur la gestion des données</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structuration-et-gouvernance">
+   1. Structuration et gouvernance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conformite-rgpd">
+   2. Conformité RGPD
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-finalite-du-traitement">
+     La finalité du traitement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-proportionnalite-des-donnees-traitees">
+     La proportionnalité des données traitées
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-duree-de-conservation">
+     La durée de conservation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-securite-des-donnees">
+     La sécurité des données
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-transparence-et-les-droits-des-personnes">
+     La transparence et les droits des personnes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#au-dela-du-rgpd">
+   3. Au-delà du RGPD
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="manifeste-sur-la-gestion-des-donnees">
+<h1>Manifeste sur la gestion des données<a class="headerlink" href="#manifeste-sur-la-gestion-des-donnees" title="Lien permanent vers ce titre">#</a></h1>
+<p>Le Premier Ministre
+<a class="reference external" href="https://www.enseignementsup-recherche.gouv.fr/fr/numerique-educatif-le-premier-ministre-dresse-le-bilan-des-enseignements-de-la-crise-et-presente-des-50939">a annoncé</a>,
+le 8 octobre 2021, les résultats des dispositifs de soutien à l’innovation.
+Parmi ceux-ci, un programme d’équipements prioritaires et de recherche (PEPR) «
+<em>Enseignement et numérique</em> » visant à soutenir l’émergence de nouveaux concepts
+et solutions numériques, les expérimenter à différentes échelles et mesurer leur
+impact et celui de solutions d’ores et déjà existantes.</p>
+<p>C’est dans ce cadre que le projet CANDYCE est mis en œuvre, en vue de «
+*développer une <strong>infrastructure numérique souveraine</strong>, pour le déploiement de
+plateformes et de services adaptés aux besoins du scolaire et du supérieur et
+permettant de <strong>respecter la confidentialité des données*</strong>».</p>
+<p>Le présent manifeste entend répondre à cet appel, affirmer l’exigence des
+acteurs impliqués dans sa structuration et son déploiement, et initier une
+transparence exemplaire dans la mise en œuvre du projet ainsi que des
+traitements de données à caractère personnel.</p>
+<p>Le Règlement général sur la protection des données (RGPD), applicable depuis mai
+2018, s’impose aux opérateurs européens, et le projet CANDYCE permet d’en
+assurer la conformité dès la conception, et par défaut.</p>
+<p>Parallèlement s’expriment des besoins et opportunités de valorisation des
+données, en particulier des traces d’apprentissage, pour des usages légitimes en
+termes de recherche scientifiques (<em>open science</em>), ou d’exploitation en vue de
+développement de nouveaux services (<em>open data</em>).</p>
+<p>L’objectif des porteurs du projet est non seulement de respecter le RGPD, mais
+en plus de mettre en place les mesures techniques et organisationnelles
+permettant d’aller au-delà des exigences communautaires, avec une gouvernance
+adaptée, éthique et pédagogue, pour considérer les enjeux de protection de la
+vie privée et d’acculturation des utilisateurs, ainsi que les enjeux de
+valorisation de la donnée :</p>
+<section id="structuration-et-gouvernance">
+<h2>1. Structuration et gouvernance<a class="headerlink" href="#structuration-et-gouvernance" title="Lien permanent vers ce titre">#</a></h2>
+<p>Le projet s’appuie sur deux grands principes du RGPD <strong>privacy by design et
+privacy by default</strong> (protection de la vie privée dès la conception et par
+défaut).</p>
+<p>Cette logique s’appuie sur des acteurs experts dans le domaine, issus de la
+sphère publique (INRIA, Paris Saclay, FUN), du secteur privé <!--(QuantStack,
+Hestia)!--> et entend bénéficier des retours de la société civile et des personnes
+concernées. Y participent différents profils complémentaires, tels que des
+enseignants-chercheurs, enseignants, chercheurs, développeurs, entrepreneurs,
+responsables des données, data engineer, délégués à la protection des données,…</p>
+<p>Ces experts de terrain mettent en œuvre la <strong>commande politique et
+stratégique</strong>, en veillant à son application éthique, tant dans le choix des
+technologies utilisées (logiciels, normes, protocoles,…) que des sous-traitants
+éventuels, et des mesures techniques et organisationnelles.</p>
+<p>Ces experts encadrent notamment, au sein d’un Comité idoine, les conditions de
+traitements de données à caractère personnel réalisés dans le cadre du projet
+(pour son déploiement, son fonctionnement, l’analyse de sa performance et son
+optimisation), mais également les conditions d’exploitation des données, leur
+interconnexion ou transfert pour des finalités connexes (recherche
+universitaire, <em>opendata, data mining</em>,…).</p>
+</section>
+<section id="conformite-rgpd">
+<h2>2. Conformité RGPD<a class="headerlink" href="#conformite-rgpd" title="Lien permanent vers ce titre">#</a></h2>
+<p>Les traitements de données sont réalisés de telle manière qu’ils respecteront, à
+chaque étape, les exigences du Règlement, tel que sommairement rappelés à
+travers des grands principes qui s’ajoutent aux 2 principes évoqués plus haut) :</p>
+<section id="la-finalite-du-traitement">
+<h3>La finalité du traitement<a class="headerlink" href="#la-finalite-du-traitement" title="Lien permanent vers ce titre">#</a></h3>
+<p>Les données à caractère personnelles ne seront traitées que pour les seules
+finalités permettant de fournir le service aux utilisateurs (élèves, étudiants,
+enseignants) et, à travers des données agrégées, monitorer et optimiser ledit
+service.</p>
+<p>Toute autre utilisation, sous réserve d’une information claire et d’un accord de
+l’utilisateur, ne pourra que :</p>
+<ul class="simple">
+<li><p>nécessiter des conditions de pseudonymisation et des mesures techniques et
+organisationnelles adaptées, dans le cas de recherches universitaires, tel que
+prévu par le Règlement et encadré par la législation nationale ;</p></li>
+<li><p>porter que sur des données strictement anonymisées en vue de l’alimentation
+d’entrepôts de données.</p></li>
+</ul>
+</section>
+<section id="la-proportionnalite-des-donnees-traitees">
+<h3>La proportionnalité des données traitées<a class="headerlink" href="#la-proportionnalite-des-donnees-traitees" title="Lien permanent vers ce titre">#</a></h3>
+<p>Seules les données strictement nécessaires à l’usage considéré ne devront
+pouvoir être traitées. Les données qui ne remplissent pas cette condition ne
+pourront qu’être sollicitées avec une information spécifique sur l’usage
+envisagé, et le rappel du caractère facultatif de la collecte.</p>
+<p>Incidemment, les données effectivement nécessaires à l’usage du service
+s’appuieront sur les mécanismes existants et éprouvés (<em>single sign-on</em>, GAR,
+fédération d’identité, OAuth, CAS, <em>learning tools interoperability</em>,…)
+permettant de simplifier l’expérience utilisateur et, par leur paramétrage, de
+minimiser les données collectées.</p>
+</section>
+<section id="la-duree-de-conservation">
+<h3>La durée de conservation<a class="headerlink" href="#la-duree-de-conservation" title="Lien permanent vers ce titre">#</a></h3>
+<p>La plateforme devra prévoir un mécanisme de suppression des données selon
+différentes situations :</p>
+<ul class="simple">
+<li><p>à la demande de l’utilisateur, dans la limite des autorisations dont il
+dispose au regard de son profil et de la base légale qui a fondé le traitement
+(un étudiant, par exemple, ne pourra pas supprimer son compte si celui-ci lui
+est nécessaire aux activités scolaires durant l’année) ;</p></li>
+<li><p>après un certain temps d’inactivité.</p></li>
+</ul>
+</section>
+<section id="la-securite-des-donnees">
+<h3>La sécurité des données<a class="headerlink" href="#la-securite-des-donnees" title="Lien permanent vers ce titre">#</a></h3>
+<p>Les données, y compris les données à caractère personnel, seront sécurisées par
+des mesures techniques à l’état de l’art et adaptées au niveau de sensibilité
+des données, en utilisant par exemple le chiffrement dès que celui-ci est
+possible techniquement et fonctionnellement -sur les protocoles, données
+stockées et en transit-, des conditions d’authentification robustes, la
+normalisation des traces générées,…</p>
+<p>Elles seront également sécurisées par des mesures organisationnelles adaptées
+(réalisation d’une analyse d’impact sur la protection des données (AIPD),
+homologation au Référentiel Général de Sécurité (RGS), revue des habilitations,
+contrats de sous-traitance éventuels, bridage des exports comportant des données
+à caractère personnel, paramétrage strict des API,…).</p>
+</section>
+<section id="la-transparence-et-les-droits-des-personnes">
+<h3>La transparence et les droits des personnes<a class="headerlink" href="#la-transparence-et-les-droits-des-personnes" title="Lien permanent vers ce titre">#</a></h3>
+<p>Le projet intègre une forte <strong>logique de transparence</strong>, au vu de sa démarche
+d’ouverture (<em>open source, open data, open science</em>) et de la possibilité donnée
+de contribuer à l’acculturation des utilisateurs aux enjeux de protection des
+données.</p>
+<p>Dans ce cadre, les différentes étapes de structuration et fonctionnement du
+projet ont vocation à être documentées et publiées : cela concerne l’ouverture
+du code, la transparence des algorithmes, mais également les documentations
+juridiques et techniques dès lors qu’elles ne portent pas atteinte à la sécurité
+des systèmes d’information ou aux droits des tiers.</p>
+<p>A titre d’exemple, l’analyse d’impact sur la protection des données a vocation à
+être diffusée, mais certains éléments de sécurité pourraient être l’objet d’une
+diffusion restreinte. De la même manière, les éventuels contrats de
+sous-traitance n’auront pas vocation à être diffusés.</p>
+<p>Cet objectif de transparence recouvre également un objectif de littératie
+numérique, qui doit donc être recherché à travers une documentation complète
+mais également adaptée pour être appréhendable aux différents profils
+d’utilisateurs.</p>
+<p>Dans le cadre de l’utilisation du service, la transparence permettra aux
+étudiants et enseignants de comprendre les flux de données, leur devenir, et la
+façon d’<strong>exercer simplement leurs droits</strong>.</p>
+</section>
+</section>
+<section id="au-dela-du-rgpd">
+<h2>3. Au-delà du RGPD<a class="headerlink" href="#au-dela-du-rgpd" title="Lien permanent vers ce titre">#</a></h2>
+<p>En complément de la conformité RGPD au sens juridique et technique, le projet
+vise à <strong>contribuer au débat public</strong> et <strong>promouvoir une approche éthique</strong>.</p>
+<p>La démarche éthique s’exprime en particulier par l’axe de la transparence, via
+l’ouverture du code informatique et de la documentation, mais également avec un
+souci de pédagogie et d’explicabilité des traitements de données.</p>
+<p>Elle s’exprime également par la ré-affirmation des principes de <em>privacy by
+design et privacy by default</em>, dans ce projet qui est l’occasion de montrer
+qu’ils sont conciliables avec les objectifs d’ouverture et de valorisation des
+données.</p>
+<p>Ainsi, si le principe cardinal du projet pourrait être celui de la science
+ouverte, « <em>aussi ouverte que possible, aussi fermé que nécessaire</em> », la
+prévalence de la protection sera garantie dans les cas où les deux objectifs se
+révèlent inconciliables, ainsi que dans les cas où l’éthique le justifie.</p>
+<p>Dans ce contexte, la mise en œuvre du projet <strong>s’appuiera également sur les
+publications et recherches universitaires</strong> en cours, pour limiter l’impact de
+l’usage des données d’apprentissage, par exemple en renonçant à leur
+exploitation même lorsque celle-ci est techniquement et juridiquement possible
+(cf. la notion de «
+<em><a class="reference external" href="https://journals.openedition.org/dms/4086">bienveillance algorithmique</a></em> »
+énoncée par le Loria).</p>
+<p>De la même manière, les API visant à permettre l’interconnexion de la plateforme
+avec d’autres systèmes d’information ou des entrepôts de données seront
+<strong>volontairement paramétrées afin d’interdire tous transferts</strong> qui pourraient,
+par recoupement, présenter des
+<a class="reference external" href="https://www.nature.com/articles/s41467-019-10933-3">risques de réidentification</a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ConceptionResponsable.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Principes de conception responsable</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="DirectionsTechnologiques.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Directions technologiques</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Candyce<br/>
+  
+      &copy; Copyright 2021-2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
