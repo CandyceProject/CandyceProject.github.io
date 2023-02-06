@@ -43,9 +43,9 @@ défaut).
 Cette logique s’appuie sur des acteurs experts dans le domaine, issus de la
 sphère publique (INRIA, Paris Saclay, FUN), du secteur privé <!--(QuantStack,
 Hestia)!--> et entend bénéficier des retours de la société civile et des personnes
-concernées. Y participent différents profils complémentaires, tels que des
-enseignants-chercheurs, enseignants, chercheurs, développeurs, entrepreneurs,
-responsables des données, data engineer, délégués à la protection des données,…
+concernées. Y participent différents profils complémentaires, tels que des enseignants-chercheurs,
+enseignants, chercheurs, développeurs, entrepreneurs, responsables des données, data
+engineer, délégués à la protection des données,…
 
 Ces experts de terrain mettent en œuvre la **commande politique et
 stratégique**, en veillant à son application éthique, tant dans le choix des

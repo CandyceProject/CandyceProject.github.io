@@ -34,9 +34,9 @@ pour ambition d’offrir un observatoire des usages pour alimenter la recherche 
 sciences du numérique, sciences de l’éducation et de la formation, sciences
 humaines et sociales et sciences cognitives._
 
-À ce jour, le programme regroupe un nombre important de partenaires
-publics associés à la maîtrise d’ouvrage portée par Inria et à la
-maîtrise d’œuvre portée par l’Université Paris-Saclay :
+À ce jour, le programme regroupe un nombre important de partenaires publics
+associés à la maîtrise d’ouvrage portée par Inria et à la maîtrise d’œuvre
+portée par l’Université Paris-Saclay :
 
 - Direction du Numérique pour l’Éducation (DNE) :
 
@@ -60,9 +60,8 @@ maîtrise d’œuvre portée par l’Université Paris-Saclay :
 
 - Personaldata&#46;io, Hestia&#46;ai.
 
-Le développent du socle logiciel sera confié à un prestataire privé
-expert de Jupyter et du logiciel libre.
-
+Le développent du socle logiciel sera confié à un prestataire privé expert de
+Jupyter et du logiciel libre.
 
 ## Enjeux
 

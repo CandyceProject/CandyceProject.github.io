@@ -447,8 +447,8 @@ opérationnelles et sa mise à l’échelle
 
 <u>Pilote :</u> France Université Numérique (FUN)
 
-<u>Partenaires :</u> UPSaclay, CentraleSupelec, <!--QuantStack!-->, Académie de Paris,
-Inria, DNE
+<u>Partenaires :</u> UPSaclay, CentraleSupelec, <!--QuantStack!-->, Académie de
+Paris, Inria, DNE
 
 <u>Associés : </u>hébergeur(s) cloud souverain(s) ? Renater ?
 
@@ -919,11 +919,11 @@ De par la large diffusion des technologies Jupyter et la nature même du logicie
 libre, la collaboration étroite avec la communauté — EdTech, des entreprises en
 général, des associations, ou des services publics — est dans l’ADN du programme
 Candyce, à commencer par son cœur même : l’infrastructure Candyce sera en effet
-réalisée conjointement par un prestataire qui sera retenu pour son
-expertise pour développer avec la communauté du libre une infrastructure
-de cette ambition, et par l’établissement public France Université Numérique
-dont le cœur de métier est la co-construction et l’opération de services
-numériques innovants et souverains pour l’éducation. <!-- QuantStack bénéficiera en
+réalisée conjointement par un prestataire qui sera retenu pour son expertise
+pour développer avec la communauté du libre une infrastructure de cette
+ambition, et par l’établissement public France Université Numérique dont le cœur
+de métier est la co-construction et l’opération de services numériques innovants
+et souverains pour l’éducation. <!-- QuantStack bénéficiera en
 retour des avancées de ce projet pour son développement européen et
 international, tandis que France Université Numérique l’intégrera dans sa
 plate-forme FUN MOOC.!-->
@@ -1234,24 +1234,21 @@ Financement : 0,5 M€ sur 3 ans puis optionnel jusqu’5 ans
 
 ### Identification des critères d’évaluation et de succès
 
-À ce jour, les critères d’évaluation suivants ont été identifiés. Il conviendra
-de les amender et de les compléter. Il faudra en sus définir comment évaluer,
-qualitativement et/ou quantitativement, chacun d’entre eux et s’accorder sur les
-objectifs visés à trois ans et cinq ans.
+À ce jour, les critères d’évaluation et indicateurs suivants ont été
+identifiés. Il conviendra de les amender et de les compléter. Il faudra en sus
+préciser comment évaluer, qualitativement et/ou quantitativement, chacun des
+critères et s’accorder sur les critères de succès visés.
 
-### Critères d’évaluation : résultats
+#### Critères d’évaluation : résultats
 
 - Publics formés, communautés animées et impliquées,
-
-- Qualité de la plate-forme
+- Qualité de l'infrastructure
 
   - **Expérience utilisateur**
-
   - **Technique:** fonctionnalité, interopérabilité, accessibilité, performance,
     scalabilité, robustesse, sécurité, etc.
-
-  - **Éthique:** protection des données personnelles, frugalité, etc.
-
+  - **Éthique:** protection des données personnelles, souveraineté,
+    frugalité, etc.
   - **Organisationnelle:** soutenabilité, coûts de maintenance et d’opération,
     potentiel de pérennité à long terme
 
@@ -1261,36 +1258,73 @@ objectifs visés à trois ans et cinq ans.
 
 - Qualité et pertinence des données produites
 
-### Critères d’évaluation: impact
+#### Critères d’évaluation : impact
 
 - Pertinence pédagogique des carnets numériques (au sens large)
 
 - **Adoption de l’infrastructure**
 
   - Dans le scolaire (lycée/collège/primaire)
-
   - Dans le supérieur (enseignement et recherche)
-
   - Par la recherche
-
   - Par les Edtech, associations, …
 
 - **Adoption des briques logicielles développées pour Candyce**
 
   - En Europe et dans le monde
-
   - Dans les entreprises (dont formation professionnelle, …)
 
 - **Impact environnemental**
 
-### Études d’impact
+### Méthodologie d'évaluation
+
+#### Indicateurs quantitatifs
+
+Nous proposons les indicateurs quantitatifs suivants pour contribuer à
+l'évaluation des critères ci-dessus et de l'impact sur les objectifs
+du PEPR.
+
+1.  Nombre d'utilisateurs uniques hebdomadaire et total de
+    l'infrastructure, ventilé par type d'utilisateur (apprenant,
+    enseignant, ...), niveau, discipline.  
+2.  Nombre d'établissement avec usage avéré, ventilé par niveau et
+    type (rep+, «en zone blanche», ...)
+3.  Mesure d'usage de la collaboration temps réel sur des carnets numériques
+4.  Niveau d'accessibilité RG2A (de l'infrastructure, des activités phares)
+5.  Nombre de personnes touchées par des activités de formation/animation organisées par Candyce (ventilé par niveau, discipline)
+6.  Nombre de ressources dans la bibliothèque de contenu, ventilé par
+    niveau, discipline, et origine (partenaires de Candyce ou
+    communauté); nombre de contributeurs
+7.  Statistiques de réutilisation des ressources de la bibliothèque
+    (ventilé par niveau, discipline)
+
+##### Lien avec les objectifs du PEPR
+
+- Objectif: Renforcer l’apprentissage des sciences du numériques  
+  Indicateurs 1, 5, 6, 7
+- Objectif: Soutenir l’apprentissage dans toute disciplines grâce au
+  numérique  
+  Indicateurs 1, 5, 6, 7
+- Objectif: Lutter contre les inégalités scolaires et contre le
+  décrochage. Permettre une meilleure gestion de l’hétérogénéité,
+  favoriser le suivi individualisé  
+  Indicateurs 2, 4
+- Objectif: Améliorer la prise en charge d’élèves souffrant de
+  troubles de l’apprentissage et de handicap  
+  Indicateur 4
+- Objectif: Faciliter l’hybridation de l’apprentissage  
+  Indicateurs 1, 3
+- Objectif: Développer un numérique responsable et souverain  
+  Indicateurs 1, 2, 4
+
+#### Études d’impact
 
 Dans un premier volet de ce chapitre, des études seront menées sur l’impact de
 Candyce pour l’enseignement, la recherche, l’industrie, la société et
 l’environnement, sur la base des critères retenus, afin de nourrir l’évaluation
 des politiques publiques ainsi que la préfiguration de la suite du programme
-Candyce. Certaines études seront réalisées par un organisme extérieur qui reste
-à déterminer.
+Candyce. Certaines études seront réalisées par des organismes extérieurs qui
+restent à déterminer.
 
 ### Préfiguration de la suite du programme Candyce
 

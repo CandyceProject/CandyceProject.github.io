@@ -13,18 +13,20 @@ href="Candyce.docx">DOCX</a>, en <a href="Candyce.md">Markdown</a>
 
 :::{warning}
 
-Candyce est un programme **en cours de montage** qui s'insère dans le
-PEPR «Enseignement et Numérique». Après deux itérations avec le SGPI
-et les ministères concernés (soumissions en juin 2021, et février
-2022) il reste une dernière étape de validation définitive
-(février-mars 2023?). L'étape suivante est la contractualisation avec
-l'ANR, après finalisation de la description de l'implémentation du
-programme (jalons, lots, tâches, budget, ...), en vue d'un lancement
-des actions progressive courant 2023.
+Candyce est un programme **en cours de montage** qui s'insère dans le PEPR
+«Enseignement et Numérique». Après deux itérations avec le SGPI et les
+ministères concernés (soumissions en juin 2021, et février 2022) il reste une
+dernière étape de validation définitive (février-mars 2023?). L'étape suivante
+est la contractualisation avec l'ANR, après finalisation de la description de
+l'implémentation du programme (jalons, lots, tâches, budget, ...), en vue d'un
+lancement des actions progressive courant 2023.
 
 Ce wiki regroupe les documents de la proposition en cours d'écriture:
-description scientifique, <!--implémentation,!--> annexes. **Certains
-éléments sont immatures ou obsolètes; d'autres simplement absents;
+description scientifique, <!--implémentation,!--> annexes. La description de
+l'implémentation du programme sera rendue publique au moment de l'appel d'offre
+public pour le prestataire en charge du cœur du développement logiciel.
+
+**Certains éléments sont immatures ou obsolètes; d'autres simplement absents;
 tous sont susceptibles d'évolutions.**
 
 Pour tous commentaires, critiques, suggestions, typos, ou si vous ou votre
@@ -33,10 +35,7 @@ coordinateur Nicolas.Thiery at universite-paris-saclay.fr.
 
 **Confidentialité:**
 
-Ce document est maintenant public et peut être relayé sur les réseaux
-sociaux. La description de l'implémentation sera rendue publique au
-moment de l'appel d'offre public pour le prestataire en charge du cœur
-du développement logiciel.
+Ce document est maintenant public et peut être relayé sur les réseaux sociaux.
 
 :::
 
@@ -52,7 +51,6 @@ du développement logiciel.
 :::
 
 !-->
-
 
 :::{admonition} Résumé en deux paragraphes
 
@@ -74,6 +72,7 @@ l’industrie._
 :::
 
 :::{admonition} Résumé en une page
+:class: dropdown
 
 L’interaction avec l’outil informatique est une composante fondamentale de
 l’expérience d’apprentissage, des mathématiques à la géographie, de la

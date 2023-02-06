@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Réservé aux partenaires de Candyce"
+AuthUserFile /home/nthiery/www/CandyceProposal/Budget/.htpasswd
+require valid-user

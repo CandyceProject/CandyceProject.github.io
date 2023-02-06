@@ -121,7 +121,8 @@ la Sciences des Données), avec 350 étudiants de 1ère année formés chaque an
 Cela a été l'occasion de nombreuses expériences pédagogiques: utilisation de
 carnets interactifs basés sur l'interpréteur C++, gestion des devoirs avec
 nbgrader et GitLab, qui ont chacun donné lieu à de nombreuses interactions avec
-la communauté <!--(dont QuantStack)!--> et des contributions aux logiciels sous-jacent.
+la communauté <!--(dont QuantStack)!--> et des contributions aux logiciels
+sous-jacent.
 
 Pour soutenir ces usages Thiéry a piloté et réalisé une partie du déploiement et
 de la maintenance du service de salle de TP virtuelle
