@@ -1214,7 +1214,7 @@ partage des résultats de la recherche avec tous les acteurs éducatifs mais aus
 leur sensibilisation et leur implication pour les associer le plus en amont
 possible aux activités de recherche.
 
-## Chapitre 6 : Évaluation
+## Chapitre 6 : Évaluation et préfiguration
 
 Enjeux :
 
@@ -1235,9 +1235,9 @@ Financement : 0,5 M€ sur 3 ans puis optionnel jusqu’5 ans
 ### Identification des critères d’évaluation et de succès
 
 À ce jour, les critères d’évaluation et indicateurs suivants ont été
-identifiés. Il conviendra de les amender et de les compléter. Il faudra en sus
-préciser comment évaluer, qualitativement et/ou quantitativement, chacun des
-critères et s’accorder sur les critères de succès visés.
+identifiés. Il conviendra de les amender et de les compléter. Il faudra préciser
+comment évaluer, qualitativement et/ou quantitativement, chacun des critères et
+s’accorder sur les cibles visées.
 
 #### Critères d’évaluation : résultats
 
