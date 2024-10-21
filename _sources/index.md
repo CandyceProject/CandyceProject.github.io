@@ -11,31 +11,65 @@ libres**
 href="Candyce.docx">DOCX</a>, en <a href="Candyce.md">Markdown</a>
 (fichier concaténé). !-->
 
-:::{warning}
+:::{attention} 2024/10: Candyce II, le retour?
 
-Candyce est un programme **en cours de montage** qui s'insère dans le PEPR
-«Enseignement et Numérique». Après deux itérations avec le SGPI et les
-ministères concernés (soumissions en juin 2021, et février 2022) il reste une
-dernière étape de validation définitive (février-mars 2023?). L'étape suivante
-est la contractualisation avec l'ANR, après finalisation de la description de
-l'implémentation du programme (jalons, lots, tâches, budget, ...), en vue d'un
-lancement des actions progressive courant 2023.
+À l'origine, Candyce devait être un programme financé à hauteur de 12M€ pour
+2023-2027 dans le cadre du plan de relance et plus spécifiquement du PEPR
+«Enseignement et Numérique». Déposé en juin 2021 puis février 2022, avec chaque
+fois des retours très positifs par le SGPI et les ministères concernés et des
+annonces par les gouvernements successifs
+[1](https://www.info.gouv.fr/actualite/numerique-educatif-le-premier-ministre-dresse-le-bilan-des-enseignants-de-la-crise-et-presente-des),
+[2](https://www.info.gouv.fr/actualite/l-innovation-au-service-de-l-enseignement-scolaire-annonces-des-premiers-laureats-edtech-de-france),
+le PEPR n'a finalement pas été financé.
 
-Ce wiki regroupe les documents de la proposition en cours d'écriture:
-description scientifique, <!--implémentation,!--> annexes. La description de
-l'implémentation du programme sera rendue publique au moment de l'appel d'offre
-public pour le prestataire en charge du cœur du développement logiciel.
+Le moment politique n'est pas favorable aux programmes ambitieux. Pour autant
+les besoins du terrain sont toujours plus pressants, avec un environnement
+national particulièrement favorable pour être à la pointe. D'autre part, le
+travail de construction du programme a permis d'identifier et de modulariser les
+actions à mener.
 
-**Certains éléments sont immatures ou obsolètes; d'autres simplement absents;
-tous sont susceptibles d'évolutions.**
+Aussi, avec le soutien d'Inria et de France Université, nous explorons les
+opportunités pour lancer -- et financer! -- certaines de ces actions, façon
+fusée à étages, en fonction de leur urgence, leur coût et leur impact, avec un
+accent mis sur les besoins de l'enseignement supérieur et de la recherche.
 
-Pour tous commentaires, critiques, suggestions, typos, ou si vous ou votre
-institution souhaiteriez vous impliquer dans Candyce, merci de contacter le
-coordinateur Nicolas.Thiery at universite-paris-saclay.fr.
+Dès à présent, nous nous appuyons sur des financements existants (CMA
+SaclAI-School, ...) pour mener des travaux préparatoires en faisant monter en
+gamme des actions locales comme à Paris-Saclay (dont CentraleSupélec):
+infrastructure [myDocker](https://mydocker.universite-paris-saclay.fr/),
+développement d'outils métiers, production de ressources pédagogiques,
+accompagnement, ...
+
+Nous avons identifié plusieurs actions nationales qui permettraient de répondre
+à court terme (~1 an après lancement) aux besoins les plus urgents (low hanging
+fruits), avec un besoin de financement par action de l'ordre de 100k€.
+
+Sur la base de ces deux premiers étages de fusée, nous pourrions alors aller
+chercher des financements à l'échelle de quelques M€ pour la massification et la
+pérennisation sur le long terme, à l'échelon Français ou Européen.
+
+Pour en savoir plus, pour toute suggestion, ou si vous ou votre institution
+souhaiteriez vous impliquer dans Candyce, merci de contacter le coordinateur
+Nicolas.Thiery at universite-paris-saclay.fr. Vous pouvez aussi [consulter les
+témoignages](https://codimd.math.cnrs.fr/kWae25O-Tqyg5_PdeH_VWw#) et y
+contribuer.
+
+:::
+
+:::{warning} À propos de ce wiki
+:class: dropdown
+
+À ce stade, ce wiki regroupe les documents de la dernière proposition du
+programme Candyce d'origine: description scientifique et <!--implémentation,!-->
+annexes. La description de l'implémentation du programme devait être rendue
+publique au moment de l'appel d'offre public pour le prestataire en charge du
+cœur du développement logiciel. **Certains éléments étaient immatures ou
+obsolètes; d'autres simplement absents; tous étaient susceptibles
+d'évolutions.**
 
 **Confidentialité:**
 
-Ce document est maintenant public et peut être relayé sur les réseaux sociaux.
+Ce document est public et peut être relayé sur les réseaux sociaux.
 
 :::
 

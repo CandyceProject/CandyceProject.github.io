@@ -99,7 +99,7 @@ jusqu'en 2008), regroupant une 50 chercheurs en Europe et à l'étranger, et aya
 eu un impact majeur sur une centaine de publications.
 
 Avec 150 billets (co)écrits et autant d'expertisés, Thiéry est lui-même un
-développeur de SageMaths avec des contributions comprenant des composants clés
+développeur de SageMath avec des contributions comprenant des composants clés
 de l'infrastructure (par exemple, les catégories), des bibliothèques de
 recherche spécialisées (par exemple les systèmes de racines), des tutoriels
 thématiques, ainsi que deux chapitres de l'ouvrage de référence "Calcul
