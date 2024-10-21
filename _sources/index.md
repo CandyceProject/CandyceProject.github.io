@@ -11,7 +11,8 @@ libres**
 href="Candyce.docx">DOCX</a>, en <a href="Candyce.md">Markdown</a>
 (fichier concaténé). !-->
 
-:::{attention} 2024/10: Candyce II, le retour?
+:::{admonition} 2024/10: Candyce II, le retour?
+:class: attention
 
 À l'origine, Candyce devait être un programme financé à hauteur de 12M€ pour
 2023-2027 dans le cadre du plan de relance et plus spécifiquement du PEPR
@@ -24,9 +25,9 @@ le PEPR n'a finalement pas été financé.
 
 Le moment politique n'est pas favorable aux programmes ambitieux. Pour autant
 les besoins du terrain sont toujours plus pressants, avec un environnement
-national particulièrement favorable pour être à la pointe. D'autre part, le
-travail de construction du programme a permis d'identifier et de modulariser les
-actions à mener.
+national particulièrement favorable pour être à la pointe. D'autre part, tout le
+travail de construction du programme a permis d'identifier et prioriser les
+actions à mener, ainsi que les acteurs potentiels.
 
 Aussi, avec le soutien d'Inria et de France Université, nous explorons les
 opportunités pour lancer -- et financer! -- certaines de ces actions, façon
@@ -56,8 +57,8 @@ contribuer.
 
 :::
 
-:::{warning} À propos de ce wiki
-:class: dropdown
+:::{admonition} À propos de ce wiki
+:class: warning dropdown
 
 À ce stade, ce wiki regroupe les documents de la dernière proposition du
 programme Candyce d'origine: description scientifique et <!--implémentation,!-->
